@@ -25,9 +25,21 @@
 
     </style>
 
-    <!-- Home - Bottom Navigation Custom -->
+    <!-- Home 화면 - Bottom Navigation Custom -->
     <style name="NavDrawerTextStyle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:textSize">8sp</item>
+    </style>
+
+    <!-- Home 화면 - 카테고리 TabLayout Custom   -->
+    <style name="HomeCategoryTabLayout_Theme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">12sp</item>
+        <item name="paddingEnd">0dp</item>
+        <item name="itemTextAppearanceInactive">@font/inter_regular</item>
+        <item name="fontFamily">@font/inter_bold</item>
+        <item name="marginHorizontal">0dp</item>
+        <item name="android:textColorPrimary">#000000</item>
+        <item name="android:textColorSecondary">#D9D9D9</item>
     </style>
 
     <!-- Splash Screen Theme -->

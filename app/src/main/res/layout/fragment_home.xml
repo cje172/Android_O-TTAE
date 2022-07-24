@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -29,6 +29,91 @@
             app:tabIndicatorColor="@color/yellow_COR2"
             app:tabIndicatorGravity="stretch"
             app:tabMode="fixed" />
+
+        <!-- 카테고리 (생일, 연인, 부모님, 가벼운 선물, 럭셔리) -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/home_category_content_tb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_banner_tb"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/white"
+            app:tabIndicatorFullWidth="false"
+            app:tabMinWidth="0dp"
+            app:tabMode="fixed"
+            app:tabPaddingEnd="0dp"
+            app:tabPaddingStart="0dp"
+            app:tabRippleColor="#00ff0000"
+            app:tabSelectedTextColor="#000000"
+            app:tabTextAppearance="@style/HomeCategoryTabLayout_Theme"
+            app:tabTextColor="#D9D9D9" />
+
+        <View
+            android:id="@+id/home_move_btn_view"
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:background="@color/white_COR3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_category_content_tb" />
+
+        <TextView
+            android:id="@+id/home_sub_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="19dp"
+            android:fontFamily="@font/inter_medium"
+            android:text="어떤 선물을 준비하고 계신가요?"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_category_content_tb" />
+
+        <Button
+            android:id="@+id/home_secret_present_btn"
+            android:layout_width="143dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="18dp"
+            android:backgroundTint="@color/red_COR1"
+            android:padding="10dp"
+            android:text="쉿! 특별함을 더해줄 비밀선물"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_sub_title_tv" />
+
+        <Button
+            android:id="@+id/home_favorite_present_btn"
+            android:layout_width="143dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="22dp"
+            android:backgroundTint="@color/yellow_COR2"
+            android:padding="10dp"
+            android:text="뭐가 필요해? 취향저격 선물"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/home_secret_present_btn"
+            app:layout_constraintTop_toBottomOf="@+id/home_sub_title_tv" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/home_category_content_vp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_secret_present_btn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

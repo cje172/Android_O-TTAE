@@ -16,12 +16,16 @@ class HomeFragment : Fragment() {
 
     lateinit var homeBannerVp: ViewPager2
     lateinit var homeBannerTb: TabLayout
+    lateinit var homeCategoryContentTb: TabLayout
+    lateinit var homeCategoryContentVp: ViewPager2
 
     var currentPosition = 0
     val handler = Handler(Looper.getMainLooper()) {
         setPage()
         true
     }
+
+    private val homeCategoryTab = arrayListOf("생일", "연인", "부모님", "가벼운 선물", "럭셔리")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +36,8 @@ class HomeFragment : Fragment() {
 
         homeBannerVp = view.findViewById(R.id.home_banner_vp)
         homeBannerTb = view.findViewById(R.id.home_banner_tb)
+        homeCategoryContentTb = view.findViewById(R.id.home_category_content_tb)
+        homeCategoryContentVp = view.findViewById(R.id.home_category_content_vp)
 
 
         // Home 화면 상단 배너 - Tablayout와 ViewPager2 연결
@@ -68,6 +74,13 @@ class HomeFragment : Fragment() {
         val thread = Thread(PagerRunnable())
         thread.start()
 
+
+        // Home 화면 카테고리 - Tablayout와 ViewPager2 연결
+        val homeCategoryAdapter = HomeCategoryVPAdapter(this)
+        homeCategoryContentVp.adapter = homeCategoryAdapter
+        TabLayoutMediator(homeCategoryContentTb, homeCategoryContentVp) { tab, position ->
+            tab.text = homeCategoryTab[position]
+        }.attach()
 
         return view
     }
