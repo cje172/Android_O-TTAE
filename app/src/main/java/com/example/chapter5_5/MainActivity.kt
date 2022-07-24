@@ -9,6 +9,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mainBnv: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Theme_Chapter55)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
