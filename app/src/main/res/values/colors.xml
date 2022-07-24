@@ -8,4 +8,9 @@
     <color name="green_700">#00584A</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    // App Theme Color
+    <color name="red_COR1">#FC3030</color>
+    <color name="yellow_COR2">#F4E61E</color>
+    <color name="white_COR3">#F4F4F4</color>
 </resources>
