@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:background="#FFFFFF"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="10dp">
+
+    <ImageView
+        android:id="@+id/gift_photo"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="48dp"
+
+        android:background="@drawable/wonder_visitor_ball_cap"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/giftCategory"
+        android:layout_width="205dp"
+        android:layout_height="15dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center_vertical"
+        android:text="000님을 위한 패션아이템"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/gift_photo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gift_name"
+        android:layout_width="147dp"
+        android:layout_height="11dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="6dp"
+        android:text="wonder visitor 볼캡"
+        android:textColor="@color/black"
+
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/gift_photo"
+        app:layout_constraintTop_toBottomOf="@id/giftCategory" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="205dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="52dp"
+        android:gravity="center_vertical"
+        android:text="12,000"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/gift_photo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

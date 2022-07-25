@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chapter5_5.databinding.ItemHomeCategoryProductBinding
+import java.util.*
 
 class ProductRVAdapter(private val productList: ArrayList<Product>) :
     RecyclerView.Adapter<ProductRVAdapter.ViewHolder>() {

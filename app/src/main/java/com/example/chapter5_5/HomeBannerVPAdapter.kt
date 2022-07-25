@@ -2,6 +2,7 @@ package com.example.chapter5_5
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import java.util.*
 
 class HomeBannerVPAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
