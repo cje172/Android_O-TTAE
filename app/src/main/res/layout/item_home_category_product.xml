@@ -10,7 +10,7 @@
         android:layout_width="89dp"
         android:layout_height="89dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/list1_film"
+        android:src="@drawable/list1_film_img"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,6 +34,7 @@
         android:layout_marginLeft="17dp"
         android:layout_marginTop="3dp"
         android:text="제품 이름"
+        android:textColor="@color/black"
         android:textSize="10sp"
         app:layout_constraintStart_toEndOf="@id/item_product_img_iv"
         app:layout_constraintTop_toBottomOf="@+id/item_company_tv" />

@@ -3,11 +3,11 @@ package com.example.chapter5_5
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.os.Message
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -18,6 +18,8 @@ class HomeFragment : Fragment() {
     lateinit var homeBannerTb: TabLayout
     lateinit var homeCategoryContentTb: TabLayout
     lateinit var homeCategoryContentVp: ViewPager2
+    lateinit var homeGiftBtn: Button
+    lateinit var homeTasteBtn: Button
 
     var currentPosition = 0
     val handler = Handler(Looper.getMainLooper()) {
@@ -41,6 +43,18 @@ class HomeFragment : Fragment() {
         homeBannerTb = view.findViewById(R.id.home_banner_tb)
         homeCategoryContentTb = view.findViewById(R.id.home_category_content_tb)
         homeCategoryContentVp = view.findViewById(R.id.home_category_content_vp)
+        homeGiftBtn = view.findViewById(R.id.home_gift_btn)
+        homeTasteBtn = view.findViewById(R.id.home_taste_btn)
+
+        // 비밀선물 버튼 클릭 시 비밀선물 페이지로 이동
+        homeGiftBtn.setOnClickListener {
+            (context as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.main_frm, GiftFragment()).commitAllowingStateLoss()
+        }
+
+        // 취향저격 선물 버튼 클릭 시 취향선물 페이지로 이동
+        homeTasteBtn.setOnClickListener {
+            (context as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.main_frm, TasteFragment()).commitAllowingStateLoss()
+        }
 
 
         // Home 화면 상단 배너 - Tablayout와 ViewPager2 연결
@@ -79,8 +93,12 @@ class HomeFragment : Fragment() {
 
 
         // Home 화면 카테고리 - Tablayout와 ViewPager2 연결
-        val homeCategoryAdapter = HomeCategoryVPAdapter(this)
+//        val homeCategoryAdapter = HomeCategoryVPAdapter(this)
+        val fm = childFragmentManager
+        val lifecycle = viewLifecycleOwner.lifecycle
+        val homeCategoryAdapter = HomeCategoryVPAdapter(fm, lifecycle)
         homeCategoryContentVp.adapter = homeCategoryAdapter
+
         TabLayoutMediator(homeCategoryContentTb, homeCategoryContentVp) { tab, position ->
             tab.text = homeCategoryTab[position]
         }.attach()

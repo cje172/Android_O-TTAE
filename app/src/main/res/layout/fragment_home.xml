@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -56,8 +56,9 @@
         <View
             android:id="@+id/home_move_btn_view"
             android:layout_width="match_parent"
-            android:layout_height="104dp"
+            android:layout_height="0dp"
             android:background="@color/white_COR3"
+            app:layout_constraintBottom_toTopOf="@+id/home_category_content_vp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/home_category_content_tb" />
@@ -76,44 +77,54 @@
             app:layout_constraintTop_toBottomOf="@id/home_category_content_tb" />
 
         <Button
-            android:id="@+id/home_secret_present_btn"
+            android:id="@+id/home_gift_btn"
             android:layout_width="143dp"
-            android:layout_height="43dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="34dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="18dp"
             android:layout_marginBottom="18dp"
             android:backgroundTint="@color/red_COR1"
-            android:padding="10dp"
-            android:text="쉿! 특별함을 더해줄 비밀선물"
+            android:drawableLeft="@drawable/home_gift_btn_icon_custom"
+            android:paddingVertical="5dp"
+            android:paddingStart="17dp"
+            android:stateListAnimator="@null"
+            android:text="쉿! 특별함을 \n더해줄 비밀선물"
             android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/home_move_btn_view"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/home_sub_title_tv" />
 
         <Button
-            android:id="@+id/home_favorite_present_btn"
+            android:id="@+id/home_taste_btn"
             android:layout_width="143dp"
-            android:layout_height="43dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="18dp"
             android:layout_marginEnd="22dp"
+            android:layout_marginBottom="18dp"
             android:backgroundTint="@color/yellow_COR2"
-            android:padding="10dp"
-            android:text="뭐가 필요해? 취향저격 선물"
+            android:drawableLeft="@drawable/home_taste_btn_icon_custom"
+            android:drawablePadding="16dp"
+            android:paddingVertical="5dp"
+            android:paddingStart="17dp"
+            android:stateListAnimator="@null"
+            android:text="뭐가 필요해? \n취향저격 선물"
+            android:textAlignment="textStart"
             android:textColor="@color/black"
             android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/home_move_btn_view"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/home_secret_present_btn"
+            app:layout_constraintStart_toEndOf="@+id/home_gift_btn"
             app:layout_constraintTop_toBottomOf="@+id/home_sub_title_tv" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/home_category_content_vp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="550dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/home_secret_present_btn" />
+            app:layout_constraintTop_toBottomOf="@+id/home_gift_btn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
