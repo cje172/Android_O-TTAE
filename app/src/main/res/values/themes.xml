@@ -21,7 +21,7 @@
         <item name="android:checkboxStyle">@style/customCheckboxFontStyle</item>
 
         <item name="android:background">@android:color/transparent</item>
-
+<!--        <item name="colorControlHighlight">@color/white</item>  Button 클릭 시 ripple color 설정 -->
 
     </style>
 
