@@ -22,7 +22,7 @@ class GiftFragment : Fragment() {
         // 선물 추천받으러 가기 버튼 클릭 시 질문지 페이지로 이동 (임시)
         giftRecommendBtn.setOnClickListener {
             (context as MainActivity).supportFragmentManager.beginTransaction()
-                .replace(R.id.main_frm, QuestionFragment()).commitAllowingStateLoss()
+                .replace(R.id.main_frm, TakerInfoFirstFragment()).commitAllowingStateLoss()
         }
 
         return view

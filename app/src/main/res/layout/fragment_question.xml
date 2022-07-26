@@ -7,10 +7,11 @@
 
     <Button
         android:id="@+id/question_back_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="34dp"
         android:layout_marginTop="34dp"
+        android:layout_marginEnd="270dp"
         android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/question_back_btn_custom"
         android:drawablePadding="8dp"
@@ -27,18 +28,22 @@
         android:textColor="#D9D9D9"
         android:textSize="15sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/question_progress_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="301dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="34dp"
         android:text="1/5"
+        android:textColor="#6C6C6C"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/question_back_btn" />
 
     <SeekBar
@@ -69,8 +74,8 @@
         android:fontFamily="@font/cafe24_ohsquareair"
         android:text="MBTI에 대한 질문입니다?"
         android:textAlignment="center"
-        android:textSize="20sp"
         android:textColor="#6C6C6C"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/question_answer_top_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,7 +83,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/question_answer_top_btn"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="34dp"
         android:layout_marginTop="126dp"
@@ -99,7 +104,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/question_answer_bottom_btn"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="34dp"
         android:layout_marginBottom="22dp"

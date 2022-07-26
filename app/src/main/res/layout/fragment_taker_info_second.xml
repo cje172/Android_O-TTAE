@@ -7,7 +7,7 @@
 
     <TextView
         android:id="@+id/taker_info_second_title_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="34dp"
         android:layout_marginTop="60dp"
@@ -24,7 +24,7 @@
 
     <TextView
         android:id="@+id/taker_info_second_sub_title_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="34dp"
         android:layout_marginTop="21dp"
@@ -40,7 +40,7 @@
 
     <View
         android:id="@+id/taker_info_second_line_view"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0.5dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="29dp"
@@ -49,5 +49,118 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taker_info_second_sub_title_tv" />
+
+    <TextView
+        android:id="@+id/taker_info_second_age_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="60dp"
+        android:text="연령"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/taker_info_second_sex_tv"
+        app:layout_constraintEnd_toStartOf="@+id/taker_info_second_age_spinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taker_info_second_line_view" />
+
+    <Spinner
+        android:id="@+id/taker_info_second_age_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/taker_info_spinner_custom"
+        android:entries="@array/taker_info_age_entries"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/taker_info_second_age_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/taker_info_second_age_tv"
+        app:layout_constraintTop_toTopOf="@+id/taker_info_second_age_tv" />
+
+    <TextView
+        android:id="@+id/taker_info_second_sex_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="38dp"
+        android:text="성별"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/taker_info_second_price_tv"
+        app:layout_constraintEnd_toStartOf="@+id/taker_info_second_sex_spinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taker_info_second_age_tv" />
+
+    <Spinner
+        android:id="@+id/taker_info_second_sex_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/taker_info_spinner_custom"
+        android:entries="@array/taker_info_sex_entries"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/taker_info_second_sex_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/taker_info_second_sex_tv"
+        app:layout_constraintTop_toTopOf="@+id/taker_info_second_sex_tv" />
+
+    <TextView
+        android:id="@+id/taker_info_second_price_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginBottom="60dp"
+        android:text="가격"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/taker_info_second_next_btn"
+        app:layout_constraintEnd_toStartOf="@+id/taker_info_second_price_spinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taker_info_second_sex_tv" />
+
+    <Spinner
+        android:id="@+id/taker_info_second_price_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/taker_info_spinner_custom"
+        android:entries="@array/taker_info_price_entries"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/taker_info_second_price_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/taker_info_second_price_tv"
+        app:layout_constraintTop_toTopOf="@+id/taker_info_second_price_tv" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/taker_info_second_next_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="22dp"
+        android:background="@drawable/taker_info_first_btn_shape"
+        android:backgroundTint="@color/yellow_COR2"
+        android:fontFamily="@font/inter_medium"
+        android:foreground="?selectableItemBackground"
+        android:includeFontPadding="false"
+        android:minHeight="41dp"
+        android:paddingTop="12.48dp"
+        android:paddingBottom="12.48dp"
+        android:text="다음"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

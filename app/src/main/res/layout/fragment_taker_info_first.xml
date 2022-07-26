@@ -7,7 +7,7 @@
 
     <TextView
         android:id="@+id/taker_info_first_title_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="34dp"
         android:layout_marginTop="60dp"
@@ -24,7 +24,7 @@
 
     <TextView
         android:id="@+id/taker_info_first_sub_title_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="34dp"
         android:layout_marginTop="21dp"
@@ -40,7 +40,7 @@
 
     <View
         android:id="@+id/taker_info_first_line_view"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0.5dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="29dp"
@@ -52,11 +52,12 @@
 
     <TextView
         android:id="@+id/taker_info_first_name_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="34dp"
         android:layout_marginTop="60dp"
-        android:layout_marginEnd="253dp"
+        android:layout_marginEnd="252dp"
+        android:includeFontPadding="false"
         android:text="받는이 이름"
         android:textColor="@color/black"
         android:textSize="15sp"
@@ -68,18 +69,19 @@
     <EditText
         android:id="@+id/taker_info_first_name_edt"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="29dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
+        android:includeFontPadding="false"
         android:layout_marginEnd="30dp"
         android:background="@drawable/taker_info_first_edt_border"
         android:hint="이름을 입력해주세요.(별명도 좋습니다.)"
-        android:includeFontPadding="false"
+        android:maxLines="1"
         android:paddingStart="5dp"
         android:paddingTop="10dp"
         android:paddingEnd="97dp"
         android:paddingBottom="10dp"
-        android:textColor="#D9D9D9"
+        android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,7 +89,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/taker_info_first_next_btn"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
         android:layout_marginBottom="22dp"

@@ -1,6 +1,21 @@
 <resources>
     <string name="app_name">Chapter5-5</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="some_id">00님의 선물 보따리</string>
+    <string-array name="taker_info_age_entries">
+        <item>10대</item>
+        <item>20대</item>
+        <item>30대</item>
+        <item>40대</item>
+        <item>50대</item>
+    </string-array>
+    <string-array name="taker_info_sex_entries">
+        <item>여성</item>
+        <item>남성</item>
+    </string-array>
+    <string-array name="taker_info_price_entries">
+        <item>1만원 미만</item>
+        <item>1~2만원대</item>
+        <item>3~4만원대</item>
+        <item>5만원 이상</item>
+    </string-array>
 </resources>

@@ -15,37 +15,44 @@
 
     <TextView
         android:id="@+id/taste_title_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="34dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="66dp"
+        android:gravity="top"
+        android:lineHeight="24dp"
+        android:lineSpacingExtra="0sp"
         android:text="취향저격 선물을 준비하시나요?"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/taste_sub_title_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/taste_sub_title_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="37dp"
         android:layout_marginTop="1dp"
-        android:layout_marginEnd="57dp"
+        android:layout_marginEnd="58dp"
         android:fontFamily="@font/inter_medium"
+        android:gravity="center_vertical"
+        android:lineHeight="14.52dp"
         android:text="받는 분에게 질문 링크를 보내고 취향을 파악해보세요."
         android:textColor="@color/black"
         android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/taste_question_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taste_title_tv" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/taste_question_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="34dp"
         android:layout_marginTop="21dp"
@@ -56,16 +63,18 @@
         android:drawablePadding="16dp"
         android:foreground="?selectableItemBackground"
         android:includeFontPadding="false"
-        android:minHeight="34dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
         android:paddingStart="15dp"
+        android:paddingTop="5dp"
         android:paddingEnd="16dp"
+        android:paddingBottom="5dp"
         android:stateListAnimator="@null"
         android:text="취향 질문지 링크보내기 → "
         android:textAlignment="textStart"
         android:textColor="@color/white"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/taste_top_view"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taste_sub_title_tv" />
 
@@ -79,10 +88,10 @@
 
     <TextView
         android:id="@+id/taste_sub_logo_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="34dp"
-        android:layout_marginEnd="163dp"
+        android:layout_marginEnd="168dp"
         android:fontFamily="@font/cafe24_ohsquareair"
         android:text="이거 어때?"
         android:textColor="@color/black"
@@ -104,7 +113,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/taste_category_trend_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="39dp"
         android:layout_marginTop="0dp"
@@ -112,7 +121,7 @@
         android:layout_marginBottom="0dp"
         android:background="@drawable/taste_category_btn_shape"
         android:drawableLeft="@drawable/taste_category_trend_btn_icon_custom"
-        android:drawablePadding="15dp"
+        android:drawablePadding="14dp"
         android:foreground="?selectableItemBackground"
         android:paddingHorizontal="20dp"
         android:paddingVertical="16dp"
@@ -128,7 +137,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/taste_category_perfume_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10.45dp"
         android:layout_marginTop="0dp"
@@ -136,7 +145,7 @@
         android:layout_marginBottom="0dp"
         android:background="@drawable/taste_category_btn_shape"
         android:drawableLeft="@drawable/taste_category_perfume_btn_icon_custom"
-        android:drawablePadding="15dp"
+        android:drawablePadding="14dp"
         android:foreground="?selectableItemBackground"
         android:paddingHorizontal="20dp"
         android:paddingVertical="16dp"
@@ -152,7 +161,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/taste_category_home_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="39dp"
         android:layout_marginTop="0dp"
@@ -160,7 +169,7 @@
         android:layout_marginBottom="0dp"
         android:background="@drawable/taste_category_btn_shape"
         android:drawableLeft="@drawable/taste_category_home_btn_icon_custom"
-        android:drawablePadding="15dp"
+        android:drawablePadding="14dp"
         android:foreground="?selectableItemBackground"
         android:paddingHorizontal="20dp"
         android:paddingVertical="16dp"
@@ -176,7 +185,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/taste_category_food_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10.45dp"
         android:layout_marginTop="0dp"
@@ -184,7 +193,7 @@
         android:layout_marginBottom="0dp"
         android:background="@drawable/taste_category_btn_shape"
         android:drawableLeft="@drawable/taste_category_food_btn_icon_custom"
-        android:drawablePadding="15dp"
+        android:drawablePadding="14dp"
         android:foreground="?selectableItemBackground"
         android:paddingHorizontal="20dp"
         android:paddingVertical="16dp"
