@@ -3,5 +3,5 @@
     <item
         android:width="18dp"
         android:height="18dp"
-        android:drawable="@drawable/btn_secret_box" />
+        android:drawable="@drawable/ic_secret_box" />
 </layer-list>

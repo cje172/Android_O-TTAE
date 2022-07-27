@@ -65,7 +65,7 @@ class ResultFragment : Fragment() {
         var productNameTemp:String =productName.text.toString()
         var priceTemp:String =price.text.toString()
         var imgTemp:Int=R.drawable.wonder_visitor_ball_cap
-        var imgTemp2:Int=R.drawable.list2_cup_img
+        var imgTemp2:Int=R.drawable.product_list_cup_img
 
         sqlitedb =dbManager.writableDatabase
 

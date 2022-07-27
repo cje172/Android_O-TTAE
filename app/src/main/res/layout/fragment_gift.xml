@@ -61,7 +61,7 @@
             android:layout_marginStart="34dp"
             android:layout_marginTop="21dp"
             android:layout_marginBottom="31dp"
-            android:background="@drawable/navi_tab_inside_move_btn_shape"
+            android:background="@drawable/gift_and_taste_move_btn_shape"
             android:drawableLeft="@drawable/gift_btn_icon_custom"
             android:drawablePadding="16dp"
             android:foreground="?selectableItemBackground"
@@ -102,27 +102,29 @@
                     android:layout_height="match_parent">
 
                     <View
-                        android:id="@+id/gift_bottom_view1"
+                        android:id="@+id/gift_category_birthday_view"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:background="@drawable/gift_layout_border"
+                        android:clickable="true"
                         app:layout_constraintBottom_toBottomOf="@+id/gift_bottom_inside_layout1"
-                        app:layout_constraintEnd_toStartOf="@+id/gift_bottom_view2"
+                        app:layout_constraintEnd_toStartOf="@+id/gift_category_parents_view"
                         app:layout_constraintStart_toStartOf="@+id/gift_bottom_inside_layout1"
                         app:layout_constraintTop_toTopOf="@+id/gift_bottom_inside_layout1" />
 
                     <View
-                        android:id="@+id/gift_bottom_view2"
+                        android:id="@+id/gift_category_parents_view"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:background="@drawable/gift_layout_border"
+                        android:clickable="true"
                         app:layout_constraintBottom_toBottomOf="@+id/gift_bottom_inside_layout1"
                         app:layout_constraintEnd_toEndOf="@+id/gift_bottom_inside_layout1"
-                        app:layout_constraintStart_toEndOf="@+id/gift_bottom_view1"
+                        app:layout_constraintStart_toEndOf="@+id/gift_category_birthday_view"
                         app:layout_constraintTop_toTopOf="@+id/gift_bottom_inside_layout1" />
 
-                    <ImageButton
-                        android:id="@+id/gift_category_birthday_ib"
+                    <ImageView
+                        android:id="@+id/gift_category_birthday_iv"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="32dp"
@@ -133,9 +135,9 @@
                         android:scaleType="centerCrop"
                         android:src="@drawable/gift_category_birthday_btn_img"
                         app:layout_constraintBottom_toTopOf="@+id/gift_category_birthday_tv"
-                        app:layout_constraintEnd_toEndOf="@+id/gift_bottom_view1"
-                        app:layout_constraintStart_toStartOf="@+id/gift_bottom_view1"
-                        app:layout_constraintTop_toTopOf="@+id/gift_bottom_view1" />
+                        app:layout_constraintEnd_toEndOf="@+id/gift_category_birthday_view"
+                        app:layout_constraintStart_toStartOf="@+id/gift_category_birthday_view"
+                        app:layout_constraintTop_toTopOf="@+id/gift_category_birthday_view" />
 
                     <TextView
                         android:id="@+id/gift_category_birthday_tv"
@@ -147,13 +149,13 @@
                         android:textColor="@color/black"
                         android:textSize="15sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/gift_bottom_view1"
-                        app:layout_constraintEnd_toEndOf="@+id/gift_bottom_view1"
-                        app:layout_constraintStart_toStartOf="@+id/gift_bottom_view1"
-                        app:layout_constraintTop_toBottomOf="@+id/gift_category_birthday_ib" />
+                        app:layout_constraintBottom_toBottomOf="@+id/gift_category_birthday_view"
+                        app:layout_constraintEnd_toEndOf="@+id/gift_category_birthday_view"
+                        app:layout_constraintStart_toStartOf="@+id/gift_category_birthday_view"
+                        app:layout_constraintTop_toBottomOf="@+id/gift_category_birthday_iv" />
 
-                    <ImageButton
-                        android:id="@+id/gift_category_parents_ib"
+                    <ImageView
+                        android:id="@+id/gift_category_parents_iv"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
@@ -164,9 +166,9 @@
                         android:scaleType="centerCrop"
                         android:src="@drawable/gift_category_parents_btn_img"
                         app:layout_constraintBottom_toTopOf="@+id/gift_category_parents_tv"
-                        app:layout_constraintEnd_toEndOf="@+id/gift_bottom_view2"
-                        app:layout_constraintStart_toStartOf="@+id/gift_bottom_view2"
-                        app:layout_constraintTop_toTopOf="@+id/gift_bottom_view2" />
+                        app:layout_constraintEnd_toEndOf="@+id/gift_category_parents_view"
+                        app:layout_constraintStart_toStartOf="@+id/gift_category_parents_view"
+                        app:layout_constraintTop_toTopOf="@+id/gift_category_parents_view" />
 
                     <TextView
                         android:id="@+id/gift_category_parents_tv"
@@ -178,10 +180,10 @@
                         android:textColor="@color/black"
                         android:textSize="15sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/gift_bottom_view2"
-                        app:layout_constraintEnd_toEndOf="@+id/gift_bottom_view2"
-                        app:layout_constraintStart_toStartOf="@+id/gift_bottom_view2"
-                        app:layout_constraintTop_toBottomOf="@+id/gift_category_parents_ib" />
+                        app:layout_constraintBottom_toBottomOf="@+id/gift_category_parents_view"
+                        app:layout_constraintEnd_toEndOf="@+id/gift_category_parents_view"
+                        app:layout_constraintStart_toStartOf="@+id/gift_category_parents_view"
+                        app:layout_constraintTop_toBottomOf="@+id/gift_category_parents_iv" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -198,27 +200,29 @@
                     android:layout_height="match_parent">
 
                     <View
-                        android:id="@+id/gift_bottom_view3"
+                        android:id="@+id/gift_category_light_gift_view"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:background="@drawable/gift_layout_border"
+                        android:clickable="true"
                         app:layout_constraintBottom_toBottomOf="@+id/gift_bottom_inside_layout2"
-                        app:layout_constraintEnd_toStartOf="@+id/gift_bottom_view4"
+                        app:layout_constraintEnd_toStartOf="@+id/gift_category_luxury_view"
                         app:layout_constraintStart_toStartOf="@+id/gift_bottom_inside_layout2"
                         app:layout_constraintTop_toTopOf="@+id/gift_bottom_inside_layout2" />
 
                     <View
-                        android:id="@+id/gift_bottom_view4"
+                        android:id="@+id/gift_category_luxury_view"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:background="@drawable/gift_layout_border"
+                        android:clickable="true"
                         app:layout_constraintBottom_toBottomOf="@+id/gift_bottom_inside_layout2"
                         app:layout_constraintEnd_toEndOf="@+id/gift_bottom_inside_layout2"
-                        app:layout_constraintStart_toEndOf="@+id/gift_bottom_view3"
+                        app:layout_constraintStart_toEndOf="@+id/gift_category_light_gift_view"
                         app:layout_constraintTop_toTopOf="@+id/gift_bottom_inside_layout2" />
 
-                    <ImageButton
-                        android:id="@+id/gift_category_light_gift_ib"
+                    <ImageView
+                        android:id="@+id/gift_category_light_gift_iv"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
@@ -229,9 +233,9 @@
                         android:scaleType="centerCrop"
                         android:src="@drawable/gift_category_light_gift_btn_img"
                         app:layout_constraintBottom_toTopOf="@+id/gift_category_light_gift_tv"
-                        app:layout_constraintEnd_toEndOf="@+id/gift_bottom_view3"
-                        app:layout_constraintStart_toStartOf="@+id/gift_bottom_view3"
-                        app:layout_constraintTop_toTopOf="@+id/gift_bottom_view3" />
+                        app:layout_constraintEnd_toEndOf="@+id/gift_category_light_gift_view"
+                        app:layout_constraintStart_toStartOf="@+id/gift_category_light_gift_view"
+                        app:layout_constraintTop_toTopOf="@+id/gift_category_light_gift_view" />
 
                     <TextView
                         android:id="@+id/gift_category_light_gift_tv"
@@ -243,13 +247,13 @@
                         android:textColor="@color/black"
                         android:textSize="15sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/gift_bottom_view3"
-                        app:layout_constraintEnd_toEndOf="@+id/gift_bottom_view3"
-                        app:layout_constraintStart_toStartOf="@+id/gift_bottom_view3"
-                        app:layout_constraintTop_toBottomOf="@+id/gift_category_light_gift_ib" />
+                        app:layout_constraintBottom_toBottomOf="@+id/gift_category_light_gift_view"
+                        app:layout_constraintEnd_toEndOf="@+id/gift_category_light_gift_view"
+                        app:layout_constraintStart_toStartOf="@+id/gift_category_light_gift_view"
+                        app:layout_constraintTop_toBottomOf="@+id/gift_category_light_gift_iv" />
 
-                    <ImageButton
-                        android:id="@+id/gift_category_luxury_ib"
+                    <ImageView
+                        android:id="@+id/gift_category_luxury_iv"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
@@ -260,9 +264,9 @@
                         android:scaleType="centerCrop"
                         android:src="@drawable/gift_category_luxury_btn_img"
                         app:layout_constraintBottom_toTopOf="@+id/gift_category_luxury_tv"
-                        app:layout_constraintEnd_toEndOf="@+id/gift_bottom_view4"
-                        app:layout_constraintStart_toStartOf="@+id/gift_bottom_view4"
-                        app:layout_constraintTop_toTopOf="@+id/gift_bottom_view4" />
+                        app:layout_constraintEnd_toEndOf="@+id/gift_category_luxury_view"
+                        app:layout_constraintStart_toStartOf="@+id/gift_category_luxury_view"
+                        app:layout_constraintTop_toTopOf="@+id/gift_category_luxury_view" />
 
                     <TextView
                         android:id="@+id/gift_category_luxury_tv"
@@ -274,10 +278,10 @@
                         android:textColor="@color/black"
                         android:textSize="15sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/gift_bottom_view4"
-                        app:layout_constraintEnd_toEndOf="@+id/gift_bottom_view4"
-                        app:layout_constraintStart_toStartOf="@+id/gift_bottom_view4"
-                        app:layout_constraintTop_toBottomOf="@+id/gift_category_luxury_ib" />
+                        app:layout_constraintBottom_toBottomOf="@+id/gift_category_luxury_view"
+                        app:layout_constraintEnd_toEndOf="@+id/gift_category_luxury_view"
+                        app:layout_constraintStart_toStartOf="@+id/gift_category_luxury_view"
+                        app:layout_constraintTop_toBottomOf="@+id/gift_category_luxury_iv" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

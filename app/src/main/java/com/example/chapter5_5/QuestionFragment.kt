@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.SeekBar
 import android.widget.TextView
+import androidx.fragment.app.FragmentManager
 import java.util.ArrayList
 
 class QuestionFragment : Fragment() {
@@ -33,6 +34,7 @@ class QuestionFragment : Fragment() {
         questionAnswerTopBtn = view.findViewById(R.id.question_answer_top_btn)
         questionAnswerBottomBtn = view.findViewById(R.id.question_answer_bottom_btn)
 
+        val transaction = (context as MainActivity).supportFragmentManager.beginTransaction()
 
         // 상단 답 버튼 클릭 시
         questionAnswerTopBtn.setOnClickListener {
@@ -80,25 +82,26 @@ class QuestionFragment : Fragment() {
                         result[4] = questionAnswerTopBtn.text.toString()
 
                         // 결과지로 이동
-                        (context as MainActivity).supportFragmentManager.beginTransaction()
-                            .replace(R.id.main_frm, ResultFragment()).commitAllowingStateLoss()
-
+                        transaction.replace(R.id.main_frm, ResultFragment())
+                        transaction.addToBackStack(null)
+                        transaction.commit()
                     }
 
                     questionAnswerBottomBtn.setOnClickListener {
                         result[4] = questionAnswerBottomBtn.text.toString()
 
                         // 결과지로 이동
-                        (context as MainActivity).supportFragmentManager.beginTransaction()
-                            .replace(R.id.main_frm, ResultFragment()).commitAllowingStateLoss()
-
+                        transaction.replace(R.id.main_frm, ResultFragment())
+                        transaction.addToBackStack(null)
+                        transaction.commit()
                     }
 
                 }
                 else -> {
                     // 결과지로 이동
-                    (context as MainActivity).supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_frm, ResultFragment()).commitAllowingStateLoss()
+                    transaction.replace(R.id.main_frm, ResultFragment())
+                    transaction.addToBackStack(null)
+                    transaction.commit()
                 }
             }
         }
@@ -148,25 +151,26 @@ class QuestionFragment : Fragment() {
                         result[4] = questionAnswerBottomBtn.text.toString()
 
                         // 결과지로 이동
-                        (context as MainActivity).supportFragmentManager.beginTransaction()
-                            .replace(R.id.main_frm, ResultFragment()).commitAllowingStateLoss()
-
+                        transaction.replace(R.id.main_frm, ResultFragment())
+                        transaction.addToBackStack(null)
+                        transaction.commit()
                     }
 
                     questionAnswerTopBtn.setOnClickListener {
                         result[4] = questionAnswerTopBtn.text.toString()
 
                         // 결과지로 이동
-                        (context as MainActivity).supportFragmentManager.beginTransaction()
-                            .replace(R.id.main_frm, ResultFragment()).commitAllowingStateLoss()
-
+                        transaction.replace(R.id.main_frm, ResultFragment())
+                        transaction.addToBackStack(null)
+                        transaction.commit()
                     }
 
                 }
                 else -> {
                     // 결과지로 이동
-                    (context as MainActivity).supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_frm, ResultFragment()).commitAllowingStateLoss()
+                    transaction.replace(R.id.main_frm, ResultFragment())
+                    transaction.addToBackStack(null)
+                    transaction.commit()
                 }
             }
         }

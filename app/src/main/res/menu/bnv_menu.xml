@@ -3,18 +3,18 @@
 
     <item
         android:id="@+id/homeFragment"
-        android:icon="@drawable/navi_home"
+        android:icon="@drawable/ic_bnv_home"
         android:title="HOME" />
     <item
         android:id="@+id/giftFragment"
-        android:icon="@drawable/navi_gift"
+        android:icon="@drawable/ic_bnv_gift"
         android:title="비밀선물" />
     <item
         android:id="@+id/tasteFragment"
-        android:icon="@drawable/navi_taste"
+        android:icon="@drawable/ic_bnv_taste"
         android:title="취향선물" />
     <item
         android:id="@+id/myFragment"
-        android:icon="@drawable/navi_my"
+        android:icon="@drawable/ic_bnv_my"
         android:title="MY" />
 </menu>

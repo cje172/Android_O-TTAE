@@ -36,7 +36,8 @@
         <item name="android:textSize">12sp</item>
         <item name="paddingEnd">0dp</item>
         <item name="itemTextAppearanceInactive">@font/inter_regular</item>
-        <item name="fontFamily">@font/inter_bold</item>
+        <item name="itemTextAppearanceActive">@font/inter_bold</item>
+<!--        <item name="fontFamily">@font/inter_bold</item>-->
         <item name="marginHorizontal">0dp</item>
         <item name="android:textColorPrimary">#000000</item>
         <item name="android:textColorSecondary">#D9D9D9</item>
