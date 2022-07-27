@@ -80,6 +80,8 @@ class QuestionFragment : Fragment() {
                         result[4] = questionAnswerTopBtn.text.toString()
 
                         // 결과지로 이동
+                        (context as MainActivity).supportFragmentManager.beginTransaction()
+                            .replace(R.id.main_frm, ResultFragment()).commitAllowingStateLoss()
 
                     }
 
@@ -87,12 +89,16 @@ class QuestionFragment : Fragment() {
                         result[4] = questionAnswerBottomBtn.text.toString()
 
                         // 결과지로 이동
+                        (context as MainActivity).supportFragmentManager.beginTransaction()
+                            .replace(R.id.main_frm, ResultFragment()).commitAllowingStateLoss()
 
                     }
 
                 }
                 else -> {
                     // 결과지로 이동
+                    (context as MainActivity).supportFragmentManager.beginTransaction()
+                        .replace(R.id.main_frm, ResultFragment()).commitAllowingStateLoss()
                 }
             }
         }
@@ -142,6 +148,8 @@ class QuestionFragment : Fragment() {
                         result[4] = questionAnswerBottomBtn.text.toString()
 
                         // 결과지로 이동
+                        (context as MainActivity).supportFragmentManager.beginTransaction()
+                            .replace(R.id.main_frm, ResultFragment()).commitAllowingStateLoss()
 
                     }
 
@@ -149,12 +157,16 @@ class QuestionFragment : Fragment() {
                         result[4] = questionAnswerTopBtn.text.toString()
 
                         // 결과지로 이동
+                        (context as MainActivity).supportFragmentManager.beginTransaction()
+                            .replace(R.id.main_frm, ResultFragment()).commitAllowingStateLoss()
 
                     }
 
                 }
                 else -> {
                     // 결과지로 이동
+                    (context as MainActivity).supportFragmentManager.beginTransaction()
+                        .replace(R.id.main_frm, ResultFragment()).commitAllowingStateLoss()
                 }
             }
         }

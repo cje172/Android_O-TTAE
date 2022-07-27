@@ -43,7 +43,7 @@ class MyGiftListAdapter(private val giftList: ArrayList<MyGiftList>) :
         holder.itemView.setOnClickListener { mGiftClickListener.onItemClick(giftList[position]) }
     }
 
-       override fun getItemCount(): Int =giftList.size
+    override fun getItemCount(): Int =giftList.size
 
     inner class ViewHolder(val binding: ItemRecyclerMyBinding) :
         RecyclerView.ViewHolder(binding.root) {

@@ -27,8 +27,8 @@ class MyFragment : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_my, container, false)
 
 
-            MyGiftItemRv=view.findViewById(R.id.my_gift_list_rv)
-      //  Santa = view.findViewById(R.id.santa)
+        MyGiftItemRv=view.findViewById(R.id.my_gift_list_rv)
+        //  Santa = view.findViewById(R.id.santa)
         GiftDatas.apply {
             add(MyGiftList("ooo님을 위한 패션 아이템", "wonder visitor 볼캡", "12,000", R.drawable.wonder_visitor_ball_cap))
             add(MyGiftList("111님을 위한 머그잔", "아이보리앤도트 머그잔", "8,400", R.drawable.list2_cup_img))
