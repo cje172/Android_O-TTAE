@@ -27,6 +27,7 @@ class MyFragment : Fragment() {
     lateinit var dbManager: DBManager
     lateinit var sqlitedb: SQLiteDatabase
 
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
@@ -46,14 +47,25 @@ class MyFragment : Fragment() {
         sqlitedb =dbManager.readableDatabase
         var cursor: Cursor
         //cursor =sqlitedb.rawQuery("SELECT * FROM my WHERE user = 'qqq';",null)
-        cursor =sqlitedb.rawQuery("SELECT * FROM my ;",null)
-       // if (cursor.moveToNext()){
-            var temp1 =cursor.getString((cursor.getColumnIndex("friendName"))).toString()
-            var temp2=cursor.getString((cursor.getColumnIndex("itemName"))).toString()
-            var temp3 =cursor.getString((cursor.getColumnIndex("price"))).toString()
+        cursor =sqlitedb.rawQuery("SELECT * FROM my WHERE user='qqq';",null)
 
-       // }
 
+        while(cursor.moveToNext()) {
+            var friendName = cursor.getString((cursor.getColumnIndex("friendName"))).toString()
+             var itemName = cursor.getString((cursor.getColumnIndex("itemName"))).toString()
+             var price = cursor.getString((cursor.getColumnIndex("price"))).toString()
+             var img =cursor.getInt((cursor.getColumnIndex("coverImg")))
+            GiftDatas.apply {
+                add(MyGiftList(friendName, itemName, price,img!!))
+//            add(MyGiftList("111님을 위한 머그잔", "아이보리앤도트 머그잔", "8,400", R.drawable.list2_cup_img))
+//            add(MyGiftList("222님을 위한 패션아이템", "Copenhagen-bule 에코백", "9,800", R.drawable.list3_bag_img))
+//            add(MyGiftList("333님을 위한 스몰 력셔리", "드레스 퍼퓸 100ml", "8,950", R.drawable.list4_perfume_img))
+//            add(MyGiftList("444님을 위한 스몰 력셔리", "드레스 퍼퓸 100ml", "8,950", R.drawable.list4_perfume_img))
+//            add(MyGiftList("555님을 위한 스몰 력셔리", "드레스 퍼퓸 100ml", "8,950", R.drawable.list4_perfume_img))
+//            add(MyGiftList("666님을 위한 패션 아이템", "wonder visitor 볼캡", "12,000", R.drawable.wonder_visitor_ball_cap))
+            }
+
+        }
 
         MyGiftItemRv=view.findViewById(R.id.my_gift_list_rv)
         //  Santa = view.findViewById(R.id.santa)
@@ -66,15 +78,15 @@ class MyFragment : Fragment() {
 //            add(MyGiftList("555님을 위한 스몰 력셔리", "드레스 퍼퓸 100ml", "8,950", R.drawable.list4_perfume_img))
 //            add(MyGiftList("666님을 위한 패션 아이템", "wonder visitor 볼캡", "12,000", R.drawable.wonder_visitor_ball_cap))
 //        }
-        GiftDatas.apply {
-            add(MyGiftList(temp1, temp2, temp3, R.drawable.wonder_visitor_ball_cap))
-//            add(MyGiftList("111님을 위한 머그잔", "아이보리앤도트 머그잔", "8,400", R.drawable.list2_cup_img))
-//            add(MyGiftList("222님을 위한 패션아이템", "Copenhagen-bule 에코백", "9,800", R.drawable.list3_bag_img))
-//            add(MyGiftList("333님을 위한 스몰 력셔리", "드레스 퍼퓸 100ml", "8,950", R.drawable.list4_perfume_img))
-//            add(MyGiftList("444님을 위한 스몰 력셔리", "드레스 퍼퓸 100ml", "8,950", R.drawable.list4_perfume_img))
-//            add(MyGiftList("555님을 위한 스몰 력셔리", "드레스 퍼퓸 100ml", "8,950", R.drawable.list4_perfume_img))
-//            add(MyGiftList("666님을 위한 패션 아이템", "wonder visitor 볼캡", "12,000", R.drawable.wonder_visitor_ball_cap))
-        }
+//        GiftDatas.apply {
+//            add(MyGiftList(friendName, itemName, price,img!!))
+////            add(MyGiftList("111님을 위한 머그잔", "아이보리앤도트 머그잔", "8,400", R.drawable.list2_cup_img))
+////            add(MyGiftList("222님을 위한 패션아이템", "Copenhagen-bule 에코백", "9,800", R.drawable.list3_bag_img))
+////            add(MyGiftList("333님을 위한 스몰 력셔리", "드레스 퍼퓸 100ml", "8,950", R.drawable.list4_perfume_img))
+////            add(MyGiftList("444님을 위한 스몰 력셔리", "드레스 퍼퓸 100ml", "8,950", R.drawable.list4_perfume_img))
+////            add(MyGiftList("555님을 위한 스몰 력셔리", "드레스 퍼퓸 100ml", "8,950", R.drawable.list4_perfume_img))
+////            add(MyGiftList("666님을 위한 패션 아이템", "wonder visitor 볼캡", "12,000", R.drawable.wonder_visitor_ball_cap))
+//        }
 
 
 

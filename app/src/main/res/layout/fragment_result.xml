@@ -22,24 +22,25 @@
 
     <TextView
         android:id="@+id/friendItem"
-        android:layout_width="268dp"
-        android:layout_height="35dp"
+        android:layout_width="299dp"
+        android:layout_height="78dp"
         android:layout_marginTop="316dp"
         android:layout_marginBottom="323dp"
-        android:text="00님을 위한 패션 아이템(테스트)"
+        android:text="님을위한 패션 아이템(테스트)"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.281"
+        app:layout_constraintHorizontal_bias="0.607"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612" />
+        app:layout_constraintVertical_bias="0.206" />
 
     <TextView
         android:id="@+id/productName"
-        android:layout_width="95dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="352dp"
+        android:layout_width="168dp"
+        android:layout_height="109dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="364dp"
         android:text="WONDER VISITOR 볼캡"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
