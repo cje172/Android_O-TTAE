@@ -1,4 +1,5 @@
 package com.example.chapter5_5
+import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -9,6 +10,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mainBnv: BottomNavigationView
 
     //db
+    lateinit var dbManager: DBManager
+    lateinit var sqlitedb: SQLiteDatabase
+
+
  //    var dbManager= DBManager(this,"my",null,1)
 //    lateinit var sqlitedb: SQLiteDatabase
 //    public var GiftDatasTemp = ArrayList<MyGiftList>()
@@ -25,7 +30,8 @@ class MainActivity : AppCompatActivity() {
 //        adapter.dbManager=dbManager
 //        MyGiftItemRv.adapter = adapter
 
-       // dbManager = DBManager(this,"my",null,1)
+        dbManager = DBManager(this,"my",null,1)
+        sqlitedb =dbManager.readableDatabase
 //
 //        sqlitedb =dbManager.writableDatabase
 //        sqlitedb.execSQL("INSERT INTO my VALUES('\"ooo님을 위한 패션 아이템\"','\"wonder visitor 볼캡\"',12,000,'\"wonder_visitor_ball_cap\"');")
@@ -71,6 +77,12 @@ class MainActivity : AppCompatActivity() {
 
         initBottomNavigation()
     }
+    @Override
+    fun insert(arg0:String,arg1:String,arg2:String,table:String){
+        sqlitedb =dbManager.writableDatabase
+        sqlitedb.execSQL("INSERT INTO my VALUES('"+arg0+"','"+arg1+"','"+arg2+"');")
+//"INSERT INTO personnel VALUES('"+str_name+"','"+str_gender+"',"+str_age+",'"+str_tel+"');")
+   }
 
     private fun initBottomNavigation() {
         supportFragmentManager.beginTransaction()
