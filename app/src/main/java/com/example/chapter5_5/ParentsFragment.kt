@@ -28,12 +28,12 @@ class ParentsFragment : Fragment() {
             add(Product("코지테이블", "아이보리앤도트 머그잔", "8,400", R.drawable.product_list_cup_img))
         }
 
-        val homeLuxuryRVAdapter = ProductRVAdapter(productDatas)
+        val homeParentsRVAdapter = ProductRVAdapter(productDatas)
         homeParentsProductRv.layoutManager = LinearLayoutManager(
             context,
             LinearLayoutManager.VERTICAL, false
         )
-        homeParentsProductRv.adapter = homeLuxuryRVAdapter
+        homeParentsProductRv.adapter = homeParentsRVAdapter
 
         return view
     }

@@ -62,6 +62,12 @@ class HomeFragment : Fragment() {
         val homeBannerLifecycle = viewLifecycleOwner.lifecycle
         val homeBannerAdapter = HomeBannerVPAdapter(homeBannerFm, homeBannerLifecycle)
 
+        homeBannerVp.adapter = homeBannerAdapter
+        homeBannerVp.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+
+        TabLayoutMediator(homeBannerTb, homeBannerVp) { tab, position ->
+        }.attach()
+
         homeBannerAdapter.addFragment(
             HomeBannerFragment(
                 R.drawable.home_banner_img1,
@@ -84,12 +90,6 @@ class HomeFragment : Fragment() {
             )
         )
 
-        homeBannerVp.adapter = homeBannerAdapter
-        homeBannerVp.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-
-        TabLayoutMediator(homeBannerTb, homeBannerVp) { tab, position ->
-        }.attach()
-
         // Home 화면 상단 배너 - ViewPager2 넘기는 Thread
         val thread = Thread(PagerRunnable())
         thread.start()
@@ -104,6 +104,19 @@ class HomeFragment : Fragment() {
         TabLayoutMediator(homeCategoryTb, homeCategoryVp) { tab, position ->
             tab.text = homeCategoryTab[position]
         }.attach()
+
+        homeCategoryVp.isUserInputEnabled = false
+        homeCategoryTb.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                tab?.position?.let { homeCategoryVp.setCurrentItem(it, false) }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+            }
+        })
 
         return view
     }

@@ -11,5 +11,4 @@
             android:gravity="bottom"
             android:src="@drawable/splash_bottom_img" />
     </item>
-
 </layer-list>

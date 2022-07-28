@@ -29,12 +29,12 @@ class BirthdayFragment : Fragment() {
             add(Product("비비디", "드레스 퍼퓸 100ml", "8,950", R.drawable.product_list_perfume_img))
         }
 
-        val homeCourseRVAdapter = ProductRVAdapter(productDatas)
+        val homeBirthdayProductRVAdapter = ProductRVAdapter(productDatas)
         homeBirthdayProductRv.layoutManager = LinearLayoutManager(
             context,
             LinearLayoutManager.VERTICAL, false
         )
-        homeBirthdayProductRv.adapter = homeCourseRVAdapter
+        homeBirthdayProductRv.adapter = homeBirthdayProductRVAdapter
 
         return view
     }

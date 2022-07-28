@@ -10,11 +10,12 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.tabs.TabLayout
-            android:id="@+id/product_list_category_tb"
+            android:id="@+id/product_category_tb"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="35dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="60dp"
+            android:layout_marginEnd="20dp"
             android:minWidth="0dp"
             android:paddingHorizontal="0dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -33,7 +34,7 @@
             app:tabTextColor="#D9D9D9" />
 
         <View
-            android:id="@+id/product_list_line_view"
+            android:id="@+id/product_line_view"
             android:layout_width="0dp"
             android:layout_height="0.5dp"
             android:layout_marginStart="0dp"
@@ -42,34 +43,15 @@
             android:background="#D9D9D9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/product_list_category_tb" />
+            app:layout_constraintTop_toBottomOf="@+id/product_category_tb" />
 
         <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/product_list_category_vp"
+            android:id="@+id/product_category_vp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/product_list_line_view" />
-
-<!--        <TextView-->
-<!--            android:id="@+id/product_list_week_tv"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="35dp"-->
-<!--            android:layout_marginTop="42dp"-->
-<!--            android:layout_marginEnd="236dp"-->
-<!--            android:includeFontPadding="false"-->
-<!--            android:lineHeight="14.52dp"-->
-<!--            android:text="금주의 이거 어때?"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="12sp"-->
-<!--            android:textStyle="bold"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/product_list_line_view" />-->
-
-
+            app:layout_constraintTop_toBottomOf="@+id/product_line_view" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

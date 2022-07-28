@@ -107,7 +107,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="31dp"
-        android:background="#33F3E61E"
+        android:background="@drawable/taste_background_img"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taste_sub_logo_tv" />
 

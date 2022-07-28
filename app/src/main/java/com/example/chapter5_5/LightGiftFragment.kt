@@ -29,12 +29,12 @@ class LightGiftFragment : Fragment() {
             add(Product("언폴드", "Copenhagen-bule 에코백", "9,800", R.drawable.product_list_bag_img))
         }
 
-        val homeLuxuryRVAdapter = ProductRVAdapter(productDatas)
+        val homeLightGiftRVAdapter = ProductRVAdapter(productDatas)
         homeLightGiftProductRv.layoutManager = LinearLayoutManager(
             context,
             LinearLayoutManager.VERTICAL, false
         )
-        homeLightGiftProductRv.adapter = homeLuxuryRVAdapter
+        homeLightGiftProductRv.adapter = homeLightGiftRVAdapter
 
         return view
     }

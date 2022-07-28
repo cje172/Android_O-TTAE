@@ -29,12 +29,12 @@ class CoupleFragment : Fragment() {
             add(Product("라이프 아카이브", "라이프 아카이브 일회용 카메라", "20,120", R.drawable.product_list_film_img))
         }
 
-        val homeLuxuryRVAdapter = ProductRVAdapter(productDatas)
+        val homeCoupleRVAdapter = ProductRVAdapter(productDatas)
         homeCoupleProductRv.layoutManager = LinearLayoutManager(
             context,
             LinearLayoutManager.VERTICAL, false
         )
-        homeCoupleProductRv.adapter = homeLuxuryRVAdapter
+        homeCoupleProductRv.adapter = homeCoupleRVAdapter
 
         return view
     }

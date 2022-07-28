@@ -1,5 +1,6 @@
 package com.example.chapter5_5
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,6 +15,9 @@ class GiftFragment : Fragment() {
     lateinit var giftCategoryParentsView: View
     lateinit var giftCategoryLightGiftView: View
     lateinit var giftCategoryLuxuryView: View
+
+
+    lateinit var tabValue:SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,29 +40,42 @@ class GiftFragment : Fragment() {
             transaction.commit()
         }
 
+
+
         // 각 카테고리 버튼 클릭시 상품 리스트 페이지로 이동
         giftCategoryBirthdayView.setOnClickListener {
-            transaction.replace(R.id.main_frm, ProductListFragment())
+
+            transaction.replace(R.id.main_frm, ProductFragment())
             transaction.addToBackStack(null)
             transaction.commit()
         }
         giftCategoryParentsView.setOnClickListener {
-            transaction.replace(R.id.main_frm, ProductListFragment())
+//            val productFragment = ProductFragment()
+//            bundle.putInt("select", 1)
+//            productFragment.arguments = bundle
+
+            transaction.replace(R.id.main_frm, ProductFragment())
             transaction.addToBackStack(null)
             transaction.commit()
         }
         giftCategoryLightGiftView.setOnClickListener {
-            transaction.replace(R.id.main_frm, ProductListFragment())
+            transaction.replace(R.id.main_frm, ProductFragment())
             transaction.addToBackStack(null)
             transaction.commit()
         }
         giftCategoryLuxuryView.setOnClickListener {
-            transaction.replace(R.id.main_frm, ProductListFragment())
+            transaction.replace(R.id.main_frm, ProductFragment())
             transaction.addToBackStack(null)
             transaction.commit()
         }
 
         return view
     }
+
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//
+//
+//    }
 
 }
