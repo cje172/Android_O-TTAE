@@ -53,7 +53,7 @@ class QuestionFragment : Fragment() {
                     //위에 답 클릭
                     resultS+="0"
                     questionProgressTv.text = "2/5"
-                    questionContentTv.text = "주로 무엇을 하고 노는지?"
+                    questionContentTv.text = "휴일을 어떻게 보내나요?"
                     questionAnswerTopBtn.text = "집에서 이것 저것 하면서 논다"
                     questionAnswerBottomBtn.text = "밖에서 여기저기 다니면서 논다"
 
@@ -63,9 +63,9 @@ class QuestionFragment : Fragment() {
                     //위에 답 클릭
                     resultS+="0"
                     questionProgressTv.text = "3/5"
-                    questionContentTv.text = "취미가 무엇인가요?"
-                    questionAnswerTopBtn.text = "세 번째 질문의 첫 번째 답"
-                    questionAnswerBottomBtn.text = "세 번째 질문의 두 번째 답"
+                    questionContentTv.text = "운동을 좋아하나요?"
+                    questionAnswerTopBtn.text = "단백질얼마 들어있어?를 외치는 운동인"
+                    questionAnswerBottomBtn.text = "숨쉬기 운동은 잊지 않는 허약인"
 
                 }
                 75 -> {
@@ -73,9 +73,9 @@ class QuestionFragment : Fragment() {
                     //위에 답 클릭
                     resultS+="0"
                     questionProgressTv.text = "4/5"
-                    questionContentTv.text = "미니멀 vs 맥시멀"
-                    questionAnswerTopBtn.text = "미니멀"
-                    questionAnswerBottomBtn.text = "맥시멀"
+                    questionContentTv.text = "친구는 평소에"
+                    questionAnswerTopBtn.text = "없는 것이 없는 보부상 스타일"
+                    questionAnswerBottomBtn.text = "있는 것이 없는 미니멀 리스트"
 
                 }
                 100 -> {
@@ -83,9 +83,10 @@ class QuestionFragment : Fragment() {
                     //위에 답 클릭
                     resultS+="0"
                     questionProgressTv.text = "5/5"
-                    questionContentTv.text = "심플 vs 화려"
-                    questionAnswerTopBtn.text = "심플"
-                    questionAnswerBottomBtn.text = "화려"
+                    questionContentTv.text = "친구의 식성은"
+                    questionAnswerTopBtn.text = "진골 한국인 한식파"
+                    questionAnswerBottomBtn.text = "폰 외국인 양식파"
+
 
 
                     questionAnswerTopBtn.setOnClickListener {
@@ -136,9 +137,9 @@ class QuestionFragment : Fragment() {
                     resultS+="1"
 
                     questionProgressTv.text = "2/5"
-                    questionContentTv.text = "주로 무엇을 하고 노는지?"
-                    questionAnswerTopBtn.text = "두 번째 질문의 첫 번째 답"
-                    questionAnswerBottomBtn.text = "두 번째 질문의 두 번째 답"
+                    questionContentTv.text = "휴일을 어떻게 보내나요?"
+                    questionAnswerTopBtn.text = "집에서 이것 저것 하면서 논다"
+                    questionAnswerBottomBtn.text = "밖에서 여기저기 다니면서 논다"
 
                 }
                 50 -> {
@@ -147,9 +148,9 @@ class QuestionFragment : Fragment() {
                     resultS+="1"
 
                     questionProgressTv.text = "3/5"
-                    questionContentTv.text = "취미가 무엇인가요?"
-                    questionAnswerTopBtn.text = "세 번째 질문의 첫 번째 답"
-                    questionAnswerBottomBtn.text = "세 번째 질문의 두 번째 답"
+                    questionContentTv.text = "운동을 좋아하나요?"
+                    questionAnswerTopBtn.text = "단백질얼마 들어있어?를 외치는 운동인"
+                    questionAnswerBottomBtn.text = "숨쉬기 운동은 잊지 않는 허약인"
 
                 }
                 75 -> {
@@ -158,9 +159,9 @@ class QuestionFragment : Fragment() {
                     resultS+="1"
 
                     questionProgressTv.text = "4/5"
-                    questionContentTv.text = "미니멀 vs 맥시멀"
-                    questionAnswerTopBtn.text = "네 번째 질문의 첫 번째 답"
-                    questionAnswerBottomBtn.text = "네 번째 질문의 두 번째 답"
+                    questionContentTv.text = "친구는 평소에 "
+                    questionAnswerTopBtn.text = "없는 것이 없는 보부상 스타일"
+                    questionAnswerBottomBtn.text = "있는 것이 없는 미니멀 리스트"
 
                 }
                 100 -> {
@@ -169,9 +170,9 @@ class QuestionFragment : Fragment() {
                     resultS+="1"
 
                     questionProgressTv.text = "5/5"
-                    questionContentTv.text = "심플 vs 화려"
-                    questionAnswerTopBtn.text = "다섯 번째 질문의 첫 번째 답"
-                    questionAnswerBottomBtn.text = "다섯 번째 질문의 두 번째 답"
+                    questionContentTv.text = "친구의 식성은?"
+                    questionAnswerTopBtn.text = "진골 한국인 한식파"
+                    questionAnswerBottomBtn.text = "폰 외국인 양식파"
 
                     questionAnswerBottomBtn.setOnClickListener {
                         result[4] = questionAnswerBottomBtn.text.toString()

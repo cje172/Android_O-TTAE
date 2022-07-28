@@ -66,12 +66,14 @@ class ResultFragment : Fragment() {
 //            // Do something with the result
 //        }
        // var answer:String
-        setFragmentResultListener("request") { key, bundle ->
-//            bundle.getString("senderKey")?.let { value ->
-//                binding.textView.text = value
-            var answer = bundle.getString("senderKey")
-            }
+//        setFragmentResultListener("request") { key, bundle ->
+////            bundle.getString("senderKey")?.let { value ->
+////                binding.textView.text = value
+//            var answer = bundle.getString("senderKey")
+//            }
 
+
+        //answer로 스위치문작성 -> 결과지 세팅    할 예정
 
         dbManager = DBManager(mainActivity,"my",null,1)
         friendItem = view.findViewById(R.id.friendItem)
