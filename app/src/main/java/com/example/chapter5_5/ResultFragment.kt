@@ -27,6 +27,7 @@ class ResultFragment : Fragment() {
     lateinit var price: TextView
     //lateinit var taker_info_first_name_edt:EditText
     private var result: String? = null    //전역변수로 사용
+    private var myId: String? = null    //전역변수로 사용
 
 
     override fun onAttach(context: Context) {
@@ -46,6 +47,9 @@ class ResultFragment : Fragment() {
 //        }
         arguments?.let {
             result = it.getString("result")    //데이터 수신
+        }
+        arguments?.let {
+            myId = it.getString("userId")    //데이터 수신
         }
 
     }
@@ -86,7 +90,7 @@ class ResultFragment : Fragment() {
 //            10100
             "10100" -> {
                 //보드게임
-                friendItem.text="집에서 혼자 잘 노는 "//+friendName+" 님을 위해\n"+"보드게임 어때?"
+                friendItem.text="집에서 혼자 잘 노는 "+friendName+" 님을 위해\n"+"보드게임 어때?"
                 productName.text="할리갈리"//임의
                 price.text="13,000"//임의
                 giftImg.setImageResource(R.drawable.product_list_perfume_img)//임의
@@ -105,7 +109,7 @@ class ResultFragment : Fragment() {
 //            10011
             "10011" -> {
                 //치킨 기프티콘콘
-                //friendItem.text="단백질이 중요한 내향형 운동인 "+friendName+" 님을 위해\n"+"치킨 기프티콘 어때?"
+                friendItem.text="단백질이 중요한 내향형 운동인 "+friendName+" 님을 위해\n"+"치킨 기프티콘 어때?"
                 productName.text="푸라닭 악마치킨"//임의
                 price.text="21,000"//임의
                 giftImg.setImageResource(R.drawable.product_list_perfume_img)//임의
@@ -114,7 +118,7 @@ class ResultFragment : Fragment() {
 //                01110
             "01110" -> {
                 //비타민
-              //  friendItem.text="밖에 돌아다니는 걸 좋아하지만 허약한 "+friendName+" 님을 위해\n"+"비타민 어때?"
+               friendItem.text="밖에 돌아다니는 걸 좋아하지만 허약한 "+friendName+" 님을 위해\n"+"비타민 어때?"
                 productName.text="비타민 C"//임의
                 price.text="21,000"//임의
                 giftImg.setImageResource(R.drawable.product_list_perfume_img)//임의
@@ -125,7 +129,7 @@ class ResultFragment : Fragment() {
 //                01101
             "01101" -> {
                 //보조배터리
-               // friendItem.text="밖을 잘 돌아다니는 보부상 "+friendName+" 님을 위해\n"+"보조배터리  어때?"
+               friendItem.text="밖을 잘 돌아다니는 보부상 "+friendName+" 님을 위해\n"+"보조배터리  어때?"
                 productName.text="카카오 보조배터리"//임의
                 price.text="23,000"//임의
                 giftImg.setImageResource(R.drawable.product_list_perfume_img)//임의
@@ -136,7 +140,7 @@ class ResultFragment : Fragment() {
 //                01000
             "01000" -> {
                 //빕스
-                //friendItem.text="외출을 자주하는 한식파 "+friendName+" 님을 위해\n"+"계절밥상 상품권 어때?"
+                friendItem.text="외출을 자주하는 한식파 "+friendName+" 님을 위해\n"+"계절밥상 상품권 어때?"
                 productName.text="계절밥상"//임의
                 price.text="21,000"//임의
                 giftImg.setImageResource(R.drawable.product_list_perfume_img)//임의
@@ -146,7 +150,7 @@ class ResultFragment : Fragment() {
 //            10010
             "10010" -> {
                 //덤벨
-               // friendItem.text="운동을 좋아하는 내향인 "+friendName+" 님을 위해\n"+"덤벨 어때?"
+               friendItem.text="운동을 좋아하는 내향인 "+friendName+" 님을 위해\n"+"덤벨 어때?"
                 productName.text="덤벨"//임의
                 price.text="41,000"//임의
                 giftImg.setImageResource(R.drawable.product_list_perfume_img)//임의
@@ -182,7 +186,7 @@ class ResultFragment : Fragment() {
       //  taker_info_first_name_edt =view.findViewById(R.id.taker_info_first_name_edt)
        // var myId:String="qqq"
         //임의로 사용자 아이디 설정
-        var myId:String="qqq"
+      //  var myId:String="qqq"
         var friendItemTemp:String =friendItem.text.toString()
         var productNameTemp:String =productName.text.toString()
         var priceTemp:String =price.text.toString()
@@ -193,7 +197,7 @@ class ResultFragment : Fragment() {
 
         sqlitedb.execSQL("INSERT INTO my VALUES('"+myId+"','"+friendItemTemp+"','"+productNameTemp+"','"+priceTemp+"',"+imgTemp+");")
         sqlitedb.execSQL("INSERT INTO my VALUES('"+myId+"','"+friendItemTemp+"','"+productNameTemp+"','"+priceTemp+"',"+imgTemp2+");")
-        sqlitedb.execSQL("INSERT INTO my VALUES('"+productNameTemp+"','"+friendItemTemp+"','"+productNameTemp+"','"+priceTemp+"',"+imgTemp+");")
+        sqlitedb.execSQL("INSERT INTO my VALUES('"+myId+"','"+friendItemTemp+"','"+productNameTemp+"','"+priceTemp+"',"+imgTemp+");")
 
         sqlitedb.close()
 

@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.FrameLayout
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
@@ -26,6 +27,8 @@ class MyFragment : Fragment() {
     lateinit var MyGiftItemRv: RecyclerView
     lateinit var dbManager: DBManager
     lateinit var sqlitedb: SQLiteDatabase
+    private var userId: String? = null
+    lateinit var someId:TextView
 
 
     override fun onAttach(context: Context) {
@@ -34,6 +37,19 @@ class MyFragment : Fragment() {
         // 2. Context를 액티비티로 형변환해서 할당
         mainActivity = context as MainActivity
     }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+//        setFragmentResultListener("requestKey") { requestKey, bundle ->
+//            val result = bundle.getString("bundleKey")
+//            // Do something with the result
+//        }
+
+        arguments?.let {
+            userId = it.getString("userId")    //데이터 수신
+        }
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,12 +57,16 @@ class MyFragment : Fragment() {
     ): View? {
 
         val view: View = inflater.inflate(R.layout.fragment_my, container, false)
+        //사용자 이름 설정
+        someId = view.findViewById(R.id.some_id)
+        someId.text=userId+"님의 선물 보따리"
 
         //db 읽어서 배열에 저장
         dbManager = DBManager(mainActivity,"my",null,1)
         sqlitedb =dbManager.readableDatabase
         var cursor: Cursor
         //cursor =sqlitedb.rawQuery("SELECT * FROM my WHERE user = 'qqq';",null)
+
         cursor =sqlitedb.rawQuery("SELECT * FROM my WHERE user='qqq';",null)
 
 

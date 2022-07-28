@@ -218,23 +218,6 @@ class QuestionFragment : Fragment() {
         val mActivity = activity as MainActivity
         mActivity.setDataAtFragment(ResultFragment(), resultS)
 
-//            val bundle = Bundle()//번들을 통해 값 전달
-//            bundle.putStringArray("result", result)//번들에 넘길 값 저장
-//
-//            val passBundleBFragment = ResultFragment()//전달하고자 하는 fragment
-//            passBundleBFragment.arguments =  bundle (context as MainActivity).supportFragmentManager.beginTransaction()
-//                .replace(R.id.main_frm,ResultFragment())
-//                .commit()
-
-
-        //PassBundleFragment는 본인이 전달하고자 하는 Fragment class
-        //fragment_container_bundle은 본인의 Fragment가 담겨있는 Container
-
-        // val result = "result"
-//            setFragmentResult("requestKey", bundleOf("bundleKey" to result))
-//            parentFragmentManager.beginTransaction()
-//                .replace(R.id.main_frm, ResultFragment())
-//                .commit()
 
     }
 }
