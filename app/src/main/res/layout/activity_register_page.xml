@@ -38,18 +38,18 @@
                 android:fontFamily="@font/inter_light"
                 android:hint="이름을 입력해주세요"
 
-
+                android:text=""
                 android:textColorHint="#6C6C6C"
                 android:textSize="15sp" />
 
 
-            <View
-                android:id="@+id/view"
-                android:layout_width="290dp"
-                android:layout_height="2dp"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="8dp"
-                android:background="#6C6C6C" />
+<!--            <View-->
+<!--                android:id="@+id/view"-->
+<!--                android:layout_width="290dp"-->
+<!--                android:layout_height="2dp"-->
+<!--                android:layout_marginLeft="35dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:background="#6C6C6C" />-->
 
             <EditText
                 android:id="@+id/register_email"
@@ -58,17 +58,18 @@
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="70dp"
                 android:fontFamily="@font/inter_light"
-                android:text="이메일을 입력해주세요"
+                android:hint="이메일을 입력해주세요"
+                android:text=""
                 android:textColor="#6C6C6C"
                 android:textSize="15sp" />
 
-            <View
-                android:id="@+id/view2"
-                android:layout_width="290dp"
-                android:layout_height="2dp"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="8dp"
-                android:background="#6C6C6C" />
+<!--            <View-->
+<!--                android:id="@+id/view2"-->
+<!--                android:layout_width="290dp"-->
+<!--                android:layout_height="2dp"-->
+<!--                android:layout_marginLeft="35dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:background="#6C6C6C" />-->
 
             <EditText
                 android:id="@+id/register_password"
@@ -77,17 +78,18 @@
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="70dp"
                 android:fontFamily="@font/inter_light"
-                android:text="비밀번호 설정(최소 8자리)"
+                android:hint="비밀번호 설정(최소 8자리)"
+                android:text=""
                 android:textColor="#6C6C6C"
                 android:textSize="15sp" />
 
-            <View
-                android:id="@+id/view7"
-                android:layout_width="290dp"
-                android:layout_height="2dp"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="8dp"
-                android:background="#6C6C6C" />
+<!--            <View-->
+<!--                android:id="@+id/view7"-->
+<!--                android:layout_width="290dp"-->
+<!--                android:layout_height="2dp"-->
+<!--                android:layout_marginLeft="35dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:background="#6C6C6C" />-->
 
 
             <EditText
@@ -97,17 +99,29 @@
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="70dp"
                 android:fontFamily="@font/inter_light"
-                android:text="비밀번호 재입력"
+                android:hint="비밀번호 재입력"
+                android:text=""
                 android:textColor="#6C6C6C"
                 android:textSize="15sp" />
 
-            <View
-                android:id="@+id/view8"
-                android:layout_width="290dp"
-                android:layout_height="2dp"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="8dp"
-                android:background="#6C6C6C" />
+<!--            <View-->
+<!--                android:id="@+id/view8"-->
+<!--                android:layout_width="290dp"-->
+<!--                android:layout_height="2dp"-->
+<!--                android:layout_marginLeft="35dp"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:background="#6C6C6C" />-->
+
+            <TextView
+                android:id="@+id/password_mismatch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="30dp"
+
+                android:text="비밀 번호가 일치하지 않습니다."
+                android:textColor="@android:color/holo_red_dark"
+                android:visibility="invisible" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -162,6 +176,14 @@
                         android:fontFamily="@font/inter_light"
                         android:text="[선택] 앱 푸시 및 마케팅/이벤트 수신 동의"
                         android:textColor="#6C6C6C" />
+
+                    <ImageButton
+                        android:id="@+id/regButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/reg_button_img"
+                        android:layout_marginTop="30dp"
+                        />
                 </LinearLayout>
 
                 <View
@@ -171,42 +193,24 @@
                     android:layout_marginTop="176dp"
                     android:background="@drawable/icon_register_arrow" />
 
-                <TextView
-                    android:id="@+id/password_mismatch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-
-                    android:visibility="visible"
-                    android:text="비밀 번호가 일치하지 않습니다."
-                    android:textColor="@android:color/holo_red_dark"
-                    />
-
             </LinearLayout>
 
         </LinearLayout>
 
     </ScrollView>
 
-    <LinearLayout
-        android:id="@+id/Group13"
-        android:layout_width="301dp"
-        android:layout_height="41dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="34dp"
-        android:layout_marginBottom="30dp"
-        android:background="#FC3031"
-        android:gravity="center"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/regButton"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="가입하기"
-            android:fontFamily="@font/inter_semi_bold"
-            android:backgroundTint="#FC3031"
-            />
+<!--    <LinearLayout-->
+<!--        android:id="@+id/Group13"-->
+<!--        android:layout_width="301dp"-->
+<!--        android:layout_height="41dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:layout_marginLeft="34dp"-->
+<!--        android:layout_marginBottom="30dp"-->
+<!--        android:background="#FC3031"-->
+<!--        android:gravity="center"-->
+<!--        android:orientation="horizontal">-->
+
 
 <!--        <TextView-->
 <!--            android:id="@+id/register_icon"-->
@@ -217,6 +221,6 @@
 <!--            android:text="가입하기"-->
 <!--            android:textColor="#FFFFFF"-->
 <!--            android:textSize="15sp" />-->
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
 </LinearLayout>

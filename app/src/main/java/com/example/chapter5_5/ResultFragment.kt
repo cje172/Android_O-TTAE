@@ -29,6 +29,7 @@ class ResultFragment : Fragment() {
     lateinit var price: TextView
     lateinit var save_result_button:ImageButton
     lateinit var again_button:ImageButton
+
     //lateinit var taker_info_first_name_edt:EditText
     lateinit var result_img:View
     private var result: String? = null    //전역변수로 사용
@@ -97,8 +98,24 @@ class ResultFragment : Fragment() {
         result_img=view.findViewById(R.id.result_img)
         //다시 검사하기 버튼
         again_button=view.findViewById(R.id.again_button)
+        val transaction = (context as MainActivity).supportFragmentManager.beginTransaction()
+        again_button.setOnClickListener {
+
+
+            transaction.replace(R.id.main_frm, TakerInfoFirstFragment())
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
         //결과 저장하기 버튼
-        save_result_button=view.findViewById(R.id.save_result_button)
+//        save_result_button=view.findViewById(R.id.save_result_button)
+//        save_result_button.setOnClickListener {
+//
+//            dbManager = DBManager(mainActivity,"my",null,1)
+//            sqlitedb =dbManager.writableDatabase
+//            saveResult()
+//
+//
+//        }
 
         //친구 이름 임의로 설정, 나중에 가져오기
      //   var friendName:String="혜온"
@@ -265,6 +282,7 @@ class ResultFragment : Fragment() {
 
        // var imgTemp:Int=R.drawable.wonder_visitor_ball_cap
         //var imgTemp2:Int=R.drawable.product_list_cup_img
+        myId="1234"
         sqlitedb.execSQL("INSERT INTO my VALUES('"+myId.toString()+"','"+friendItemTemp+"','"+productNameTemp+"','"+priceTemp+"',"+imgTemp+");")
     }
 

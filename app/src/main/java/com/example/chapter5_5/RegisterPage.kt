@@ -8,13 +8,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 
 class RegisterPage : AppCompatActivity() {
 
 
-    lateinit var regButton: Button
+    lateinit var regButton: ImageButton
     lateinit var register_name: EditText
     lateinit var register_email:EditText
     lateinit var register_password:EditText
@@ -35,15 +36,18 @@ class RegisterPage : AppCompatActivity() {
         regButton=findViewById(R.id.regButton)
         register_name=findViewById(R.id.register_name)
         register_email=findViewById(R.id.register_email)
+        register_password=findViewById(R.id.register_password)
         register_rePassword=findViewById(R.id.register_rePassword)
         password_mismatch=findViewById(R.id.password_mismatch)
 
         //db
         dbManager = DBManager(this,"user",null,1)
         //쓰기
-        sqlitedbW =dbManager.writableDatabase
+
         //읽기
         sqlitedbR =dbManager.readableDatabase
+        sqlitedbW =dbManager.writableDatabase
+
 
 //        //아이디 중복 확인
 //        checkId()
@@ -61,14 +65,27 @@ class RegisterPage : AppCompatActivity() {
            // checkEmail()
             //비밀번호 일치 확인
            // checkPassword()
+
+//        var cursor: Cursor
+//        var userId:String=register_name.text.toString()
+//        cursor =sqlitedbR.rawQuery("SELECT * FROM user WHERE name='$userId';",null)
+//        //  var friendName = cursor.getString((cursor.getColumnIndex("friendName"))).toString()
+//        //아이디 중복 확인
+//        if(cursor.count>0)//중복있음
+//        {
+//            register_name.hint = "이미 있는 아이디 입니다."
+//
+//        }
+           //     startActivity(Intent(this, MainActivity::class.java))
             if(checkId()&&checkEmail()&&checkPassword()) {
                 //db에 정보 저장
-                sqlitedbW.execSQL("INSERT INTO user VALUES('"+register_name.text.toString()+"'," +
-                        "'"+register_email.text.toString()+"','"+register_password.text.toString()+"');")
+
+                sqlitedbW.execSQL("INSERT INTO user VALUES('"+register_name.text.toString()+"','"+register_email.text.toString()+"','"+register_password.text.toString()+"');")
                 //MyFragment에 유저 이름 전달
-                setDataAtFragment(MyFragment(), register_name.text.toString())
+             //   setDataAtFragment(MyFragment(), register_name.text.toString())
                 //ResultFragment에 유저 이름 전달
-                setDataAtFragment(ResultFragment(), register_name.text.toString())
+               // setDataAtFragment2(ResultFragment(), register_name.text.toString())
+//            if(checkEmail())
                 startActivity(Intent(this, MainActivity::class.java))
               //  finish()
             }
@@ -79,12 +96,16 @@ class RegisterPage : AppCompatActivity() {
     {
         var cursor: Cursor
         var userId:String=register_name.text.toString()
-        cursor =sqlitedbR.rawQuery("SELECT * FROM user WHERE user='$userId';",null)
+        cursor =sqlitedbR.rawQuery("SELECT * FROM user WHERE name='$userId';",null)
         //  var friendName = cursor.getString((cursor.getColumnIndex("friendName"))).toString()
         //아이디 중복 확인
         if(cursor.count>0)//중복있음
         {
+           // password_mismatch.
+            password_mismatch.visibility = View.VISIBLE
+            password_mismatch.text="이미 있는 아이디 입니다."
             register_name.hint = "이미 있는 아이디 입니다."
+
             return false
         }
          return true
@@ -98,7 +119,7 @@ class RegisterPage : AppCompatActivity() {
         var userEmail:String=register_email.text.toString()
         cursor =sqlitedbR.rawQuery("SELECT * FROM user WHERE email='$userEmail';",null)
         //  var friendName = cursor.getString((cursor.getColumnIndex("friendName"))).toString()
-        //아이디 중복 확인
+        //이메일 중복 확인
         if(cursor.count>0)//중복있음
         {
             register_email.hint = "이미 가입된 이메일 입니다."
@@ -132,6 +153,13 @@ class RegisterPage : AppCompatActivity() {
 
         fragment.arguments = bundle
        // setFragment(fragment)
+    }
+    fun setDataAtFragment2(fragment: Fragment, userId:String) {
+        val bundle = Bundle()
+        bundle.putString("userId", userId)
+
+        fragment.arguments = bundle
+        // setFragment(fragment)
     }
     //데이터가 셋팅된 프래그먼트 띄우기
 //    fun setFragment(fragment: Fragment) {

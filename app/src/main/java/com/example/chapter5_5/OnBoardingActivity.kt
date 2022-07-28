@@ -58,8 +58,8 @@ class OnBoardingActivity : AppCompatActivity() {
         // 시작하기 버튼 클릭 시 종료. 로그인 화면으로 이동
         onBoardingStartBtn.setOnClickListener {
             // 로그인 화면으로 이동 수정 예정
-            startActivity(Intent(this, MainActivity::class.java))
-            //startActivity(Intent(this, RegisterPage::class.java))
+            //startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, RegisterPage::class.java))
             //finish()
         }
 
