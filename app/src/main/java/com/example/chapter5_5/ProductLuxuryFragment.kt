@@ -7,12 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import java.util.ArrayList
 
 class ProductLuxuryFragment : Fragment() {
 
     lateinit var productLuxuryWeekRv: RecyclerView
     private var weekProductDatas = ArrayList<WeekProduct>()
+
+    lateinit var productCategoryPriceTb: TabLayout
+    lateinit var productCategoryPriceVp: ViewPager2
+    private val productCategoryTab = arrayListOf("전체", "1만원 이하", "2~4만원대", "5만원 이상")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,7 +28,35 @@ class ProductLuxuryFragment : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_product_category, container, false)
 
         productLuxuryWeekRv = view.findViewById(R.id.product_category_week_rv)
+        productCategoryPriceTb = view.findViewById(R.id.product_category_price_tb)
+        productCategoryPriceVp = view.findViewById(R.id.product_category_price_vp)
 
+        // 가격대별 인기선물 TabLayout, ViewPager2 연결
+        val productPriceFm = childFragmentManager
+        val productPriceLifecycle = viewLifecycleOwner.lifecycle
+        val productPriceVPAdapter =
+            ProductPriceVPAdapter(productPriceFm, productPriceLifecycle)
+        productCategoryPriceVp.adapter = productPriceVPAdapter
+
+        TabLayoutMediator(productCategoryPriceTb, productCategoryPriceVp) { tab, position ->
+            tab.text = productCategoryTab[position]
+        }.attach()
+
+        productCategoryPriceVp.isUserInputEnabled = false
+        productCategoryPriceTb.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                tab?.position?.let { productCategoryPriceVp.setCurrentItem(it, false) }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+            }
+        })
+
+
+        // 금주의 이거 어때? 데이터 리스트
         weekProductDatas.apply {
             add(WeekProduct("라이프 아카이브", "라이프 아카이브 일회용 카메라", R.drawable.product_list_film_img))
             add(WeekProduct("언폴드", "Copenhagen-bule 에코백", R.drawable.product_list_bag_img))

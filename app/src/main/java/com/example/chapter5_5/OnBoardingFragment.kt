@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.viewpager2.widget.ViewPager2
+import kotlinx.android.synthetic.*
 import org.w3c.dom.Text
 
 class OnBoardingFragment(
@@ -35,5 +37,4 @@ class OnBoardingFragment(
 
         return view
     }
-
 }

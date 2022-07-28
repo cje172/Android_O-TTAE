@@ -9,9 +9,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Lifecycle
+import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import java.util.ArrayList
 
 class HomeFragment : Fragment() {
 
@@ -78,15 +82,15 @@ class HomeFragment : Fragment() {
         homeBannerAdapter.addFragment(
             HomeBannerFragment(
                 R.drawable.home_banner_img2,
-                "임시 제목",
-                "임시 수식어"
+                "애주가를 위한 인생술",
+                "과실주_특별한 순간을 빛내는 맛"
             )
         )
         homeBannerAdapter.addFragment(
             HomeBannerFragment(
                 R.drawable.home_banner_img3,
-                "임시 제목",
-                "임시 수식어"
+                "향기로 완성하는 무드",
+                "금목서 향수_달빛을 닮은 달콤한 꽃향기"
             )
         )
 
@@ -128,17 +132,36 @@ class HomeFragment : Fragment() {
         currentPosition += 1
     }
 
-    // Home 화면 상단 배너 - 3초마다 페이지 넘기기
+    // Home 화면 상단 배너 - 2초마다 페이지 넘기기
     inner class PagerRunnable : Runnable {
         override fun run() {
             try {
                 while (true) {
-                    Thread.sleep(3000)
+                    Thread.sleep(2000)
                     handler.sendEmptyMessage(0)
                 }
             } catch (e: InterruptedException) {
                 Log.d("Banner", "쓰레드가 죽었습니다. ${e.message}")
             }
         }
+    }
+
+    private inner class HomeBannerVPAdapter(
+        childFragmentManager: FragmentManager,
+        getLifecycle: Lifecycle
+    ) :
+        FragmentStateAdapter(childFragmentManager, getLifecycle) {
+
+        private val fragmentList: ArrayList<Fragment> = ArrayList()
+
+        override fun getItemCount(): Int = fragmentList.size
+
+        override fun createFragment(position: Int): Fragment = fragmentList[position]
+
+        fun addFragment(fragment: Fragment) {
+            fragmentList.add(fragment)
+            notifyItemInserted(fragmentList.size - 1)
+        }
+
     }
 }

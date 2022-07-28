@@ -34,7 +34,6 @@
         android:paddingStart="35dp"
         android:paddingEnd="27dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/product_category_price_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/product_category_week_tv"
@@ -52,20 +51,41 @@
         android:textColor="@color/black"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/product_category_price_rv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/product_category_week_rv" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/product_category_price_rv"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/product_category_price_tb"
+        style="@style/ProductPriceChipTabLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="11dp"
-        android:orientation="vertical"
-        android:paddingHorizontal="35dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@id/product_category_price_tv"
-        tools:listitem="@layout/item_home_category_product" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_category_price_tv"
+        app:tabPaddingStart="5dp"
+        app:tabPaddingEnd="5dp"
+        app:tabIndicatorColor="@color/white"
+        app:tabMode="fixed"
+        android:minWidth="0dp"
+        app:tabRippleColor="#00ff0000"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextAppearance="@style/HomeCategoryTabLayout_Theme"
+        app:tabTextColor="#D9D9D9" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/product_category_price_vp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_category_price_tb" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
