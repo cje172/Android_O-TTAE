@@ -3,5 +3,5 @@
     <item
         android:width="20dp"
         android:height="20dp"
-        android:drawable="@drawable/btn_taste" />
+        android:drawable="@drawable/ic_taste" />
 </layer-list>

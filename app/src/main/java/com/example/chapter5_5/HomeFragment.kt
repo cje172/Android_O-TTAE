@@ -3,6 +3,7 @@ package com.example.chapter5_5
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,8 +17,8 @@ class HomeFragment : Fragment() {
 
     lateinit var homeBannerVp: ViewPager2
     lateinit var homeBannerTb: TabLayout
-    lateinit var homeCategoryContentTb: TabLayout
-    lateinit var homeCategoryContentVp: ViewPager2
+    lateinit var homeCategoryTb: TabLayout
+    lateinit var homeCategoryVp: ViewPager2
     lateinit var homeGiftBtn: Button
     lateinit var homeTasteBtn: Button
 
@@ -37,24 +38,30 @@ class HomeFragment : Fragment() {
 
         homeBannerVp = view.findViewById(R.id.home_banner_vp)
         homeBannerTb = view.findViewById(R.id.home_banner_tb)
-        homeCategoryContentTb = view.findViewById(R.id.home_category_content_tb)
-        homeCategoryContentVp = view.findViewById(R.id.home_category_content_vp)
+        homeCategoryTb = view.findViewById(R.id.home_category_tb)
+        homeCategoryVp = view.findViewById(R.id.home_category_vp)
         homeGiftBtn = view.findViewById(R.id.home_gift_btn)
         homeTasteBtn = view.findViewById(R.id.home_taste_btn)
 
+
         // 비밀선물 버튼 클릭 시 비밀선물 페이지로 이동
         homeGiftBtn.setOnClickListener {
-            (context as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.main_frm, GiftFragment()).commitAllowingStateLoss()
+            (context as MainActivity).supportFragmentManager.beginTransaction()
+                .replace(R.id.main_frm, GiftFragment()).commitAllowingStateLoss()
         }
 
         // 취향저격 선물 버튼 클릭 시 취향선물 페이지로 이동
         homeTasteBtn.setOnClickListener {
-            (context as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.main_frm, TasteFragment()).commitAllowingStateLoss()
+            (context as MainActivity).supportFragmentManager.beginTransaction()
+                .replace(R.id.main_frm, TasteFragment()).commitAllowingStateLoss()
         }
 
 
-        // Home 화면 상단 배너 - Tablayout와 ViewPager2 연결
-        val homeBannerAdapter = HomeBannerVPAdapter(this)
+        // Home 화면 상단 배너 - TabLayout, ViewPager2 연결
+        val homeBannerFm = childFragmentManager
+        val homeBannerLifecycle = viewLifecycleOwner.lifecycle
+        val homeBannerAdapter = HomeBannerVPAdapter(homeBannerFm, homeBannerLifecycle)
+
         homeBannerAdapter.addFragment(
             HomeBannerFragment(
                 R.drawable.home_banner_img1,
@@ -88,14 +95,13 @@ class HomeFragment : Fragment() {
         thread.start()
 
 
-        // Home 화면 카테고리 - Tablayout와 ViewPager2 연결
-//        val homeCategoryAdapter = HomeCategoryVPAdapter(this)
-        val fm = childFragmentManager
-        val lifecycle = viewLifecycleOwner.lifecycle
-        val homeCategoryAdapter = HomeCategoryVPAdapter(fm, lifecycle)
-        homeCategoryContentVp.adapter = homeCategoryAdapter
+        // Home 화면 카테고리 - TabLayout, ViewPager2 연결
+        val homeCategoryFm = childFragmentManager
+        val homeCategoryLifecycle = viewLifecycleOwner.lifecycle
+        val homeCategoryAdapter = HomeCategoryVPAdapter(homeCategoryFm, homeCategoryLifecycle)
+        homeCategoryVp.adapter = homeCategoryAdapter
 
-        TabLayoutMediator(homeCategoryContentTb, homeCategoryContentVp) { tab, position ->
+        TabLayoutMediator(homeCategoryTb, homeCategoryVp) { tab, position ->
             tab.text = homeCategoryTab[position]
         }.attach()
 
@@ -112,9 +118,13 @@ class HomeFragment : Fragment() {
     // Home 화면 상단 배너 - 3초마다 페이지 넘기기
     inner class PagerRunnable : Runnable {
         override fun run() {
-            while (true) {
-                Thread.sleep(3000)
-                handler.sendEmptyMessage(0)
+            try {
+                while (true) {
+                    Thread.sleep(3000)
+                    handler.sendEmptyMessage(0)
+                }
+            } catch (e: InterruptedException) {
+                Log.d("Banner", "쓰레드가 죽었습니다. ${e.message}")
             }
         }
     }

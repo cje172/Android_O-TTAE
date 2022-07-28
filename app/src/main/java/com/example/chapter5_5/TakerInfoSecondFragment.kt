@@ -19,10 +19,13 @@ class TakerInfoSecondFragment : Fragment() {
 
         takerInfoSecondNextBtn = view.findViewById(R.id.taker_info_second_next_btn)
 
+        val transaction = (context as MainActivity).supportFragmentManager.beginTransaction()
+
         // 다음 버튼 클릭 시 질문지 페이지로 이동
         takerInfoSecondNextBtn.setOnClickListener {
-            (context as MainActivity).supportFragmentManager.beginTransaction()
-                .replace(R.id.main_frm, QuestionFragment()).commitAllowingStateLoss()
+            transaction.replace(R.id.main_frm, QuestionFragment())
+            transaction.addToBackStack(null)
+            transaction.commit()
         }
 
         return view

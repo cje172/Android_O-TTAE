@@ -2,6 +2,7 @@ package com.example.chapter5_5
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.*
 
@@ -83,6 +84,20 @@ class MainActivity : AppCompatActivity() {
         sqlitedb.execSQL("INSERT INTO my VALUES('"+arg0+"','"+arg1+"','"+arg2+"');")
 //"INSERT INTO personnel VALUES('"+str_name+"','"+str_gender+"',"+str_age+",'"+str_tel+"');")
    }
+
+    fun setDataAtFragment(fragment: Fragment, result:String) {
+        val bundle = Bundle()
+        bundle.putString("result", result)
+
+        fragment.arguments = bundle
+        setFragment(fragment)
+    }
+    //데이터가 셋팅된 프래그먼트 띄우기
+    fun setFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.main_frm, fragment)
+        transaction.commit()
+    }
 
     private fun initBottomNavigation() {
         supportFragmentManager.beginTransaction()
