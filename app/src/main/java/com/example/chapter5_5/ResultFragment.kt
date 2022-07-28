@@ -12,8 +12,8 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
-
-
+import androidx.fragment.app.setFragmentResultListener
+import java.util.*
 
 
 class ResultFragment : Fragment() {
@@ -26,6 +26,7 @@ class ResultFragment : Fragment() {
     lateinit var giftImg:ImageView
     lateinit var price: TextView
     //lateinit var taker_info_first_name_edt:EditText
+    private var result: String? = null    //전역변수로 사용
 
 
     override fun onAttach(context: Context) {
@@ -39,7 +40,13 @@ class ResultFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
+//        setFragmentResultListener("requestKey") { requestKey, bundle ->
+//            val result = bundle.getString("bundleKey")
+//            // Do something with the result
+//        }
+        arguments?.let {
+            result = it.getString("result")    //데이터 수신
+        }
 
     }
 
@@ -50,8 +57,22 @@ class ResultFragment : Fragment() {
         // Inflate the layout for this fragment
 
 
-
         val view: View = inflater.inflate(R.layout.fragment_result, container, false)
+
+
+//        var result = arrayOfNulls<String>(5)
+//        setFragmentResultListener("requestKey") { requestKey, bundle ->
+//             result = bundle.getStringArray("bundleKey") as Array<String?>
+//            // Do something with the result
+//        }
+       // var answer:String
+        setFragmentResultListener("request") { key, bundle ->
+//            bundle.getString("senderKey")?.let { value ->
+//                binding.textView.text = value
+            var answer = bundle.getString("senderKey")
+            }
+
+
         dbManager = DBManager(mainActivity,"my",null,1)
         friendItem = view.findViewById(R.id.friendItem)
         productName = view.findViewById(R.id. productName)
@@ -76,7 +97,9 @@ class ResultFragment : Fragment() {
         sqlitedb.close()
 
 
-       // friendItem.text=friendItemTemp
+      //  title="테스트입니다"
+      price.text=result.toString()
+
         giftImg.setImageResource(imgTemp!!)
         return  view
     }
