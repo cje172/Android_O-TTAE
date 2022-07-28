@@ -40,7 +40,8 @@
 
                 android:text=""
                 android:textColorHint="#6C6C6C"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                tools:ignore="TouchTargetSizeCheck" />
 
 
 <!--            <View-->
@@ -61,7 +62,8 @@
                 android:hint="이메일을 입력해주세요"
                 android:text=""
                 android:textColor="#6C6C6C"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                tools:ignore="TouchTargetSizeCheck" />
 
 <!--            <View-->
 <!--                android:id="@+id/view2"-->
@@ -81,7 +83,8 @@
                 android:hint="비밀번호 설정(최소 8자리)"
                 android:text=""
                 android:textColor="#6C6C6C"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                tools:ignore="TouchTargetSizeCheck" />
 
 <!--            <View-->
 <!--                android:id="@+id/view7"-->
@@ -102,7 +105,8 @@
                 android:hint="비밀번호 재입력"
                 android:text=""
                 android:textColor="#6C6C6C"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                tools:ignore="TouchTargetSizeCheck" />
 
 <!--            <View-->
 <!--                android:id="@+id/view8"-->
@@ -114,11 +118,12 @@
 
             <TextView
                 android:id="@+id/password_mismatch"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_marginLeft="32dp"
                 android:layout_marginTop="30dp"
 
+                android:layout_weight="1"
                 android:text="비밀 번호가 일치하지 않습니다."
                 android:textColor="@android:color/holo_red_dark"
                 android:visibility="invisible" />
