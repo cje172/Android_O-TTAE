@@ -65,6 +65,13 @@
                 android:text="원더비지터는 “재미있는 제품이 재미있는 삶을 만든다”는 모토의 그래픽을 기반으로 하는 그래픽 패션 레이블이다. 3명의 아트를 전공한 친구들이 함께 브랜드를 론칭했다. 80년대의 서브컬처 만화풍을 컨셉으로한 디자인을 주로 선보인다."
                 app:layout_constraintStart_toStartOf="parent" />
 
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="173dp"
+                android:layout_height="30dp"
+                android:text="12,000"
+                android:textColor="@color/black" />
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="303dp"
                 android:layout_height="112dp"

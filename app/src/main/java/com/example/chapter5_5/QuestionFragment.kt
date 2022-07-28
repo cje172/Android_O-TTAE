@@ -46,6 +46,7 @@ class QuestionFragment : Fragment() {
         questionAnswerTopBtn.setOnClickListener {
             questionProgressSb.progress += 25  // 진행률 증가
 
+
             // 진행률에 따른 질문, 답, 진행된 질문 개수 설정
             when (questionProgressSb.progress) {
                 25 -> {
@@ -103,8 +104,8 @@ class QuestionFragment : Fragment() {
 
                     questionAnswerBottomBtn.setOnClickListener {
                         result[4] = questionAnswerBottomBtn.text.toString()
-                        //위에 답 클릭
-                        resultS+="0"
+                        //아래 답 클릭
+                        resultS+="1"
 
                         // 결과지로 이동
                         sendAnswers()
