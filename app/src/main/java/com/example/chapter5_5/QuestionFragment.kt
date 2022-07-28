@@ -1,18 +1,13 @@
 package com.example.chapter5_5
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ProgressBar
 import android.widget.SeekBar
 import android.widget.TextView
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.setFragmentResult
-import java.util.ArrayList
 
 class QuestionFragment : Fragment() {
 
@@ -25,7 +20,7 @@ class QuestionFragment : Fragment() {
     var result = arrayOfNulls<String>(5)  // 사용자의 답변을 저장할 배열
 
     //var result = arrayOfNulls<Int>(5)
-    var resultS :String =""
+    var resultS: String = ""
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -38,7 +33,7 @@ class QuestionFragment : Fragment() {
         questionAnswerTopBtn = view.findViewById(R.id.question_answer_top_btn)
         questionAnswerBottomBtn = view.findViewById(R.id.question_answer_bottom_btn)
         //초기화
-        resultS=""
+        resultS = ""
 
         val transaction = (context as MainActivity).supportFragmentManager.beginTransaction()
 
@@ -52,7 +47,7 @@ class QuestionFragment : Fragment() {
                 25 -> {
                     result[0] = questionAnswerTopBtn.text.toString()
                     //위에 답 클릭
-                    resultS+="0"
+                    resultS += "0"
                     questionProgressTv.text = "2/5"
                     questionContentTv.text = "휴일을 어떻게 보내나요?"
                     questionAnswerTopBtn.text = "집에서 이것 저것 하면서 논다"
@@ -62,17 +57,17 @@ class QuestionFragment : Fragment() {
                 50 -> {
                     result[1] = questionAnswerTopBtn.text.toString()
                     //위에 답 클릭
-                    resultS+="0"
+                    resultS += "0"
                     questionProgressTv.text = "3/5"
                     questionContentTv.text = "운동을 좋아하나요?"
-                    questionAnswerTopBtn.text = "단백질얼마 들어있어?를 외치는 운동인"
+                    questionAnswerTopBtn.text = "단백질 얼마 들어있어?를 외치는 운동인"
                     questionAnswerBottomBtn.text = "숨쉬기 운동은 잊지 않는 허약인"
 
                 }
                 75 -> {
                     result[2] = questionAnswerTopBtn.text.toString()
                     //위에 답 클릭
-                    resultS+="0"
+                    resultS += "0"
                     questionProgressTv.text = "4/5"
                     questionContentTv.text = "친구는 평소에"
                     questionAnswerTopBtn.text = "없는 것이 없는 보부상 스타일"
@@ -82,7 +77,7 @@ class QuestionFragment : Fragment() {
                 100 -> {
                     result[3] = questionAnswerTopBtn.text.toString()
                     //위에 답 클릭
-                    resultS+="0"
+                    resultS += "0"
                     questionProgressTv.text = "5/5"
                     questionContentTv.text = "친구의 식성은"
                     questionAnswerTopBtn.text = "진골 한국인 한식파"
@@ -93,7 +88,7 @@ class QuestionFragment : Fragment() {
                     questionAnswerTopBtn.setOnClickListener {
                         result[4] = questionAnswerTopBtn.text.toString()
                         //위에 답 클릭
-                        resultS+="0"
+                        resultS += "0"
 
                         // 결과지로 이동
                         sendAnswers()
@@ -105,7 +100,7 @@ class QuestionFragment : Fragment() {
                     questionAnswerBottomBtn.setOnClickListener {
                         result[4] = questionAnswerBottomBtn.text.toString()
                         //아래 답 클릭
-                        resultS+="1"
+                        resultS += "1"
 
                         // 결과지로 이동
                         sendAnswers()
@@ -135,7 +130,7 @@ class QuestionFragment : Fragment() {
                 25 -> {
                     result[0] = questionAnswerBottomBtn.text.toString()
                     //아래 답 클릭
-                    resultS+="1"
+                    resultS += "1"
 
                     questionProgressTv.text = "2/5"
                     questionContentTv.text = "휴일을 어떻게 보내나요?"
@@ -146,7 +141,7 @@ class QuestionFragment : Fragment() {
                 50 -> {
                     result[1] = questionAnswerBottomBtn.text.toString()
                     //아래 답 클릭
-                    resultS+="1"
+                    resultS += "1"
 
                     questionProgressTv.text = "3/5"
                     questionContentTv.text = "운동을 좋아하나요?"
@@ -157,7 +152,7 @@ class QuestionFragment : Fragment() {
                 75 -> {
                     result[2] = questionAnswerBottomBtn.text.toString()
                     //아래 답 클릭
-                    resultS+="1"
+                    resultS += "1"
 
                     questionProgressTv.text = "4/5"
                     questionContentTv.text = "친구는 평소에 "
@@ -168,7 +163,7 @@ class QuestionFragment : Fragment() {
                 100 -> {
                     result[3] = questionAnswerBottomBtn.text.toString()
                     //아래 답 클릭
-                    resultS+="1"
+                    resultS += "1"
 
                     questionProgressTv.text = "5/5"
                     questionContentTv.text = "친구의 식성은?"
@@ -178,7 +173,7 @@ class QuestionFragment : Fragment() {
                     questionAnswerBottomBtn.setOnClickListener {
                         result[4] = questionAnswerBottomBtn.text.toString()
                         //아래 답 클릭
-                        resultS+="1"
+                        resultS += "1"
 
                         // 결과지로 이동
                         sendAnswers()
@@ -190,7 +185,7 @@ class QuestionFragment : Fragment() {
                     questionAnswerTopBtn.setOnClickListener {
                         result[4] = questionAnswerTopBtn.text.toString()
                         //아래 답 클릭
-                        resultS+="1"
+                        resultS += "1"
 
                         // 결과지로 이동
                         sendAnswers()
@@ -218,8 +213,7 @@ class QuestionFragment : Fragment() {
     }
 
 
-    fun sendAnswers()
-    {
+    fun sendAnswers() {
 
         val mActivity = activity as MainActivity
         mActivity.setDataAtFragment(ResultFragment(), resultS)
