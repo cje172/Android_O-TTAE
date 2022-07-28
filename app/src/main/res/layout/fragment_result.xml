@@ -28,8 +28,8 @@
 
             <TextView
                 android:id="@+id/friendItem"
-                android:layout_width="200dp"
-                android:layout_height="42dp"
+                android:layout_width="350dp"
+                android:layout_height="80dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="34dp"
                 android:fontFamily="@font/cafe24_ohsquareair"
@@ -65,13 +65,6 @@
                 android:text="원더비지터는 “재미있는 제품이 재미있는 삶을 만든다”는 모토의 그래픽을 기반으로 하는 그래픽 패션 레이블이다. 3명의 아트를 전공한 친구들이 함께 브랜드를 론칭했다. 80년대의 서브컬처 만화풍을 컨셉으로한 디자인을 주로 선보인다."
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/price"
-                android:layout_width="173dp"
-                android:layout_height="30dp"
-                android:text="12,000"
-                android:textColor="@color/black" />
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="303dp"
                 android:layout_height="112dp"
@@ -99,6 +92,18 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="173dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="5dp"
+                    android:text="12,000"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/coverImg"
+                    app:layout_constraintTop_toTopOf="@+id/productName" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
@@ -115,14 +120,47 @@
                 android:textSize="15sp"
                 tools:ignore="TextContrastCheck" />
 
-            <TextView
-                android:id="@+id/result_all"
-                android:layout_width="180dp"
-                android:layout_height="50dp"
-                android:background="#80F3E61E"
-                android:fontFamily="@font/inter_bold"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="모든 결과 유형 보기" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/result_all"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:background="#80F3E61E"-->
+<!--                android:fontFamily="@font/inter_bold"-->
+<!--                android:layout_marginLeft="31dp"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:gravity="center_horizontal|center_vertical"-->
+<!--                android:text="모든 결과 유형 보기"-->
+
+<!--                />-->
+
+            <ImageButton
+                android:id="@+id/save_result_button"
+                android:layout_width="wrap_content"
+                android:layout_height="63dp"
+                android:layout_marginLeft="100dp"
+
+
+                android:layout_marginTop="15dp"
+
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:gravity="clip_vertical|center_vertical"
+                android:src="@drawable/save_result_img"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageButton
+                android:id="@+id/all_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/all_button_img" />
+
+            <ImageButton
+                android:id="@+id/again_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/again_button_img" />
+
 
         </LinearLayout>
     </ScrollView>
