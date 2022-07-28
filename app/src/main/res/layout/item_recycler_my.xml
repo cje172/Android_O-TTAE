@@ -26,11 +26,11 @@
 
     <TextView
         android:id="@+id/giftCategory"
-        android:layout_width="205dp"
-        android:layout_height="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="3dp"
         android:gravity="center_vertical"
         android:text="000님을 위한 패션아이템"
         android:textColor="@color/black"
@@ -41,8 +41,8 @@
 
     <TextView
         android:id="@+id/gift_name"
-        android:layout_width="147dp"
-        android:layout_height="11dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="6dp"
         android:text="wonder visitor 볼캡"
@@ -54,8 +54,8 @@
 
     <TextView
         android:id="@+id/price"
-        android:layout_width="205dp"
-        android:layout_height="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_marginStart="24dp"
         android:layout_marginTop="52dp"
@@ -66,13 +66,15 @@
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/gift_photo"
         app:layout_constraintTop_toTopOf="parent" />
+
     <ImageButton
         android:id="@+id/removeButton"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="5dp"
         android:background="@drawable/remove"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.627"
@@ -80,7 +82,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-<!--    <ImageView-->
+    <!--    <ImageView-->
 <!--        android:layout_width="400dp"-->
 <!--        android:layout_height="8dp"-->
 <!--        android:layout_marginStart="20dp"-->

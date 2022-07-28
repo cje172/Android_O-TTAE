@@ -70,7 +70,7 @@ class RegisterPage : AppCompatActivity() {
                 //ResultFragment에 유저 이름 전달
                 setDataAtFragment(ResultFragment(), register_name.text.toString())
                 startActivity(Intent(this, MainActivity::class.java))
-                finish()
+              //  finish()
             }
         }
     }
@@ -101,7 +101,7 @@ class RegisterPage : AppCompatActivity() {
         //아이디 중복 확인
         if(cursor.count>0)//중복있음
         {
-            register_name.hint = "이미 가입된 이메일 입니다."
+            register_email.hint = "이미 가입된 이메일 입니다."
             return  false
         }
         return true
@@ -114,6 +114,7 @@ class RegisterPage : AppCompatActivity() {
 
         if(!password.equals(password2)) {
             password_mismatch.visibility = View.VISIBLE
+
             return false
         }
         else

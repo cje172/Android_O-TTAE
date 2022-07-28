@@ -67,7 +67,7 @@ class MyFragment : Fragment() {
         var cursor: Cursor
         //cursor =sqlitedb.rawQuery("SELECT * FROM my WHERE user = 'qqq';",null)
 
-        cursor =sqlitedb.rawQuery("SELECT * FROM my WHERE user='qqq';",null)
+        cursor =sqlitedb.rawQuery("SELECT * FROM my WHERE user='"+userId+"';",null)
 
 
         while(cursor.moveToNext()) {
