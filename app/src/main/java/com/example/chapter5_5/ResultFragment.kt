@@ -22,8 +22,9 @@ class ResultFragment : Fragment() {
     lateinit var productName: TextView
     lateinit var giftImg: ImageView
     lateinit var price: TextView
-    lateinit var saveResultButton: ImageButton
+    lateinit var saveResultBtn: ImageButton
     lateinit var againButton: ImageButton
+    lateinit var resultItemBg: ImageView
 
     lateinit var resultImg: View
     private var result: String? = null    //전역변수로 사용
@@ -76,26 +77,27 @@ class ResultFragment : Fragment() {
 //            var answer = bundle.getString("senderKey")
 //            }
 
-        //결과지 세팅할 것들
+        // 결과지 세팅할 것들
         friendItem = view.findViewById(R.id.friend_item)
         productName = view.findViewById(R.id.product_name)
         price = view.findViewById(R.id.gift_price)
         giftImg = view.findViewById(R.id.cover_img)
         resultImg = view.findViewById(R.id.result_img)
-        //다시 검사하기 버튼
+        resultItemBg = view.findViewById(R.id.result_item_bg)
+        // 다시 검사하기 버튼
         againButton = view.findViewById(R.id.again_btn)
+
         val transaction = (context as MainActivity).supportFragmentManager.beginTransaction()
+
         againButton.setOnClickListener {
-
-
             transaction.replace(R.id.main_frm, TakerInfoFirstFragment())
             transaction.addToBackStack(null)
             transaction.commit()
         }
 
         //결과 저장하기 버튼
-//        saveResultButton=view.findViewById(R.id.save_result_button)
-//        saveResultButton.setOnClickListener {
+//        saveResultBtn=view.findViewById(R.id.save_result_btn)
+//        saveResultBtn.setOnClickListener {
 //
 //            dbManager = DBManager(mainActivity,"my",null,1)
 //            sqlitedb =dbManager.writableDatabase
@@ -110,28 +112,32 @@ class ResultFragment : Fragment() {
             // 10100
             "10100" -> {
                 loadData()
+
                 // 보드게임
                 friendItem.text = "집에서 혼자 잘 노는 " + friendName + " 님을 위해\n" + "보드게임 어때?"
                 productName.text = "상프앙 / ARCHI MEMORY CARD GAME"
                 price.text = "13,000"
-                imgTemp = R.drawable.result_bordgame1
-                resultImg.setBackgroundResource(R.drawable.result_bordgame2)
-                giftImg.setImageResource(R.drawable.result_bordgame1)
+                imgTemp = R.drawable.result_board_game1
+                resultImg.setBackgroundResource(R.drawable.result_board_game2)
+                giftImg.setImageResource(R.drawable.result_board_game1)
                 friendItemComment = friendName + " 님을 위한 보드게임"
+                resultItemBg.setImageResource(R.drawable.result_board_game3)
             }
 
             // 2.E,밖,운동,보부상,양식 -> 운동인을 위한 운동가방
             // 01001
             "01001" -> {
                 loadData()
+
                 // 운동가방
                 friendItem.text = "보부상 운동인 " + friendName + " 님을 위해\n" + "운동가방 어때?"
                 productName.text = "시랜드 / Hero_Black"
                 price.text = "34,000"
-                imgTemp = R.drawable.result_sports_bag
-                resultImg.setBackgroundResource(R.drawable.result_sportsbag2)
-                giftImg.setImageResource(R.drawable.result_sports_bag)
+                imgTemp = R.drawable.result_sports_bag1
+                resultImg.setBackgroundResource(R.drawable.result_sports_bag2)
+                giftImg.setImageResource(R.drawable.result_sports_bag1)
                 friendItemComment = friendName + " 님을 위한 운동가방"
+                resultItemBg.setImageResource(R.drawable.result_sports_bag3)
             }
 
             // 3.I,집, 운동,미니멀, 양식 -> 단백질을 챙기고 집에만 있는 운동인을 위한 치킨 (배민 쿠폰)
@@ -147,6 +153,7 @@ class ResultFragment : Fragment() {
                 resultImg.setBackgroundResource(R.drawable.result_chicken2)
                 giftImg.setImageResource(R.drawable.result_chicken1)
                 friendItemComment = friendName + " 님을 위한 치킨 기프티콘"
+                resultItemBg.setImageResource(R.drawable.result_chicken3)
             }
 
             // 4.E,밖,허약,미니멀,한식-> 밖에 돌아다니는 걸 좋아하지만 허약한 친구를 위한 비타민
@@ -158,10 +165,11 @@ class ResultFragment : Fragment() {
                 friendItem.text = "밖에 돌아다니는 걸 좋아하지만 허약한 " + friendName + " 님을 위해\n" + "비타민 어때?"
                 productName.text = "바이너랩 / 글로시 30포 레모나맛"
                 price.text = "21,000"
-                imgTemp = R.drawable.result_vitamain1
+                imgTemp = R.drawable.result_vitamin1
                 resultImg.setBackgroundResource(R.drawable.result_vitamin2)
-                giftImg.setImageResource(R.drawable.result_vitamain1)
+                giftImg.setImageResource(R.drawable.result_vitamin1)
                 friendItemComment = friendName + " 님을 위한 비타민"
+                resultItemBg.setImageResource(R.drawable.result_vitamin3)
             }
 
             // 5.E,밖,허약,보부상,양식-> 밖을 잘 돌아다니는 친구를 위한 보조배터리
@@ -174,9 +182,10 @@ class ResultFragment : Fragment() {
                 productName.text = "어프어프 / CLEANER PUNI-BLACK"
                 price.text = "13,000"
                 imgTemp = R.drawable.result_battery1
-                resultImg.setBackgroundResource(R.drawable.result_battery1)
+                resultImg.setBackgroundResource(R.drawable.result_battery2)
                 giftImg.setImageResource(R.drawable.result_battery1)
                 friendItemComment = friendName + " 님을 위한 보조배터리"
+                resultItemBg.setImageResource(R.drawable.result_battery3)
             }
 
             // 6.E,밖,운동인,보부상, 한식-> 외출을 자주하는 친구를 위한 계절밥상 기프티콘
@@ -189,9 +198,10 @@ class ResultFragment : Fragment() {
                 productName.text = "계절밥상 상품권"
                 price.text = "21,000"
                 imgTemp = R.drawable.result_food1
-                resultImg.setBackgroundResource(R.drawable.result_food1)
+                resultImg.setBackgroundResource(R.drawable.result_food2)
                 giftImg.setImageResource(R.drawable.result_food1)
                 friendItemComment = friendName + " 님을 위한 계절밥상 상품권"
+                resultItemBg.setImageResource(R.drawable.result_food3)
             }
 
             // 7.I,집,운동,미니멀,한식 -> I이지만 운동을 좋아하는 친구를 위한 운동기구 (덤벨)
@@ -202,11 +212,12 @@ class ResultFragment : Fragment() {
                 // 덤벨
                 friendItem.text = "운동을 좋아하는 내향인 " + friendName + " 님을 위해\n" + "덤벨 어때?"
                 productName.text = "와이벨 / Y-Bell 와이벨 XS (4.5kg) 케틀벨+덤벨+메디슨볼+푸쉬업바=와이벨"
-                imgTemp = R.drawable.result_fitnes1
+                imgTemp = R.drawable.result_fitness1
                 price.text = "31,000"
-                resultImg.setBackgroundResource(R.drawable.result_fitnes2)
-                giftImg.setImageResource(R.drawable.result_fitnes1)
+                resultImg.setBackgroundResource(R.drawable.result_fitness2)
+                giftImg.setImageResource(R.drawable.result_fitness1)
                 friendItemComment = friendName + " 님을 위한 덤벨"
+                resultItemBg.setImageResource(R.drawable.result_fitness3)
             }
 
             // 8.I,집,허약,미니멀,양식 -> 집에서 노는 친구를 위한 미니멀한 찻잔 세트(그릇세트) 양식메뉴에도 어울려!
@@ -222,6 +233,7 @@ class ResultFragment : Fragment() {
                 resultImg.setBackgroundResource(R.drawable.result_teaset2)
                 giftImg.setImageResource(R.drawable.result_teaset1)
                 friendItemComment = friendName + " 님을 위한 찻잔세트"
+                resultItemBg.setImageResource(R.drawable.result_teaset3)
             }
 
             else -> {
@@ -235,6 +247,7 @@ class ResultFragment : Fragment() {
                 resultImg.setBackgroundResource(R.drawable.result_teaset2)
                 giftImg.setImageResource(R.drawable.result_teaset1)
                 friendItemComment = friendName + " 님을 위한 찻잔세트"
+                resultItemBg.setImageResource(R.drawable.result_teaset3)
             }
         }
 

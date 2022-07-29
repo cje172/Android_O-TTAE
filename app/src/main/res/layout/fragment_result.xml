@@ -1,192 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".ResultFragment">
 
-    <!--아이디 필요해서 임의로 만든것-->
-
-    <ScrollView
-        android:id="@+id/scrollView2"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <View
+            <ImageView
                 android:id="@+id/result_img"
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
-                android:background="@drawable/result_battery1" />
+                android:scaleType="fitXY"
+                android:src="@drawable/result_teaset2"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/friend_item"
-                android:layout_width="350dp"
-                android:layout_height="80dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="34dp"
                 android:fontFamily="@font/cafe24_ohsquareair"
+                android:paddingHorizontal="30dp"
+                android:paddingVertical="34dp"
                 android:text="님을 위해\n패션아이템 어때?"
                 android:textAlignment="center"
-                android:textColor="#000000"
-                android:textSize="18sp" />
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@+id/result_img" />
 
-            <LinearLayout
+            <ImageView
+                android:id="@+id/result_item_bg"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="34dp"
-                android:orientation="vertical">
-
-                <View
-                    android:id="@+id/resultItem_bg"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/result_item_bg"
-                    android:backgroundTint="#802E2D2D" />
-
-            </LinearLayout>
+                android:layout_height="297dp"
+                android:alpha="0.5"
+                android:scaleType="centerCrop"
+                android:src="@drawable/result_teaset3"
+                android:tintMode="src_atop"
+                app:layout_constraintTop_toBottomOf="@+id/friend_item"
+                app:tint="#B3000000" />
 
             <TextView
                 android:id="@+id/result_brand"
-                android:layout_width="299dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:fontFamily="@font/inter_bold"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:layout_marginHorizontal="30dp"
+                android:textStyle="bold"
+                android:layout_marginVertical="20dp"
+                android:text="@string/result_item_board_game_intro"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/result_item_bg"
+                app:layout_constraintEnd_toEndOf="@+id/result_item_bg"
+                app:layout_constraintStart_toStartOf="@+id/result_item_bg"
+                app:layout_constraintTop_toTopOf="@+id/result_item_bg" />
             <!--   android:text="원더비지터는 “재미있는 제품이 재미있는 삶을 만든다”는 모토의 그래픽을 기반으로 하는 그래픽 패션 레이블이다. 3명의 아트를 전공한 친구들이 함께 브랜드를 론칭했다. 80년대의 서브컬처 만화풍을 컨셉으로한 디자인을 주로 선보인다."-->
 
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="303dp"
-                android:layout_height="112dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="28dp">
-
-                <TextView
-                    android:id="@+id/product_name"
-                    android:layout_width="173dp"
-                    android:layout_height="60dp"
-                    android:layout_marginStart="132dp"
-                    android:layout_marginTop="12dp"
-                    android:text="WONDER VISITOR 볼캡"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/cover_img"
-                    android:layout_width="114dp"
-                    android:layout_height="101dp"
-                    android:layout_marginTop="4dp"
-                    android:background="@drawable/wonder_visitor_ball_cap"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.084"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/gift_price"
-                    android:layout_width="173dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="5dp"
-                    android:text="12,000"
-                    android:textColor="@color/black"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.6"
-                    app:layout_constraintStart_toEndOf="@+id/cover_img"
-                    app:layout_constraintTop_toTopOf="@+id/product_name"
-                    app:layout_constraintVertical_bias="0.869" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <!--            <TextView-->
-            <!--                android:id="@+id/result_all"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="50dp"-->
-            <!--                android:background="#80F3E61E"-->
-            <!--                android:fontFamily="@font/inter_bold"-->
-            <!--                android:layout_marginLeft="31dp"-->
-            <!--                android:layout_marginTop="15dp"-->
-            <!--                android:gravity="center_horizontal|center_vertical"-->
-            <!--                android:text="모든 결과 유형 보기"-->
-
-            <!--                />-->
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <View
+                android:id="@+id/result_first_line_view"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="0.5dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="28dp"
+                android:background="#D9D9D9"
+                app:layout_constraintTop_toBottomOf="@+id/result_item_bg" />
 
-                <TextView
-                    android:id="@+id/result_more_info"
-                    android:layout_width="319dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="40dp"
-                    android:background="#FC3031"
-                    android:fontFamily="@font/inter_light"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="선물정보가 더 궁금하다면?"
-                    android:textColor="#FFFFFF"
-                    android:textSize="15sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="TextContrastCheck" />
+            <ImageView
+                android:id="@+id/cover_img"
+                android:layout_width="89dp"
+                android:layout_height="89dp"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="11dp"
+                android:background="@drawable/result_teaset1"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/result_first_line_view" />
 
-                <ImageButton
-                    android:id="@+id/again_btn"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:src="@drawable/again_button_img"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintLeft_toRightOf="@+id/save_result_btn"
-                    app:layout_constraintStart_toEndOf="@+id/save_result_btn"
-                    app:layout_constraintTop_toBottomOf="@+id/result_more_info" />
+            <TextView
+                android:id="@+id/product_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="35dp"
+                android:textColor="@color/black"
+                android:text="WONDER VISITOR 볼캡"
+                app:layout_constraintBottom_toTopOf="@+id/gift_price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cover_img"
+                app:layout_constraintTop_toTopOf="@+id/cover_img"
+                app:layout_goneMarginEnd="35dp" />
 
-                <ImageButton
-                    android:id="@+id/save_result_btn"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="4dp"
-                    android:gravity="clip_vertical|center_vertical"
-                    android:src="@drawable/save_result_img"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.006"
-                    app:layout_constraintStart_toEndOf="@+id/all_btn"
-                    app:layout_constraintTop_toBottomOf="@+id/result_more_info"
-                    app:layout_constraintVertical_bias="1.0" />
+            <TextView
+                android:id="@+id/gift_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="35dp"
+                android:text="12,000"
+                android:textSize="10sp"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/cover_img"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cover_img"
+                app:layout_constraintTop_toBottomOf="@+id/product_name"
+                app:layout_goneMarginEnd="35dp" />
 
-                <ImageButton
-                    android:id="@+id/all_btn"
-                    android:layout_width="180dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="168dp"
-                    android:src="@drawable/all_button_img"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@id/result_more_info"
-                    app:layout_constraintTop_toBottomOf="@+id/result_more_info"
-                    app:layout_constraintVertical_bias="0.0" />
+            <View
+                android:id="@+id/result_last_line_view"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="11dp"
+                android:background="#D9D9D9"
+                app:layout_constraintTop_toBottomOf="@+id/cover_img" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </LinearLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/result_more_info_btn"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="28dp"
+                android:background="@color/red_COR1"
+                android:fontFamily="@font/inter_light"
+                android:text="선물정보가 더 궁금하다면?"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/result_last_line_view"
+                tools:ignore="TextContrastCheck" />
 
-    </ScrollView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/result_more_info_btn">
 
-</LinearLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/all_btn"
+                        android:layout_width="180dp"
+                        android:layout_height="50dp"
+                        android:background="#80F3E61E"
+                        android:fontFamily="@font/inter_medium"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="15dp"
+                        android:stateListAnimator="@null"
+                        android:text="모든 결과 유형 보기"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/save_result_btn"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="#B2F3E61E"
+                        android:padding="11dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/save_result_btn_img"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/again_btn"
+                        app:layout_constraintStart_toEndOf="@+id/all_btn"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/again_btn"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@color/yellow_COR2"
+                        android:padding="11dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/again_btn_img"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</ScrollView>

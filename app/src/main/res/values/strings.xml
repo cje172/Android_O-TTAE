@@ -18,8 +18,7 @@
         <item>3~4만원대</item>
         <item>5만원 이상</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -29,4 +28,20 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <string name="result_item_board_game_intro">
+        원더비지터는 “재미있는 제품이 재미있는 삶을 만든다”는 모토의 그래픽을 기반으로 하는 그래픽 패션 레이블이다. 3명의 아트를 전공한 친구들이 함께 브랜드를 론칭했다. 80년대의 서브컬처 만화풍을 컨셉으로한 디자인을 주로 선보인다.
+    </string>
+    <string name="result_item_sports_bag_intro">
+    </string>
+    <string name="result_item_chicken_intro">
+    </string>
+    <string name="result_item_vitamin_intro">
+    </string>
+    <string name="result_item_battery_intro">
+    </string>
+    <string name="result_item_fitness_intro">
+    </string>
+    <string name="result_item_teaset_intro">
+    </string>
 </resources>
