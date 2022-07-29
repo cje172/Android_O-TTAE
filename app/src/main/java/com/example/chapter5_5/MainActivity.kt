@@ -1,4 +1,5 @@
 package com.example.chapter5_5
+
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,19 +15,15 @@ class MainActivity : AppCompatActivity() {
     lateinit var dbManager: DBManager
     lateinit var sqlitedb: SQLiteDatabase
 
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_Chapter55)
         super.onCreate(savedInstanceState)
-        //db
-
-        dbManager = DBManager(this,"my",null,1)
-        sqlitedb =dbManager.readableDatabase
 
         //db
+        dbManager = DBManager(this, "my", null, 1)
+        sqlitedb = dbManager.readableDatabase
 
+        //db
 
         setContentView(R.layout.activity_main)
 
@@ -34,14 +31,15 @@ class MainActivity : AppCompatActivity() {
 
         initBottomNavigation()
     }
-    @Override
-    fun insert(arg0:String,arg1:String,arg2:String,table:String){
-        sqlitedb =dbManager.writableDatabase
-        sqlitedb.execSQL("INSERT INTO my VALUES('"+arg0+"','"+arg1+"','"+arg2+"');")
-//"INSERT INTO personnel VALUES('"+str_name+"','"+str_gender+"',"+str_age+",'"+str_tel+"');")
-   }
 
-    fun setDataAtFragment(fragment: Fragment, result:String) {
+    @Override
+    fun insert(arg0: String, arg1: String, arg2: String, table: String) {
+        sqlitedb = dbManager.writableDatabase
+        sqlitedb.execSQL("INSERT INTO my VALUES('" + arg0 + "','" + arg1 + "','" + arg2 + "');")
+//"INSERT INTO personnel VALUES('"+str_name+"','"+str_gender+"',"+str_age+",'"+str_tel+"');")
+    }
+
+    fun setDataAtFragment(fragment: Fragment, result: String) {
         val bundle = Bundle()
         bundle.putString("result", result)
 
@@ -49,14 +47,7 @@ class MainActivity : AppCompatActivity() {
         setFragment(fragment)
     }
 
-    fun setDataAtFragment2(fragment: Fragment,  friendId :String) {
-        val bundle = Bundle()
-        bundle.putString("friendId",  friendId)
-
-        fragment.arguments = bundle
-        setFragment(fragment)
-    }
-    //데이터가 셋팅된 프래그먼트 띄우기
+    // 데이터가 셋팅된 프래그먼트 띄우기
     fun setFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.main_frm, fragment)
@@ -98,4 +89,3 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-

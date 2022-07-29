@@ -4,11 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/myRv"
     android:layout_width="match_parent"
-    android:layout_height="90dp"
-    android:background="#FFFFFF"
-    android:paddingHorizontal="20dp"
-    android:paddingVertical="10dp">
-
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="#FFFFFF">
 
     <ImageView
         android:id="@+id/gift_photo"
@@ -16,26 +14,30 @@
         android:layout_height="52dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-
-        android:layout_marginStart="16dp"
+        android:layout_marginVertical="19dp"
+        android:layout_marginStart="14dp"
         android:background="@drawable/wonder_visitor_ball_cap"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.421" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/giftCategory"
-        android:layout_width="wrap_content"
+        android:id="@+id/gift_category"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="10dp"
+        android:ellipsize="end"
         android:gravity="center_vertical"
+        android:lineHeight="12sp"
+        android:maxLines="1"
         android:text="000님을 위한 패션아이템"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="10sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/gift_remove_btn"
         app:layout_constraintStart_toEndOf="@+id/gift_photo"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,56 +45,40 @@
         android:id="@+id/gift_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="3dp"
+        android:lineHeight="12.1dp"
         android:text="wonder visitor 볼캡"
         android:textColor="@color/black"
-
         android:textSize="8sp"
         app:layout_constraintStart_toEndOf="@+id/gift_photo"
-        app:layout_constraintTop_toBottomOf="@id/giftCategory" />
+        app:layout_constraintTop_toBottomOf="@id/gift_category" />
 
     <TextView
-        android:id="@+id/price"
+        android:id="@+id/gift_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="3dp"
         android:gravity="center_vertical"
         android:text="12,000"
         android:textColor="@color/black"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/gift_photo"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/gift_name" />
 
     <ImageButton
-        android:id="@+id/removeButton"
-        android:layout_width="16dp"
-        android:layout_height="16dp"
+        android:id="@+id/gift_remove_btn"
+        android:layout_width="0dp"
+        android:layout_height="28dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginEnd="13dp"
         android:background="@drawable/remove"
+        app:layout_constraintBottom_toBottomOf="@+id/gift_photo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.627"
-        app:layout_constraintStart_toEndOf="@+id/some_id"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <!--    <ImageView-->
-<!--        android:layout_width="400dp"-->
-<!--        android:layout_height="8dp"-->
-<!--        android:layout_marginStart="20dp"-->
-
-
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:layout_marginEnd="16dp"-->
-<!--        android:background="#00000000"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/price" />-->
+        app:layout_constraintTop_toTopOf="@+id/gift_photo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

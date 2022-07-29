@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
@@ -12,6 +13,7 @@ import java.util.*
 class CoupleFragment : Fragment() {
     private var productDatas = ArrayList<Product>()
     lateinit var homeCoupleProductRv: RecyclerView
+    lateinit var homeCoupleAllBtn: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,8 +22,10 @@ class CoupleFragment : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_couple, container, false)
 
         homeCoupleProductRv = view.findViewById(R.id.home_couple_product_rv)
+        homeCoupleAllBtn = view.findViewById(R.id.home_couple_all_btn)
 
-        // 더미데이터 연결
+        val transaction = (context as MainActivity).supportFragmentManager.beginTransaction()
+
         productDatas.apply {
             add(Product("코지테이블", "아이보리앤도트 머그잔", "8,400", R.drawable.product_list_cup_img))
             add(Product("언폴드", "Copenhagen-bule 에코백", "9,800", R.drawable.product_list_bag_img))
@@ -29,12 +33,21 @@ class CoupleFragment : Fragment() {
             add(Product("라이프 아카이브", "라이프 아카이브 일회용 카메라", "20,120", R.drawable.product_list_film_img))
         }
 
+        // 어댑터와 데이터 리스트 연결
         val homeCoupleRVAdapter = ProductRVAdapter(productDatas)
         homeCoupleProductRv.layoutManager = LinearLayoutManager(
             context,
             LinearLayoutManager.VERTICAL, false
         )
         homeCoupleProductRv.adapter = homeCoupleRVAdapter
+
+
+        // 전체 보기 버튼 클릭 시 상품 리스트 페이지로 이동
+        homeCoupleAllBtn.setOnClickListener {
+            transaction.replace(R.id.main_frm, ProductFragment())
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
 
         return view
     }

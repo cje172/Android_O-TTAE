@@ -16,7 +16,6 @@ class GiftFragment : Fragment() {
     lateinit var giftCategoryLightGiftView: View
     lateinit var giftCategoryLuxuryView: View
 
-
     lateinit var tabValue:SharedPreferences
 
     override fun onCreateView(
@@ -42,7 +41,7 @@ class GiftFragment : Fragment() {
 
 
 
-        // 각 카테고리 버튼 클릭시 상품 리스트 페이지로 이동
+        // 각 카테고리 버튼 클릭 시 상품 리스트 페이지로 이동
         giftCategoryBirthdayView.setOnClickListener {
 
             transaction.replace(R.id.main_frm, ProductFragment())

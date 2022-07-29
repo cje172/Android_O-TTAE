@@ -7,13 +7,11 @@
     tools:context=".ResultFragment">
 
     <!--아이디 필요해서 임의로 만든것-->
-    <!-- TODO: Update blank fragment layout -->
 
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,7 +25,7 @@
                 android:background="@drawable/result_battery1" />
 
             <TextView
-                android:id="@+id/friendItem"
+                android:id="@+id/friend_item"
                 android:layout_width="350dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center"
@@ -42,7 +40,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginTop="34dp"
-
                 android:orientation="vertical">
 
                 <View
@@ -55,7 +52,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/resultBrand"
+                android:id="@+id/result_brand"
                 android:layout_width="299dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -63,7 +60,7 @@
                 android:layout_marginLeft="16dp"
                 android:fontFamily="@font/inter_bold"
                 app:layout_constraintStart_toStartOf="parent" />
-             <!--   android:text="원더비지터는 “재미있는 제품이 재미있는 삶을 만든다”는 모토의 그래픽을 기반으로 하는 그래픽 패션 레이블이다. 3명의 아트를 전공한 친구들이 함께 브랜드를 론칭했다. 80년대의 서브컬처 만화풍을 컨셉으로한 디자인을 주로 선보인다."-->
+            <!--   android:text="원더비지터는 “재미있는 제품이 재미있는 삶을 만든다”는 모토의 그래픽을 기반으로 하는 그래픽 패션 레이블이다. 3명의 아트를 전공한 친구들이 함께 브랜드를 론칭했다. 80년대의 서브컬처 만화풍을 컨셉으로한 디자인을 주로 선보인다."-->
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -73,7 +70,7 @@
                 android:layout_marginTop="28dp">
 
                 <TextView
-                    android:id="@+id/productName"
+                    android:id="@+id/product_name"
                     android:layout_width="173dp"
                     android:layout_height="60dp"
                     android:layout_marginStart="132dp"
@@ -83,11 +80,10 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/coverImg"
+                    android:id="@+id/cover_img"
                     android:layout_width="114dp"
                     android:layout_height="101dp"
                     android:layout_marginTop="4dp"
-
                     android:background="@drawable/wonder_visitor_ball_cap"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.084"
@@ -95,7 +91,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/price"
+                    android:id="@+id/gift_price"
                     android:layout_width="173dp"
                     android:layout_height="30dp"
                     android:layout_marginStart="5dp"
@@ -104,32 +100,32 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.6"
-                    app:layout_constraintStart_toEndOf="@+id/coverImg"
-                    app:layout_constraintTop_toTopOf="@+id/productName"
+                    app:layout_constraintStart_toEndOf="@+id/cover_img"
+                    app:layout_constraintTop_toTopOf="@+id/product_name"
                     app:layout_constraintVertical_bias="0.869" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             <!--            <TextView-->
-<!--                android:id="@+id/result_all"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="50dp"-->
-<!--                android:background="#80F3E61E"-->
-<!--                android:fontFamily="@font/inter_bold"-->
-<!--                android:layout_marginLeft="31dp"-->
-<!--                android:layout_marginTop="15dp"-->
-<!--                android:gravity="center_horizontal|center_vertical"-->
-<!--                android:text="모든 결과 유형 보기"-->
+            <!--                android:id="@+id/result_all"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="50dp"-->
+            <!--                android:background="#80F3E61E"-->
+            <!--                android:fontFamily="@font/inter_bold"-->
+            <!--                android:layout_marginLeft="31dp"-->
+            <!--                android:layout_marginTop="15dp"-->
+            <!--                android:gravity="center_horizontal|center_vertical"-->
+            <!--                android:text="모든 결과 유형 보기"-->
 
-<!--                />-->
+            <!--                />-->
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/result_moreInfo"
+                    android:id="@+id/result_more_info"
                     android:layout_width="319dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="40dp"
@@ -145,24 +141,22 @@
                     tools:ignore="TextContrastCheck" />
 
                 <ImageButton
-                    android:id="@+id/again_button"
+                    android:id="@+id/again_btn"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
-
                     android:src="@drawable/again_button_img"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintLeft_toRightOf="@+id/save_result_button"
-                    app:layout_constraintStart_toEndOf="@+id/save_result_button"
-                    app:layout_constraintTop_toBottomOf="@+id/result_moreInfo" />
+                    app:layout_constraintLeft_toRightOf="@+id/save_result_btn"
+                    app:layout_constraintStart_toEndOf="@+id/save_result_btn"
+                    app:layout_constraintTop_toBottomOf="@+id/result_more_info" />
 
                 <ImageButton
-                    android:id="@+id/save_result_button"
+                    android:id="@+id/save_result_btn"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="4dp"
@@ -171,29 +165,28 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.006"
-                    app:layout_constraintStart_toEndOf="@+id/all_button"
-                    app:layout_constraintTop_toBottomOf="@+id/result_moreInfo"
+                    app:layout_constraintStart_toEndOf="@+id/all_btn"
+                    app:layout_constraintTop_toBottomOf="@+id/result_more_info"
                     app:layout_constraintVertical_bias="1.0" />
 
                 <ImageButton
-                    android:id="@+id/all_button"
+                    android:id="@+id/all_btn"
                     android:layout_width="180dp"
                     android:layout_height="50dp"
-
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="168dp"
                     android:src="@drawable/all_button_img"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@id/result_moreInfo"
-                    app:layout_constraintTop_toBottomOf="@+id/result_moreInfo"
+                    app:layout_constraintStart_toStartOf="@id/result_more_info"
+                    app:layout_constraintTop_toBottomOf="@+id/result_more_info"
                     app:layout_constraintVertical_bias="0.0" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>

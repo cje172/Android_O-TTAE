@@ -29,6 +29,7 @@ class PriceAllFragment : Fragment() {
             add(Product("비비디", "드레스 퍼퓸 100ml", "8,950", R.drawable.product_list_perfume_img))
         }
 
+        // 어댑터와 데이터 리스트 연결
         val priceAllProductRVAdapter = ProductRVAdapter(productDatas)
         priceAllProductRv.layoutManager = LinearLayoutManager(
             context,

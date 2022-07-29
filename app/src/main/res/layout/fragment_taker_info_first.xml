@@ -81,7 +81,6 @@
         android:paddingTop="10dp"
         android:paddingEnd="97dp"
         android:paddingBottom="10dp"
-        android:text="혜온"
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
