@@ -2,6 +2,7 @@ package com.example.chapter5_5
 
 import android.os.Bundle
 import android.content.Context
+import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -29,6 +31,7 @@ class MyFragment : Fragment() {
     lateinit var sqlitedb: SQLiteDatabase
     private var userId: String? = null
     lateinit var someId:TextView
+    lateinit var Log_out_button:Button
 
 
     override fun onAttach(context: Context) {
@@ -59,6 +62,10 @@ class MyFragment : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_my, container, false)
         //사용자 이름 설정
         someId = view.findViewById(R.id.some_id)
+        Log_out_button=view.findViewById(R.id.Log_out_button)
+        Log_out_button.setOnClickListener {
+            startActivity(Intent(mainActivity, LoginPage::class.java))
+        }
         someId.text=userId+"님의 선물 보따리"
 
         //db 읽어서 배열에 저장
