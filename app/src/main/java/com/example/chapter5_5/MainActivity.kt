@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var mainBnv: BottomNavigationView
 
-    //db
+    // db
     lateinit var dbManager: DBManager
     lateinit var sqlitedb: SQLiteDatabase
 
@@ -19,11 +19,11 @@ class MainActivity : AppCompatActivity() {
         setTheme(R.style.Theme_Chapter55)
         super.onCreate(savedInstanceState)
 
-        //db
+        // db
         dbManager = DBManager(this, "my", null, 1)
         sqlitedb = dbManager.readableDatabase
 
-        //db
+        // db
 
         setContentView(R.layout.activity_main)
 

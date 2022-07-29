@@ -4,136 +4,151 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_bg"
-    tools:context=".LoginPage">
-
-    <!-- 어때?! -->
-
-    <!--
-    Font family: Cafe24 Ohsquare
-    Line height: 35sp
-    -->
-    <!-- styles.xml -->
+    android:background="@drawable/login_bg_img"
+    tools:context=".LoginPageActivity">
 
     <View
         android:id="@+id/logIn_view2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/login_bg_r" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_bg_r_img" />
 
     <View
         android:id="@+id/logIn_view1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/login_bg_b" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_bg_b_img" />
 
     <TextView
-        android:layout_width="248sp"
-        android:layout_height="35sp"
+        android:layout_width="248dp"
+        android:layout_height="35dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="88dp"
+        android:layout_marginEnd="80dp"
         android:fontFamily="@font/cafe24_ohsquare"
         android:gravity="center_horizontal|center_vertical"
         android:text="어때?!"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textFontWeight="700"
         android:textSize="30sp"
         app:lineHeight="35.4sp" />
 
     <LinearLayout
         android:id="@+id/Group21"
-        android:layout_width="290dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="34dp"
-        android:layout_marginTop="306dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="140dp"
         android:orientation="vertical">
 
         <EditText
             android:id="@+id/logIn_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#B2FFFFFF"
             android:fontFamily="@font/inter_light"
             android:hint="이메일을 입력해주세요"
+            android:inputType="textEmailAddress"
+            android:lastBaselineToBottomHeight="20dp"
+            android:maxLines="1"
             android:textColor="#B2FFFFFF"
             android:textColorHint="#B2FFFFFF"
             android:textSize="15sp"
             tools:ignore="TouchTargetSizeCheck" />
+
         <TextView
             android:id="@+id/notExEmailText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="2dp"
             android:text="존재하지 않는 이메일입니다."
-            android:textSize="14dp"
             android:textColor="@android:color/holo_red_dark"
-            android:visibility="invisible"
-            />
-
+            android:textSize="14dp"
+            android:visibility="invisible" />
 
         <EditText
             android:id="@+id/logIn_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="21dp"
+            android:layout_marginTop="11dp"
+            android:backgroundTint="#B2FFFFFF"
             android:fontFamily="@font/inter_light"
             android:hint="비밀번호를 입력해주세요"
+            android:inputType="textPassword"
+            android:lastBaselineToBottomHeight="20dp"
+            android:maxLines="1"
             android:textColor="#B2FFFFFF"
             android:textColorHint="#B2FFFFFF"
-
-
             android:textSize="15sp"
             tools:ignore="TouchTargetSizeCheck" />
+
         <TextView
             android:id="@+id/misMatchText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="이메일과 비밀번호가 일치하지 않습니다.."
-            android:textSize="14dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/inter_medium"
+            android:text="이메일과 비밀번호가 일치하지 않습니다."
             android:textColor="@android:color/holo_red_dark"
-            android:visibility="invisible"
-            />
+            android:textSize="12dp"
+            android:visibility="invisible" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/logIn_wrong"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Group21"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginBottom="281dp"
-        android:fontFamily="@font/inter_light"
-        android:text="아이디와 비밀번호가 일치하지 않습니다."
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="12sp"
-        android:visibility="invisible" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/logIn_wrong"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@+id/Group21"-->
+    <!--        android:layout_alignParentStart="true"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_marginStart="52dp"-->
+    <!--        android:layout_marginTop="18dp"-->
+    <!--        android:layout_marginBottom="281dp"-->
+    <!--        android:fontFamily="@font/inter_light"-->
+    <!--        android:text="아이디와 비밀번호가 일치하지 않습니다."-->
+    <!--        android:textColor="@android:color/holo_red_dark"-->
+    <!--        android:textSize="12sp"-->
+    <!--        android:visibility="invisible" />-->
 
-    <ImageButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/logIn_button"
-        android:layout_width="301dp"
-        android:layout_height="41dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="29dp"
-        android:layout_marginBottom="178dp"
-        android:background="@drawable/log_button"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="505dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="107dp"
+        android:background="@color/red_COR1"
+        android:fontFamily="@font/inter_medium"
+        android:foreground="?selectableItemBackground"
+        android:gravity="center"
+        android:minHeight="0dp"
+        android:paddingVertical="12.48dp"
+        android:text="로그인하기"
+        android:textColor="@color/white"
+        android:textSize="15sp"
         tools:ignore="TextContrastCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <LinearLayout
-        android:id="@+id/Group_log"
-        android:layout_width="wrap_content"
+        android:id="@+id/group_log"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginBottom="72dp"
+        android:layout_marginTop="557dp"
+        android:layout_marginBottom="30dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -142,8 +157,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#00FFFFFF"
-            android:fontFamily="@font/inter_light"
+            android:background="@android:color/transparent"
+            android:maxLines="1"
+            android:paddingStart="36dp"
+            android:paddingEnd="18dp"
             android:text="회원가입"
             android:textColor="#80FFFFFF"
             android:textSize="15sp"
@@ -151,25 +168,31 @@
 
         <View
             android:id="@+id/view5"
-            android:layout_width="2dp"
+            android:layout_width="1dp"
             android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginVertical="22dp"
             android:background="#80FFFFFF" />
 
         <Button
             android:id="@+id/findPSW_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#00FFFFFF"
-            android:fontFamily="@font/inter_light"
-            android:text="비밀번호찾기"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:maxLines="1"
+            android:paddingHorizontal="18dp"
+            android:text="비밀번호 찾기"
             android:textColor="#80FFFFFF"
             android:textSize="15sp"
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
         <View
             android:id="@+id/view6"
-            android:layout_width="2dp"
+            android:layout_width="1dp"
             android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginVertical="22dp"
             android:background="#80FFFFFF" />
 
         <Button
@@ -177,19 +200,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#00FFFFFF"
-            android:fontFamily="@font/inter_light"
+            android:background="@android:color/transparent"
+            android:maxLines="1"
+            android:paddingStart="18dp"
+            android:paddingEnd="36dp"
             android:text=" 로그인 문의"
             android:textColor="#80FFFFFF"
             android:textSize="15sp"
             tools:ignore="TouchTargetSizeCheck" />
+
     </LinearLayout>
-
-
-
-    <!--
-Font family: Cafe24 Ohsquare
--->
-
 
 </RelativeLayout>

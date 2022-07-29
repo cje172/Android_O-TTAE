@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#F5F5F5"
     android:orientation="vertical"
-    tools:context=".RegisterPage">
+    tools:context=".RegisterPageActivity">
 
     <ScrollView
         android:id="@+id/scrollView1"
@@ -186,7 +186,7 @@
                         android:id="@+id/regButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/reg_button_img"
+                        android:background="@drawable/reg_btn_img"
                         android:layout_marginTop="30dp"
                         />
                 </LinearLayout>
@@ -196,7 +196,7 @@
                     android:layout_width="16dp"
                     android:layout_height="16dp"
                     android:layout_marginTop="176dp"
-                    android:background="@drawable/icon_register_arrow" />
+                    android:background="@drawable/ic_register_arrow" />
 
             </LinearLayout>
 

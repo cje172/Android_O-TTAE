@@ -60,7 +60,7 @@ class MyFragment : Fragment() {
         someId = view.findViewById(R.id.some_id)
         logOutBtn = view.findViewById(R.id.Log_out_button)
         logOutBtn.setOnClickListener {
-            startActivity(Intent(mainActivity, LoginPage::class.java))
+            startActivity(Intent(mainActivity, LoginPageActivity::class.java))
         }
         someId.text = userId + "님의 선물 보따리"
 

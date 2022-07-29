@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chapter55">
 
-        <activity android:name=".RegisterPage"
+        <activity android:name=".RegisterPageActivity"
             android:exported="true"
             />
-        <activity android:name=".LoginPage"
+        <activity android:name=".LoginPageActivity"
             android:exported="true"
             />
         <activity

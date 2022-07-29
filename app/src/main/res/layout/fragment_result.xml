@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/result_teaset2"
+                android:src="@drawable/result_teaset2_img"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -43,7 +43,7 @@
                 android:layout_height="297dp"
                 android:alpha="0.5"
                 android:scaleType="centerCrop"
-                android:src="@drawable/result_teaset3"
+                android:src="@drawable/result_teaset3_img"
                 android:tintMode="src_atop"
                 app:layout_constraintTop_toBottomOf="@+id/friend_item"
                 app:tint="#B3000000" />
@@ -82,7 +82,7 @@
                 android:layout_height="89dp"
                 android:layout_marginStart="35dp"
                 android:layout_marginTop="11dp"
-                android:background="@drawable/result_teaset1"
+                android:background="@drawable/result_teaset1_img"
                 android:scaleType="centerCrop"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/result_first_line_view" />
@@ -195,7 +195,7 @@
                         android:background="@color/yellow_COR2"
                         android:padding="11dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/again_btn_img"
+                        android:src="@drawable/ic_again_btn"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />

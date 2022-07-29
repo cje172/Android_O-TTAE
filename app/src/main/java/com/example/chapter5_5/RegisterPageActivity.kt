@@ -6,21 +6,21 @@ import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 
-class RegisterPage : AppCompatActivity() {
+class RegisterPageActivity : AppCompatActivity() {
 
 
     lateinit var regButton: ImageButton
-    lateinit var register_name: EditText
-    lateinit var register_email:EditText
-    lateinit var register_password:EditText
-    lateinit var register_rePassword:EditText
-    lateinit var password_mismatch :TextView
+    lateinit var registerName: EditText
+    lateinit var registerEmail: EditText
+    lateinit var registerPassword: EditText
+    lateinit var registerRePassword: EditText
+    lateinit var passwordMismatch: TextView
+
     //db
     lateinit var dbManager: DBManager
     lateinit var sqlitedbW: SQLiteDatabase
@@ -31,22 +31,20 @@ class RegisterPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_page)
 
-
-
-        regButton=findViewById(R.id.regButton)
-        register_name=findViewById(R.id.register_name)
-        register_email=findViewById(R.id.register_email)
-        register_password=findViewById(R.id.register_password)
-        register_rePassword=findViewById(R.id.register_rePassword)
-        password_mismatch=findViewById(R.id.password_mismatch)
+        regButton = findViewById(R.id.regButton)
+        registerName = findViewById(R.id.register_name)
+        registerEmail = findViewById(R.id.register_email)
+        registerPassword = findViewById(R.id.register_password)
+        registerRePassword = findViewById(R.id.register_rePassword)
+        passwordMismatch = findViewById(R.id.password_mismatch)
 
         //db
-        dbManager = DBManager(this,"user",null,1)
+        dbManager = DBManager(this, "user", null, 1)
         //쓰기
 
         //읽기
-        sqlitedbR =dbManager.readableDatabase
-        sqlitedbW =dbManager.writableDatabase
+        sqlitedbR = dbManager.readableDatabase
+        sqlitedbW = dbManager.writableDatabase
 
 
 //        //아이디 중복 확인
@@ -60,11 +58,11 @@ class RegisterPage : AppCompatActivity() {
         regButton.setOnClickListener {
             //로그인 화면으로 이동
             //아이디 중복 확인
-           // checkId()
+            // checkId()
             //이메일 중복 확인
-           // checkEmail()
+            // checkEmail()
             //비밀번호 일치 확인
-           // checkPassword()
+            // checkPassword()
 
 //        var cursor: Cursor
 //        var userId:String=register_name.text.toString()
@@ -76,97 +74,93 @@ class RegisterPage : AppCompatActivity() {
 //            register_name.hint = "이미 있는 아이디 입니다."
 //
 //        }
-           //     startActivity(Intent(this, MainActivity::class.java))
-            if(checkId()&&checkEmail()&&checkPassword()) {
+            //     startActivity(Intent(this, MainActivity::class.java))
+            if (checkId() && checkEmail() && checkPassword()) {
                 //db에 정보 저장
 
-                sqlitedbW.execSQL("INSERT INTO user VALUES('"+register_name.text.toString()+"','"+register_email.text.toString()+"','"+register_password.text.toString()+"');")
+                sqlitedbW.execSQL("INSERT INTO user VALUES('" + registerName.text.toString() + "','" + registerEmail.text.toString() + "','" + registerPassword.text.toString() + "');")
                 //MyFragment에 유저 이름 전달
-             //   setDataAtFragment(MyFragment(), register_name.text.toString())
+                //   setDataAtFragment(MyFragment(), register_name.text.toString())
                 //ResultFragment에 유저 이름 전달
-               // setDataAtFragment2(ResultFragment(), register_name.text.toString())
+                // setDataAtFragment2(ResultFragment(), register_name.text.toString())
 //            if(checkEmail())
                 startActivity(Intent(this, MainActivity::class.java))
-              //  finish()
+                //  finish()
             }
         }
     }
 
-    private fun checkId():Boolean
-    {
+    private fun checkId(): Boolean {
         var cursor: Cursor
-        var userId:String=register_name.text.toString()
-        cursor =sqlitedbR.rawQuery("SELECT * FROM user WHERE name='$userId';",null)
+        var userId: String = registerName.text.toString()
+        cursor = sqlitedbR.rawQuery("SELECT * FROM user WHERE name='$userId';", null)
         //  var friendName = cursor.getString((cursor.getColumnIndex("friendName"))).toString()
-        //아이디 중복 확인
-        if(cursor.count>0)//중복있음
+
+        // 아이디 중복 확인
+        if (cursor.count > 0)  // 중복있음
         {
-           // password_mismatch.
-            password_mismatch.visibility = View.VISIBLE
-            password_mismatch.text="이미 있는 아이디 입니다."
-            register_name.hint = "이미 있는 아이디 입니다."
+            // password_mismatch
+            passwordMismatch.visibility = View.VISIBLE
+            passwordMismatch.text = "이미 있는 아이디 입니다."
+            registerName.hint = "이미 있는 아이디 입니다."
 
             return false
-        }
-         return true
-
-
-
-    }
-    private fun checkEmail():Boolean
-    {
-        var cursor: Cursor
-        var userEmail:String=register_email.text.toString()
-        cursor =sqlitedbR.rawQuery("SELECT * FROM user WHERE email='$userEmail';",null)
-        //  var friendName = cursor.getString((cursor.getColumnIndex("friendName"))).toString()
-        //이메일 중복 확인
-        if(cursor.count>0)//중복있음
-        {
-            register_email.hint = "이미 가입된 이메일 입니다."
-            return  false
         }
         return true
     }
-    private fun checkPassword():Boolean
-    {
 
-        var password:String=register_password.text.toString()
-        var password2:String=register_rePassword.text.toString()
+    private fun checkEmail(): Boolean {
+        var cursor: Cursor
+        var userEmail: String = registerEmail.text.toString()
+        cursor = sqlitedbR.rawQuery("SELECT * FROM user WHERE email='$userEmail';", null)
+        //  var friendName = cursor.getString((cursor.getColumnIndex("friendName"))).toString()
 
-        if(!password.equals(password2)) {
-            password_mismatch.visibility = View.VISIBLE
+        // 이메일 중복 확인
+        if (cursor.count > 0)//중복있음
+        {
+            registerEmail.hint = "이미 가입된 이메일 입니다."
 
             return false
         }
-        else
-        {
-            password_mismatch.visibility = View.INVISIBLE
+        return true
+    }
+
+    private fun checkPassword(): Boolean {
+        var password: String = registerPassword.text.toString()
+        var password2: String = registerRePassword.text.toString()
+
+        if (!password.equals(password2)) {
+            passwordMismatch.visibility = View.VISIBLE
+
+            return false
+        } else {
+            passwordMismatch.visibility = View.INVISIBLE
             return true
         }
 
         return true
     }
 
-    fun setDataAtFragment(fragment: Fragment, userId:String) {
-        val bundle = Bundle()
-        bundle.putString("userId", userId)
-
-        fragment.arguments = bundle
-       // setFragment(fragment)
-    }
-    fun setDataAtFragment2(fragment: Fragment, userId:String) {
+    fun setDataAtFragment(fragment: Fragment, userId: String) {
         val bundle = Bundle()
         bundle.putString("userId", userId)
 
         fragment.arguments = bundle
         // setFragment(fragment)
     }
+
+    fun setDataAtFragment2(fragment: Fragment, userId: String) {
+        val bundle = Bundle()
+        bundle.putString("userId", userId)
+
+        fragment.arguments = bundle
+        // setFragment(fragment)
+    }
+
     //데이터가 셋팅된 프래그먼트 띄우기
 //    fun setFragment(fragment: Fragment) {
 //        val transaction = supportFragmentManager.beginTransaction()
 //        transaction.replace(R.id.main_frm, fragment)
 //        transaction.commit()
 //    }
-
-
 }

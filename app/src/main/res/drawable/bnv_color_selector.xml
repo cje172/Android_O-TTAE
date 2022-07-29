@@ -3,5 +3,4 @@
     <!-- Bottom Navigation -->
     <item android:color="#FFFFFF" android:state_checked="true" />
     <item android:color="@color/white_COR3" />
-
 </selector>

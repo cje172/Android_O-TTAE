@@ -8,8 +8,6 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
@@ -54,7 +52,7 @@ class OnBoardingActivity : AppCompatActivity() {
             OnBoardingFragment(
                 "추천선물 리스트",
                 "모아보기",
-                R.drawable.on_boarding_first_img
+                R.drawable.on_boarding_sec_img
             )
         )
         onBoardingVPAdapter.addFragment(
@@ -81,7 +79,7 @@ class OnBoardingActivity : AppCompatActivity() {
         onBoardingStartBtn.setOnClickListener {
             // 로그인 화면으로 이동
 //            startActivity(Intent(this, MainActivity::class.java))
-            startActivity(Intent(this, LoginPage::class.java))
+            startActivity(Intent(this, LoginPageActivity::class.java))
 //            finish()
         }
 
