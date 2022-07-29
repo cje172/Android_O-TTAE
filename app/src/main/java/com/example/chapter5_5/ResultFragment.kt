@@ -25,8 +25,9 @@ class ResultFragment : Fragment() {
     lateinit var saveResultBtn: ImageButton
     lateinit var againButton: ImageButton
     lateinit var resultItemBg: ImageView
+    lateinit var resultItemIntro: TextView
 
-    lateinit var resultImg: View
+    lateinit var resultImg: ImageView
     private var result: String? = null    //전역변수로 사용
     private var myId: String? = null    //전역변수로 사용
     private var friendName: String? = null
@@ -64,7 +65,6 @@ class ResultFragment : Fragment() {
     ): View? {
         val view: View = inflater.inflate(R.layout.fragment_result, container, false)
 
-
 //        var result = arrayOfNulls<String>(5)
 //        setFragmentResultListener("requestKey") { requestKey, bundle ->
 //             result = bundle.getStringArray("bundleKey") as Array<String?>
@@ -84,6 +84,7 @@ class ResultFragment : Fragment() {
         giftImg = view.findViewById(R.id.cover_img)
         resultImg = view.findViewById(R.id.result_img)
         resultItemBg = view.findViewById(R.id.result_item_bg)
+        resultItemIntro = view.findViewById(R.id.result_item_intro)
         // 다시 검사하기 버튼
         againButton = view.findViewById(R.id.again_btn)
 
@@ -106,9 +107,9 @@ class ResultFragment : Fragment() {
 //        }
 
 
-        // answer로 스위치문작성 -> 결과지 세팅
+        // answer로 조건문 작성 -> 결과지 세팅
         when (result) {
-            // 1. I ,집. 허약, 보부상, 한식 -> 보드게임
+            // 1. I, 집, 허약, 보부상, 한식 -> 보드게임
             // 10100
             "10100" -> {
                 loadData()
@@ -118,13 +119,14 @@ class ResultFragment : Fragment() {
                 productName.text = "상프앙 / ARCHI MEMORY CARD GAME"
                 price.text = "13,000"
                 imgTemp = R.drawable.result_board_game1
-                resultImg.setBackgroundResource(R.drawable.result_board_game2)
+                resultImg.setImageResource(R.drawable.result_board_game2)
                 giftImg.setImageResource(R.drawable.result_board_game1)
                 friendItemComment = friendName + " 님을 위한 보드게임"
                 resultItemBg.setImageResource(R.drawable.result_board_game3)
+                resultItemIntro.text = getString(R.string.result_item_board_game_intro)
             }
 
-            // 2.E,밖,운동,보부상,양식 -> 운동인을 위한 운동가방
+            // 2. E, 밖, 운동, 보부상, 양식 -> 운동인을 위한 운동가방
             // 01001
             "01001" -> {
                 loadData()
@@ -134,13 +136,14 @@ class ResultFragment : Fragment() {
                 productName.text = "시랜드 / Hero_Black"
                 price.text = "34,000"
                 imgTemp = R.drawable.result_sports_bag1
-                resultImg.setBackgroundResource(R.drawable.result_sports_bag2)
+                resultImg.setImageResource(R.drawable.result_sports_bag2)
                 giftImg.setImageResource(R.drawable.result_sports_bag1)
                 friendItemComment = friendName + " 님을 위한 운동가방"
                 resultItemBg.setImageResource(R.drawable.result_sports_bag3)
+                resultItemIntro.text = getString(R.string.result_item_sports_bag_intro)
             }
 
-            // 3.I,집, 운동,미니멀, 양식 -> 단백질을 챙기고 집에만 있는 운동인을 위한 치킨 (배민 쿠폰)
+            // 3. I, 집, 운동, 미니멀, 양식 -> 단백질을 챙기고 집에만 있는 운동인을 위한 치킨 (배민 쿠폰)
             // 10011
             "10011" -> {
                 loadData()
@@ -150,29 +153,31 @@ class ResultFragment : Fragment() {
                 productName.text = "bhc 치킨 "
                 price.text = "21,000"
                 imgTemp = R.drawable.result_chicken1
-                resultImg.setBackgroundResource(R.drawable.result_chicken2)
+                resultImg.setImageResource(R.drawable.result_chicken2)
                 giftImg.setImageResource(R.drawable.result_chicken1)
                 friendItemComment = friendName + " 님을 위한 치킨 기프티콘"
                 resultItemBg.setImageResource(R.drawable.result_chicken3)
+                resultItemIntro.text = getString(R.string.result_item_chicken_intro)
             }
 
-            // 4.E,밖,허약,미니멀,한식-> 밖에 돌아다니는 걸 좋아하지만 허약한 친구를 위한 비타민
+            // 4. E, 밖, 허약, 미니멀, 한식 -> 밖에 돌아다니는 걸 좋아하지만 허약한 친구를 위한 비타민
             // 01110
-            "01110" -> {//제대로 안나옴
+            "01110" -> {
                 loadData()
 
                 // 비타민
-                friendItem.text = "밖에 돌아다니는 걸 좋아하지만 허약한 " + friendName + " 님을 위해\n" + "비타민 어때?"
+                friendItem.text = "밖에 돌아다니는 걸 좋아하지만 허약한\n" + friendName + " 님을 위해 비타민 어때?"
                 productName.text = "바이너랩 / 글로시 30포 레모나맛"
                 price.text = "21,000"
                 imgTemp = R.drawable.result_vitamin1
-                resultImg.setBackgroundResource(R.drawable.result_vitamin2)
+                resultImg.setImageResource(R.drawable.result_vitamin2)
                 giftImg.setImageResource(R.drawable.result_vitamin1)
                 friendItemComment = friendName + " 님을 위한 비타민"
                 resultItemBg.setImageResource(R.drawable.result_vitamin3)
+                resultItemIntro.text = getString(R.string.result_item_vitamin_intro)
             }
 
-            // 5.E,밖,허약,보부상,양식-> 밖을 잘 돌아다니는 친구를 위한 보조배터리
+            // 5. E, 밖, 허약, 보부상, 양식 -> 밖을 잘 돌아다니는 친구를 위한 보조배터리
             // 01101
             "01101" -> {
                 loadData()
@@ -182,29 +187,31 @@ class ResultFragment : Fragment() {
                 productName.text = "어프어프 / CLEANER PUNI-BLACK"
                 price.text = "13,000"
                 imgTemp = R.drawable.result_battery1
-                resultImg.setBackgroundResource(R.drawable.result_battery2)
+                resultImg.setImageResource(R.drawable.result_battery2)
                 giftImg.setImageResource(R.drawable.result_battery1)
                 friendItemComment = friendName + " 님을 위한 보조배터리"
                 resultItemBg.setImageResource(R.drawable.result_battery3)
+                resultItemIntro.text = getString(R.string.result_item_battery_intro)
             }
 
-            // 6.E,밖,운동인,보부상, 한식-> 외출을 자주하는 친구를 위한 계절밥상 기프티콘
+            // 6. E, 밖, 운동인, 보부상, 한식 -> 외출을 자주하는 친구를 위한 계절밥상 기프티콘
             // 01000
             "01000" -> {
                 loadData()
 
                 // 계절밥상
-                friendItem.text = "외출을 자주하는 한식파 " + friendName + " 님을 위해\n" + "계절밥상 상품권 어때?"
+                friendItem.text = "외출을 자주 하는 한식파 " + friendName + " 님을 위해\n" + "계절밥상 상품권 어때?"
                 productName.text = "계절밥상 상품권"
                 price.text = "21,000"
                 imgTemp = R.drawable.result_food1
-                resultImg.setBackgroundResource(R.drawable.result_food2)
+                resultImg.setImageResource(R.drawable.result_food2)
                 giftImg.setImageResource(R.drawable.result_food1)
                 friendItemComment = friendName + " 님을 위한 계절밥상 상품권"
                 resultItemBg.setImageResource(R.drawable.result_food3)
+                resultItemIntro.text = getString(R.string.result_item_food_intro)
             }
 
-            // 7.I,집,운동,미니멀,한식 -> I이지만 운동을 좋아하는 친구를 위한 운동기구 (덤벨)
+            // 7. I, 집, 운동, 미니멀, 한식 -> I이지만 운동을 좋아하는 친구를 위한 운동기구 (덤벨)
             // 10010
             "10010" -> {
                 loadData()
@@ -214,13 +221,14 @@ class ResultFragment : Fragment() {
                 productName.text = "와이벨 / Y-Bell 와이벨 XS (4.5kg) 케틀벨+덤벨+메디슨볼+푸쉬업바=와이벨"
                 imgTemp = R.drawable.result_fitness1
                 price.text = "31,000"
-                resultImg.setBackgroundResource(R.drawable.result_fitness2)
+                resultImg.setImageResource(R.drawable.result_fitness2)
                 giftImg.setImageResource(R.drawable.result_fitness1)
                 friendItemComment = friendName + " 님을 위한 덤벨"
                 resultItemBg.setImageResource(R.drawable.result_fitness3)
+                resultItemIntro.text = getString(R.string.result_item_fitness_intro)
             }
 
-            // 8.I,집,허약,미니멀,양식 -> 집에서 노는 친구를 위한 미니멀한 찻잔 세트(그릇세트) 양식메뉴에도 어울려!
+            // 8. I, 집, 허약, 미니멀, 양식 -> 집에서 노는 친구를 위한 미니멀한 찻잔 세트(그릇세트) 양식메뉴에도 어울려!
             // 10111
             "10111" -> {
                 loadData()
@@ -230,10 +238,11 @@ class ResultFragment : Fragment() {
                 productName.text = "1537 / 컵 앤 소서 - 커피잔 세트 (3종)"
                 price.text = "21,000"
                 imgTemp = R.drawable.result_teaset1
-                resultImg.setBackgroundResource(R.drawable.result_teaset2)
+                resultImg.setImageResource(R.drawable.result_teaset2)
                 giftImg.setImageResource(R.drawable.result_teaset1)
                 friendItemComment = friendName + " 님을 위한 찻잔세트"
                 resultItemBg.setImageResource(R.drawable.result_teaset3)
+                resultItemIntro.text = getString(R.string.result_item_teaset_intro)
             }
 
             else -> {
@@ -244,10 +253,11 @@ class ResultFragment : Fragment() {
                 productName.text = "설정 X"
                 price.text = "21,000"
                 imgTemp = R.drawable.result_teaset1
-                resultImg.setBackgroundResource(R.drawable.result_teaset2)
+                resultImg.setImageResource(R.drawable.result_teaset2)
                 giftImg.setImageResource(R.drawable.result_teaset1)
                 friendItemComment = friendName + " 님을 위한 찻잔세트"
                 resultItemBg.setImageResource(R.drawable.result_teaset3)
+                resultItemIntro.text = getString(R.string.result_item_teaset_intro)
             }
         }
 
@@ -266,7 +276,7 @@ class ResultFragment : Fragment() {
     }
 
     private fun saveResult() {
-//        var friendItemTemp: String = friendItem.text.toString()
+        var friendItemTemp: String = friendItem.text.toString()
         var productNameTemp: String = productName.text.toString()
         var priceTemp: String = price.text.toString()
 
@@ -274,8 +284,7 @@ class ResultFragment : Fragment() {
         // var imgTemp:Int=R.drawable.wonder_visitor_ball_cap
         //var imgTemp2:Int=R.drawable.product_list_cup_img
         myId = "1234"
-        sqlitedb.execSQL("INSERT INTO my VALUES('" + myId.toString() + "','" + friendItemComment + "','" + productNameTemp + "','" + priceTemp + "'," + imgTemp + ");")
-//        sqlitedb.execSQL("INSERT INTO my VALUES('" + myId.toString() + "','" + friendItem.text.toString() + "','" + productNameTemp + "','" + priceTemp + "'," + imgTemp + ");")
+        sqlitedb.execSQL("INSERT INTO my VALUES('" + myId.toString() + "','" + friendItemTemp.toString() + "','" + productNameTemp + "','" + priceTemp + "'," + imgTemp + ");")
     }
 
     private fun loadData() {

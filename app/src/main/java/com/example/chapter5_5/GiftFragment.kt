@@ -16,7 +16,7 @@ class GiftFragment : Fragment() {
     lateinit var giftCategoryLightGiftView: View
     lateinit var giftCategoryLuxuryView: View
 
-    lateinit var tabValue:SharedPreferences
+    lateinit var tabValue: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,29 +40,27 @@ class GiftFragment : Fragment() {
         }
 
 
-
         // 각 카테고리 버튼 클릭 시 상품 리스트 페이지로 이동
         giftCategoryBirthdayView.setOnClickListener {
-
+            sendData(0)
             transaction.replace(R.id.main_frm, ProductFragment())
             transaction.addToBackStack(null)
             transaction.commit()
         }
         giftCategoryParentsView.setOnClickListener {
-//            val productFragment = ProductFragment()
-//            bundle.putInt("select", 1)
-//            productFragment.arguments = bundle
-
+            sendData(1)
             transaction.replace(R.id.main_frm, ProductFragment())
             transaction.addToBackStack(null)
             transaction.commit()
         }
         giftCategoryLightGiftView.setOnClickListener {
+            sendData(2)
             transaction.replace(R.id.main_frm, ProductFragment())
             transaction.addToBackStack(null)
             transaction.commit()
         }
         giftCategoryLuxuryView.setOnClickListener {
+            sendData(3)
             transaction.replace(R.id.main_frm, ProductFragment())
             transaction.addToBackStack(null)
             transaction.commit()
@@ -71,10 +69,10 @@ class GiftFragment : Fragment() {
         return view
     }
 
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//
-//    }
+    private fun sendData(tabPosition: Int) {
+        var pref = this.activity?.getPreferences(0)
+        var editor = pref?.edit()
 
+        editor?.putInt("tabPosition", tabPosition)?.apply()
+    }
 }

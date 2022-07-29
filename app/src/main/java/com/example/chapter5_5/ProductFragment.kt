@@ -16,6 +16,7 @@ class ProductFragment : Fragment() {
     lateinit var productCategoryVp: ViewPager2
 
     private val productCategoryTab = arrayListOf("생일", "부모님", "가벼운 선물", "럭셔리", "연인")
+    private var resultTab: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,21 +52,20 @@ class ProductFragment : Fragment() {
         })
 
         // 비밀선물 화면에서 클릭한 카테고리에 해당하는 탭으로 이동
-//        val result:Int = arguments?.getInt("select")!!
-
-//        Log.d("select",result.toString())
-//        val tab: TabLayout.Tab? = productCategoryTb.getTabAt(result)
-//        tab?.select()
+        receiveData()
+        val tab: TabLayout.Tab? = productCategoryTb.getTabAt(resultTab)
+        tab?.select()
 
 
         return view
     }
 
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-////        val result: Int = arguments?.getInt("select")!!
-////        val tab: TabLayout.Tab? = productCategoryTb.getTabAt(requireArguments().getInt("select"))
-////        tab?.select()
-//    }
+    fun receiveData() {
+        var pref = this.activity?.getPreferences(0)
+        var tab = pref?.getInt("tabPosition", 0)
+
+        if (tab != null) {
+            resultTab = tab
+        }
+    }
 }

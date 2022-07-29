@@ -47,7 +47,7 @@ class QuestionFragment : Fragment() {
                     resultS += "0"
                     questionProgressTv.text = "2/5"
                     questionContentTv.text = "휴일을 어떻게 보내나요?"
-                    questionAnswerTopBtn.text = "집에서 이것 저것 하면서 논다"
+                    questionAnswerTopBtn.text = "집에서 이것저것 하면서 논다"
                     questionAnswerBottomBtn.text = "밖에서 여기저기 다니면서 논다"
                 }
                 50 -> {
@@ -117,7 +117,7 @@ class QuestionFragment : Fragment() {
                     resultS += "1"
                     questionProgressTv.text = "3/5"
                     questionContentTv.text = "운동을 좋아하나요?"
-                    questionAnswerTopBtn.text = "단백질얼마 들어있어?를 외치는 운동인"
+                    questionAnswerTopBtn.text = "단백질 얼마 들어있어?를 외치는 운동인"
                     questionAnswerBottomBtn.text = "숨쉬기 운동은 잊지 않는 허약인"
 
                 }
@@ -146,8 +146,8 @@ class QuestionFragment : Fragment() {
                     }
 
                     questionAnswerTopBtn.setOnClickListener {
-                        //아래 답 클릭
-                        resultS += "1"
+                        //위에 답 클릭
+                        resultS += "0"
 
                         // 결과지로 이동
                         sendAnswers()

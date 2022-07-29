@@ -42,6 +42,7 @@ class ParentsFragment : Fragment() {
 
         // 전체 보기 버튼 클릭 시 상품 리스트 페이지로 이동
         homeParentsAllBtn.setOnClickListener {
+            sendData(1)
             transaction.replace(R.id.main_frm, ProductFragment())
             transaction.addToBackStack(null)
             transaction.commit()
@@ -50,4 +51,10 @@ class ParentsFragment : Fragment() {
         return view
     }
 
+    private fun sendData(tabPosition: Int) {
+        var pref = this.activity?.getPreferences(0)
+        var editor = pref?.edit()
+
+        editor?.putInt("tabPosition", tabPosition)?.apply()
+    }
 }
