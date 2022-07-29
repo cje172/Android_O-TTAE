@@ -54,6 +54,7 @@ class ResultFragment : Fragment() {
 //        }
         arguments?.let {
             result = it.getString("result")    //데이터 수신
+            friendName=it.getString("friendId")
         }
         arguments?.let {
             myId = it.getString("userId")    //데이터 수신
@@ -62,7 +63,7 @@ class ResultFragment : Fragment() {
         }
         arguments?.let {
 
-            friendName=it.getString("friendId")+"혜온"
+           // friendName=it.getString("friendId")+"혜온"
 
         }
 
@@ -234,34 +235,6 @@ class ResultFragment : Fragment() {
         dbManager = DBManager(mainActivity,"my",null,1)
         sqlitedb =dbManager.writableDatabase
         saveResult()
-        //dbManager = DBManager(mainActivity,"my",null,1)
-//        friendItem = view.findViewById(R.id.friendItem)
-//        productName = view.findViewById(R.id. productName)
-//        price = view.findViewById(R.id.price)
-//        giftImg=view.findViewById(R.id.coverImg)
-      //  taker_info_first_name_edt =view.findViewById(R.id.taker_info_first_name_edt)
-       // var myId:String="qqq"
-        //임의로 사용자 아이디 설정
-      //  var myId:String="qqq"
-//        var friendItemTemp:String =friendItem.text.toString()
-//        var productNameTemp:String =productName.text.toString()
-//        var priceTemp:String =price.text.toString()
-//        var imgTemp:Int=R.drawable.wonder_visitor_ball_cap
-//        var imgTemp2:Int=R.drawable.product_list_cup_img
-
-      //  sqlitedb =dbManager.writableDatabase
-
-        //결과 저장하기 버튼 눌려지면
-//        save_result_button.setOnClickListener {
-//            dbManager = DBManager(mainActivity,"my",null,1)
-//            sqlitedb =dbManager.writableDatabase
-//            saveResult()
-//        }
-
-//
-//        sqlitedb.execSQL("INSERT INTO my VALUES('"+myId+"','"+friendItemTemp+"','"+productNameTemp+"','"+priceTemp+"',"+imgTemp+");")
-//        sqlitedb.execSQL("INSERT INTO my VALUES('"+myId+"','"+friendItemTemp+"','"+productNameTemp+"','"+priceTemp+"',"+imgTemp2+");")
-//        sqlitedb.execSQL("INSERT INTO my VALUES('"+myId+"','"+friendItemTemp+"','"+productNameTemp+"','"+priceTemp+"',"+imgTemp+");")
 
         sqlitedb.close()
 
@@ -275,7 +248,7 @@ class ResultFragment : Fragment() {
 
     private fun saveResult()
     {
-        var friendItemTemp:String =friendItem.text.toString()
+        //var friendItemTemp:String =friendItem.text.toString()
         var productNameTemp:String =productName.text.toString()
         var priceTemp:String =price.text.toString()
 
@@ -283,7 +256,7 @@ class ResultFragment : Fragment() {
        // var imgTemp:Int=R.drawable.wonder_visitor_ball_cap
         //var imgTemp2:Int=R.drawable.product_list_cup_img
         myId="1234"
-        sqlitedb.execSQL("INSERT INTO my VALUES('"+myId.toString()+"','"+friendItemTemp+"','"+productNameTemp+"','"+priceTemp+"',"+imgTemp+");")
+        sqlitedb.execSQL("INSERT INTO my VALUES('"+myId.toString()+"','"+friendItem.text.toString()+"','"+productNameTemp+"','"+priceTemp+"',"+imgTemp+");")
     }
 
 

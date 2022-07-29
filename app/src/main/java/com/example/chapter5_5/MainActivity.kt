@@ -48,6 +48,14 @@ class MainActivity : AppCompatActivity() {
         fragment.arguments = bundle
         setFragment(fragment)
     }
+
+    fun setDataAtFragment2(fragment: Fragment,  friendId :String) {
+        val bundle = Bundle()
+        bundle.putString("friendId",  friendId)
+
+        fragment.arguments = bundle
+        setFragment(fragment)
+    }
     //데이터가 셋팅된 프래그먼트 띄우기
     fun setFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()

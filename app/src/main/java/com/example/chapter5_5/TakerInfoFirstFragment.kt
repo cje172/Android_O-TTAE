@@ -28,7 +28,8 @@ class TakerInfoFirstFragment : Fragment() {
            name=view.findViewById(R.id.taker_info_first_name_edt)
             friendId=name.text.toString()
             //결과화면으로 친구 이름 넘기기
-            setDataAtFragment(ResultFragment(), friendId!!)
+            //setDataAtFragment(ResultFragment(), friendId!!)
+            sendAnswers()
             transaction.replace(R.id.main_frm, TakerInfoSecondFragment())
             transaction.addToBackStack(null)
             transaction.commit()
@@ -36,12 +37,20 @@ class TakerInfoFirstFragment : Fragment() {
 
         return view
     }
-    private fun setDataAtFragment(fragment: Fragment, friendId:String) {
-        val bundle = Bundle()
-        bundle.putString("friendId", friendId)
+//    private fun setDataAtFragment(fragment: Fragment, friendId:String) {
+//        val bundle2 = Bundle()
+//        bundle2.putString("friendId", friendId)
+//
+//        fragment.arguments = bundle2
+//        // setFragment(fragment)
+//    }
 
-        fragment.arguments = bundle
-        // setFragment(fragment)
+    fun sendAnswers() {
+
+        val mActivity = activity as MainActivity
+        mActivity.setDataAtFragment2(ResultFragment(), friendId!!)
+
+
     }
 
 }
