@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.TextView
 
 class LoginPageActivity : AppCompatActivity() {
@@ -56,15 +55,16 @@ class LoginPageActivity : AppCompatActivity() {
             if (availableLogin(cursor)) {
 //                misMatchText.visibility=View.INVISIBLE!
 //                notExEmailText.visibility=View.INVISIBLE
+//                sendData(cursor.getString((cursor.getColumnIndex("name"))).toString())
+
                 cursor.close()
                 sqlitedbR.close()
                 dbManager.close()
                 startActivity(Intent(this, MainActivity::class.java))
             }
-
         }
 
-        // 회원가입 전환
+        // 회원가입 화면으로 전환
         toReg_button.setOnClickListener {
             misMatchText.visibility = View.INVISIBLE
             notExEmailText.visibility = View.INVISIBLE
@@ -72,11 +72,12 @@ class LoginPageActivity : AppCompatActivity() {
         }
     }
 
-    private fun availableLogin(cursor: Cursor): Boolean {
+    fun availableLogin(cursor: Cursor): Boolean {
         if (cursor.count > 0)  // 아이디 존재
         {
-
-
+            while (cursor.moveToNext()) {
+                sendUserName(cursor.getString((cursor.getColumnIndex("name"))).toString())
+            }
 //            var cursor2: Cursor
 //            cursor2 =sqlitedbR.rawQuery("SELECT * FROM user;",null)
 //            notExEmailText.visibility=View.VISIBLE
@@ -106,8 +107,12 @@ class LoginPageActivity : AppCompatActivity() {
             misMatchText.text = "존재하지 않거나 비밀번호가 틀렸습니다."
             return false
         }
-
-
     }
 
+    private fun sendUserName(name: String) {
+        var pref = applicationContext.getSharedPreferences("name",0)
+        var editor = pref?.edit()
+
+        editor?.putString("name", name)?.apply()
+    }
 }

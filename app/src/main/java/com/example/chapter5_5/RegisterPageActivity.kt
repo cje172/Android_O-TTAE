@@ -84,7 +84,9 @@ class RegisterPageActivity : AppCompatActivity() {
                 //ResultFragment에 유저 이름 전달
                 // setDataAtFragment2(ResultFragment(), register_name.text.toString())
 //            if(checkEmail())
-                startActivity(Intent(this, MainActivity::class.java))
+//                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, LoginPageActivity::class.java))
+
                 //  finish()
             }
         }
@@ -116,7 +118,7 @@ class RegisterPageActivity : AppCompatActivity() {
         //  var friendName = cursor.getString((cursor.getColumnIndex("friendName"))).toString()
 
         // 이메일 중복 확인
-        if (cursor.count > 0)//중복있음
+        if (cursor.count > 0)  // 중복있음
         {
             registerEmail.hint = "이미 가입된 이메일 입니다."
 
@@ -162,5 +164,12 @@ class RegisterPageActivity : AppCompatActivity() {
 //        val transaction = supportFragmentManager.beginTransaction()
 //        transaction.replace(R.id.main_frm, fragment)
 //        transaction.commit()
+//    }
+
+//    private fun sendData(userId: String) {
+//        var pref = this.getPreferences(0)
+//        var editor = pref?.edit()
+//
+//        editor?.putString("userId", userId)?.apply()
 //    }
 }

@@ -5,11 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mainBnv: BottomNavigationView
+
+    var userName: String? = null
 
     // db
     lateinit var dbManager: DBManager
@@ -30,6 +31,9 @@ class MainActivity : AppCompatActivity() {
         mainBnv = findViewById(R.id.main_bnv)
 
         initBottomNavigation()
+        loadUserName()
+        sendUserName(userName.toString())
+
     }
 
     @Override
@@ -87,5 +91,19 @@ class MainActivity : AppCompatActivity() {
             }
             false
         }
+    }
+
+    private fun loadUserName() {
+        var pref = applicationContext.getSharedPreferences("name", 0)
+        var name = pref?.getString("name", "")
+
+        userName = name
+    }
+
+    private fun sendUserName(name: String) {
+        var pref = applicationContext.getSharedPreferences("name", 0)
+        var editor = pref?.edit()
+
+        editor?.putString("name", name)?.apply()
     }
 }

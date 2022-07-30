@@ -47,7 +47,6 @@ class MyFragment : Fragment() {
         arguments?.let {
             userId = it.getString("userId")    //데이터 수신
         }
-
     }
 
     override fun onCreateView(
@@ -56,24 +55,26 @@ class MyFragment : Fragment() {
     ): View? {
         val view: View = inflater.inflate(R.layout.fragment_my, container, false)
 
-        //사용자 이름 설정
+        // 사용자 이름 설정
         someId = view.findViewById(R.id.some_id)
         logOutBtn = view.findViewById(R.id.Log_out_button)
         logOutBtn.setOnClickListener {
             startActivity(Intent(mainActivity, LoginPageActivity::class.java))
         }
-        someId.text = userId + "님의 선물 보따리"
 
-        //db 읽어서 배열에 저장
+        // db 읽어서 배열에 저장
         dbManager = DBManager(mainActivity, "my", null, 1)
         sqlitedb = dbManager.readableDatabase
         var cursor: Cursor
-        //cursor =sqlitedb.rawQuery("SELECT * FROM my WHERE user = 'qqq';",null)
+        // cursor =sqlitedb.rawQuery("SELECT * FROM my WHERE user = 'qqq';",null)
 
-        //지워야함
+        // 지워야함
         userId = "1234"
         cursor = sqlitedb.rawQuery("SELECT * FROM my WHERE user='" + userId + "';", null)
 
+
+        // 사용자 이름 받아오기
+        loadUserName()
 
         while (cursor.moveToNext()) {
             var friendName = cursor.getString((cursor.getColumnIndex("friendName"))).toString()
@@ -122,7 +123,6 @@ class MyFragment : Fragment() {
         MyGiftItemRv.adapter = myRVAdapter
 
 
-
         return view
 
 //    private fun transXAni() {
@@ -139,5 +139,12 @@ class MyFragment : Fragment() {
 //        }
 //    }
 
+    }
+
+    private fun loadUserName() {
+        var pref = this.activity?.getSharedPreferences("name", 0)
+        var name = pref?.getString("name", "0")
+
+        someId.text = name + "님의 선물 보따리"
     }
 }
