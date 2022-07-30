@@ -1,181 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterPageActivity">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="34dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/register_title_tv"
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:text="회원가입하기"
-            android:textAlignment="textStart"
-            android:textColor="#6C6C6C"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/register_name_et"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
-            android:hint="이름을 입력해주세요"
-            android:maxLines="1"
-            android:textColor="@color/black"
-            android:textColorHint="#6C6C6C"
-            android:textSize="15sp"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <EditText
-            android:id="@+id/register_email_et"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
-            android:hint="이메일을 입력해주세요"
-            android:inputType="textEmailAddress"
-            android:maxLines="1"
-            android:textColorHint="#6C6C6C"
-            android:textSize="15sp"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <EditText
-            android:id="@+id/register_password_et"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
-            android:hint="비밀번호 설정(최소 8자리)"
-            android:inputType="textPassword"
-            android:maxLength="12"
-            android:maxLines="1"
-            android:textColorHint="#6C6C6C"
-            android:textSize="15sp"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <EditText
-            android:id="@+id/register_re_password_et"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
-            android:hint="비밀번호 재입력"
-            android:inputType="textPassword"
-            android:maxLength="12"
-            android:maxLines="1"
-            android:textColorHint="#6C6C6C"
-            android:textSize="15sp"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <TextView
-            android:id="@+id/register_password_mismatch_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="30dp"
-            android:text="비밀번호가 일치하지 않습니다."
-            android:textColor="@android:color/holo_red_dark"
-            android:visibility="invisible" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="19dp"
-            android:orientation="horizontal">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/register_check_box_layout"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="34dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-                <CheckBox
-                    android:id="@+id/register_all_agree_cb"
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/register_title_tv"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:buttonTint="#6C6C6C"
-                    android:padding="0dp"
-                    android:text="전체 동의하기"
+                    android:layout_marginTop="60dp"
+                    android:text="회원가입하기"
                     android:textAlignment="textStart"
                     android:textColor="#6C6C6C"
-                    android:textSize="15sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
-                <CheckBox
-                    android:id="@+id/register_first_cb"
+                <EditText
+                    android:id="@+id/register_name_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="70dp"
+                    android:hint="이름을 입력해주세요"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="#6C6C6C"
+                    android:textSize="15sp"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/register_email_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="70dp"
+                    android:hint="이메일을 입력해주세요"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:textColorHint="#6C6C6C"
+                    android:textSize="15sp"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/register_password_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="70dp"
+                    android:hint="비밀번호 설정(최소 8자리)"
+                    android:inputType="textPassword"
+                    android:maxLength="12"
+                    android:maxLines="1"
+                    android:textColorHint="#6C6C6C"
+                    android:textSize="15sp"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/register_re_password_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="70dp"
+                    android:hint="비밀번호 재입력"
+                    android:inputType="textPassword"
+                    android:maxLength="12"
+                    android:maxLines="1"
+                    android:textColorHint="#6C6C6C"
+                    android:textSize="15sp"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <TextView
+                    android:id="@+id/register_password_mismatch_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="#6C6C6C"
-                    android:padding="0dp"
-                    android:text="[필수] 서비스 이용약관"
-                    android:textAlignment="textStart"
-                    android:textColor="#6C6C6C"
-                    android:textSize="15sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/register_all_agree_cb" />
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="30dp"
+                    android:text="비밀번호가 일치하지 않습니다."
+                    android:textColor="@android:color/holo_red_dark"
+                    android:visibility="invisible" />
 
-                <CheckBox
-                    android:id="@+id/register_second_cb"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:buttonTint="#6C6C6C"
-                    android:padding="0dp"
-                    android:text="[필수] 개인정보수집 및 이용 동의"
-                    android:textAlignment="textStart"
-                    android:textColor="#6C6C6C"
-                    android:textSize="15sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/register_first_cb" />
+                    android:layout_marginTop="22dp"
+                    android:layout_marginBottom="100dp"
+                    android:orientation="horizontal">
 
-                <CheckBox
-                    android:id="@+id/register_third_cb"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="#6C6C6C"
-                    android:checked="false"
-                    android:padding="0dp"
-                    android:text="[필수] 연령 (만14세 이상) 확인"
-                    android:textAlignment="textStart"
-                    android:textColor="#6C6C6C"
-                    android:textSize="15sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/register_second_cb" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/register_check_box_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-                <CheckBox
-                    android:id="@+id/register_choice_cb"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="#6C6C6C"
-                    android:checked="false"
-                    android:padding="0dp"
-                    android:text="[선택] 앱 푸시 및 마케팅/이벤트 수신 동의"
-                    android:textAlignment="textStart"
-                    android:textColor="#6C6C6C"
-                    android:textSize="15sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/register_third_cb" />
+                        <CheckBox
+                            android:id="@+id/register_all_agree_cb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="#6C6C6C"
+                            android:padding="0dp"
+                            android:text="전체 동의하기"
+                            android:textAlignment="textStart"
+                            android:textColor="#6C6C6C"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                        <CheckBox
+                            android:id="@+id/register_first_cb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="#6C6C6C"
+                            android:padding="0dp"
+                            android:text="[필수] 서비스 이용약관"
+                            android:textAlignment="textStart"
+                            android:textColor="#6C6C6C"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/register_all_agree_cb" />
 
-        </LinearLayout>
+                        <CheckBox
+                            android:id="@+id/register_second_cb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="#6C6C6C"
+                            android:padding="0dp"
+                            android:text="[필수] 개인정보수집 및 이용 동의"
+                            android:textAlignment="textStart"
+                            android:textColor="#6C6C6C"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/register_first_cb" />
+
+                        <CheckBox
+                            android:id="@+id/register_third_cb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="#6C6C6C"
+                            android:checked="false"
+                            android:padding="0dp"
+                            android:text="[필수] 연령 (만14세 이상) 확인"
+                            android:textAlignment="textStart"
+                            android:textColor="#6C6C6C"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/register_second_cb" />
+
+                        <CheckBox
+                            android:id="@+id/register_choice_cb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="#6C6C6C"
+                            android:checked="false"
+                            android:padding="0dp"
+                            android:text="[선택] 앱 푸시 및 마케팅/이벤트 수신 동의"
+                            android:textAlignment="textStart"
+                            android:textColor="#6C6C6C"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/register_third_cb" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
 
         <Button
             android:id="@+id/register_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="30dp"
             android:layout_marginBottom="20dp"
+            android:background="@null"
             android:backgroundTint="@color/red_COR1"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="0dp"
             android:paddingVertical="12.48dp"
-            android:text="가입하기" />
+            android:text="가입하기"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</ScrollView>
+</LinearLayout>
