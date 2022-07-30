@@ -21,35 +21,35 @@ class DBManager(
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
     }
 
-    //insert 메소드
+    // insert 메소드
     fun insertGift(gift: MyGiftList) {
         val values = ContentValues()
-        //넘겨줄 컬럼의 매개변수 지정
+        // 넘겨줄 컬럼의 매개변수 지정
         values.put("friendItem", gift.friendItem)
         values.put("productName", gift.productName)
         values.put("price", gift.price)
         values.put("coverImg", gift.coverImg)
 
 
-        //쓰기나 수정이 가능한 데이터베이스 변수
+        // 쓰기나 수정이 가능한 데이터베이스 변수
         val wd = writableDatabase
         wd.insert("my", null, values)
-        //사용이 끝나면 반드시 close()를 사용하여 메모리 누수가 되지 않도록 합시다.
+        // 사용이 끝나면 반드시 close()를 사용하여 메모리 누수 방지
         wd.close()
     }
 
-    //select 메소드
+    // select 메소드
     fun selectProduct(): ArrayList<MyGiftList> {//MutableList<Memo>{
         val list = ArrayList<MyGiftList>()
-        //전체조회
+        // 전체조회
         val selectMy = "SELECT * FROM my WHERE friendItem ='ooo님을 위한 패션 아이템'"
-        //"SELECT * FROM my WHERE friendItem ='ooo님을 위한 패션 아이템'"
-        //읽기전용 데이터베이스 변수
+        // "SELECT * FROM my WHERE friendItem ='ooo님을 위한 패션 아이템'"
+        // 읽기전용 데이터베이스 변수
         val rd = readableDatabase
-        //데이터를 받아줍니다.
+        // 데이터 받아오기
         val cursor = rd.rawQuery(selectMy, null)
 
-        //반복문을 사용하여 list 에 데이터를 넘겨 줍시다.
+        // 반복문 사용하여 list에 데이터 넘겨주기
         while (cursor.moveToNext()) {
             val friendItem = cursor.getString(cursor.getColumnIndex("friendName"))
             val productName = cursor.getString(cursor.getColumnIndex("productName"))
@@ -64,7 +64,7 @@ class DBManager(
         return list
     }
 
-    //update 메소드
+    // update 메소드
     fun updateMemo(gift: MyGiftList) {
         val values = ContentValues()
 
@@ -78,7 +78,7 @@ class DBManager(
         wd.close()
     }
 
-    //delete 메소드
+    // delete 메소드
     fun deleteMemo(gift: MyGiftList) {
         val delete = "delete from my where id = ${gift.friendItem}"
         val db = writableDatabase
