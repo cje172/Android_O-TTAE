@@ -23,8 +23,8 @@ class MyFragment : Fragment() {
     lateinit var dbManager: DBManager
     lateinit var sqlitedb: SQLiteDatabase
     private var userId: String? = null
-    lateinit var someId: TextView
-    lateinit var logOutBtn: Button
+    lateinit var myTitleTv: TextView
+    lateinit var myLogOutBtn: Button
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -47,24 +47,23 @@ class MyFragment : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_my, container, false)
 
         // 사용자 이름 설정
-        someId = view.findViewById(R.id.some_id)
-        logOutBtn = view.findViewById(R.id.Log_out_button)
-        logOutBtn.setOnClickListener {
+        myTitleTv = view.findViewById(R.id.my_title_tv)
+        myLogOutBtn = view.findViewById(R.id.my_log_out_btn)
+        myLogOutBtn.setOnClickListener {
             startActivity(Intent(mainActivity, LoginPageActivity::class.java))
         }
 
         // db 읽어서 배열에 저장
         dbManager = DBManager(mainActivity, "my", null, 1)
         sqlitedb = dbManager.readableDatabase
-        var cursor: Cursor
 
         // 현재 로그인 한 user의 아이디를 가져오기
         loadUserName()
         // 가져온 user의 아이디를 사용하여 my 테이블에서 user의 선물추천 받은 기록을 불러오기
-        cursor = sqlitedb.rawQuery("SELECT * FROM my WHERE user='" + userId + "';", null)
+        var cursor: Cursor = sqlitedb.rawQuery("SELECT * FROM my WHERE user='" + userId + "';", null)
 
 
-        // 기록 개수만큼 GiftDatas(ArrayList)에 저장하기
+        // 기록 개수만큼 giftData(ArrayList)에 저장하기
         while (cursor.moveToNext()) {
             var friendName = cursor.getString((cursor.getColumnIndex("friendName"))).toString()
             var itemName = cursor.getString((cursor.getColumnIndex("itemName"))).toString()
@@ -95,6 +94,6 @@ class MyFragment : Fragment() {
         var pref = this.activity?.getSharedPreferences("name", 0)
         userId = pref?.getString("name", "0")
 
-        someId.text = userId + "님의 선물 보따리"
+        myTitleTv.text = userId + "님의 선물 보따리"
     }
 }

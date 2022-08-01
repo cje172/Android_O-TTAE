@@ -10,7 +10,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/some_id"
+            android:id="@+id/my_title_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -29,26 +29,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- 선물 보따리 -->
-        <!--        <ScrollView-->
-        <!--            android:id="@+id/myGift"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="320dp"-->
-        <!--            android:layout_marginTop="20dp"-->
-        <!--            android:background="@drawable/my_rectangle"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintHorizontal_bias="0.0"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@+id/some_id">-->
-        <!--        </ScrollView>-->
-
         <FrameLayout
-            android:id="@+id/my"
+            android:id="@+id/my_layout"
             android:layout_width="match_parent"
             android:layout_height="320dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/my_rectangle"
-            app:layout_constraintTop_toBottomOf="@+id/some_id" />
+            android:background="#F13A43"
+            app:layout_constraintTop_toBottomOf="@+id/my_title_tv" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/my_gift_list_rv"
@@ -60,15 +47,15 @@
             android:layout_marginBottom="12dp"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="@+id/my"
-            app:layout_constraintLeft_toLeftOf="@id/my"
-            app:layout_constraintRight_toRightOf="@id/my"
-            app:layout_constraintStart_toStartOf="@id/my"
-            app:layout_constraintTop_toTopOf="@id/my"
-            tools:listitem="@layout/item_recycler_my" />
+            app:layout_constraintBottom_toBottomOf="@+id/my_layout"
+            app:layout_constraintLeft_toLeftOf="@id/my_layout"
+            app:layout_constraintRight_toRightOf="@id/my_layout"
+            app:layout_constraintStart_toStartOf="@id/my_layout"
+            app:layout_constraintTop_toTopOf="@id/my_layout"
+            tools:listitem="@layout/item_my_recycler" />
 
         <ImageButton
-            android:id="@+id/icons8_sett"
+            android:id="@+id/my_setting_btn"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_alignParentLeft="true"
@@ -76,25 +63,24 @@
             android:layout_marginStart="81dp"
             android:layout_marginEnd="45dp"
             android:background="@drawable/ic_settings"
-            app:layout_constraintBottom_toBottomOf="@id/some_id"
+            app:layout_constraintBottom_toBottomOf="@id/my_title_tv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.627"
-            app:layout_constraintStart_toEndOf="@id/some_id"
-            app:layout_constraintTop_toTopOf="@+id/some_id" />
+            app:layout_constraintStart_toEndOf="@id/my_title_tv"
+            app:layout_constraintTop_toTopOf="@+id/my_title_tv" />
 
         <View
-            android:id="@+id/view"
+            android:id="@+id/my_bottom_view"
             android:layout_width="match_parent"
             android:layout_height="270dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/my">
-            <!--이상하면 이거 지우기-->
+            app:layout_constraintTop_toBottomOf="@+id/my_layout">
         </View>
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/my_about_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="34dp"
@@ -107,7 +93,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/my" />
+            app:layout_constraintTop_toBottomOf="@id/my_layout" />
 
         <View
             android:id="@+id/my_line_view"
@@ -119,10 +105,10 @@
             android:background="#6C6C6C"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            app:layout_constraintTop_toBottomOf="@+id/my_about_tv" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/my_user_info_edit_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="34dp"
@@ -136,7 +122,7 @@
             app:layout_constraintTop_toBottomOf="@id/my_line_view" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/user_notice_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="26dp"
@@ -144,12 +130,12 @@
             android:textAlignment="textStart"
             android:textColor="@android:color/black"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@id/textView4"
-            app:layout_constraintStart_toStartOf="@id/textView4"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintEnd_toEndOf="@id/my_user_info_edit_tv"
+            app:layout_constraintStart_toStartOf="@id/my_user_info_edit_tv"
+            app:layout_constraintTop_toBottomOf="@+id/my_user_info_edit_tv" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/my_customer_center_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="26dp"
@@ -157,12 +143,12 @@
             android:textAlignment="textStart"
             android:textColor="@android:color/black"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@id/textView5"
-            app:layout_constraintStart_toStartOf="@id/textView5"
-            app:layout_constraintTop_toBottomOf="@id/textView5" />
+            app:layout_constraintEnd_toEndOf="@id/user_notice_tv"
+            app:layout_constraintStart_toStartOf="@id/user_notice_tv"
+            app:layout_constraintTop_toBottomOf="@id/user_notice_tv" />
 
         <Button
-            android:id="@+id/Log_out_button"
+            android:id="@+id/my_log_out_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -178,7 +164,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            app:layout_constraintTop_toBottomOf="@+id/my_customer_center_tv" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
