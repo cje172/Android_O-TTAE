@@ -58,10 +58,10 @@ class ProductParentsFragment : Fragment() {
 
         // 금주의 이거 어때? 데이터 리스트
         weekProductDatas.apply {
-            add(WeekProduct("코지테이블", "아이보리앤도트 머그잔", R.drawable.product_list_cup_img))
-            add(WeekProduct("언폴드", "Copenhagen-bule 에코백", R.drawable.product_list_bag_img))
-            add(WeekProduct("비비디", "드레스 퍼퓸 100ml", R.drawable.product_list_perfume_img))
-            add(WeekProduct("라이프 아카이브", "라이프 아카이브 일회용 카메라", R.drawable.product_list_film_img))
+            add(WeekProduct("인사이디", "휴대용 미니 마사지건 IMG-BP", R.drawable.product_list_massage_gun_img))
+            add(WeekProduct("한우맘", "1등급 한우 선물세트 1.2kg", R.drawable.product_list_meat_img))
+            add(WeekProduct("복순도가", "복순도가 손막걸리 935ml x 1병", R.drawable.product_list_makgeolli_img))
+            add(WeekProduct("이너셋", "더 진한 홍삼 100스틱 10g x 100포", R.drawable.product_list_red_ginseng_img))
         }
 
         // 어댑터와 데이터 리스트 연결

@@ -27,10 +27,10 @@ class LuxuryFragment : Fragment() {
         val transaction = (context as MainActivity).supportFragmentManager.beginTransaction()
 
         productDatas.apply {
-            add(Product("코지테이블", "아이보리앤도트 머그잔", "8,400", R.drawable.product_list_cup_img))
-            add(Product("언폴드", "Copenhagen-bule 에코백", "9,800", R.drawable.product_list_bag_img))
-            add(Product("라이프 아카이브", "라이프 아카이브 일회용 카메라", "20,120", R.drawable.product_list_film_img))
-            add(Product("비비디", "드레스 퍼퓸 100ml", "8,950", R.drawable.product_list_perfume_img))
+            add(Product("DIOR", "[각인/선물포장] 립 글로우", "47,000", R.drawable.product_list_dior_img))
+            add(Product("젠틀몬스터", "릭 01", "259,000", R.drawable.product_list_sunglasses_img))
+            add(Product("판도라", "신탄생석 참 목걸이세트", "98,000", R.drawable.product_list_pandora_img))
+            add(Product("샤넬", "블루 드 샤넬 오 드 빠르펭 50ml", "127,000", R.drawable.product_list_chanel_img))
         }
 
         // 어댑터와 데이터 리스트 연결

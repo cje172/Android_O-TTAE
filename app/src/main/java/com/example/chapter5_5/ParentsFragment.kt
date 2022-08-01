@@ -26,10 +26,10 @@ class ParentsFragment : Fragment() {
         val transaction = (context as MainActivity).supportFragmentManager.beginTransaction()
 
         productDatas.apply {
-            add(Product("언폴드", "Copenhagen-bule 에코백", "9,800", R.drawable.product_list_bag_img))
-            add(Product("비비디", "드레스 퍼퓸 100ml", "8,950", R.drawable.product_list_perfume_img))
-            add(Product("라이프 아카이브", "라이프 아카이브 일회용 카메라", "20,120", R.drawable.product_list_film_img))
-            add(Product("코지테이블", "아이보리앤도트 머그잔", "8,400", R.drawable.product_list_cup_img))
+            add(Product("인사이디", "휴대용 미니 마사지건 IMG-BP", "59,900", R.drawable.product_list_massage_gun_img))
+            add(Product("한우맘", "1등급 한우 선물세트 1.2kg", "79,000", R.drawable.product_list_meat_img))
+            add(Product("복순도가", "복순도가 손막걸리 935ml x 1병", "12,000", R.drawable.product_list_makgeolli_img))
+            add(Product("이너셋", "더 진한 홍삼 100스틱 10g x 100포", "44,900", R.drawable.product_list_red_ginseng_img))
         }
 
         // 어댑터와 데이터 리스트 연결

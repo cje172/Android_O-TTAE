@@ -28,10 +28,10 @@ class LightGiftFragment : Fragment() {
         val transaction = (context as MainActivity).supportFragmentManager.beginTransaction()
 
         productDatas.apply {
-            add(Product("비비디", "드레스 퍼퓸 100ml", "8,950", R.drawable.product_list_perfume_img))
-            add(Product("라이프 아카이브", "라이프 아카이브 일회용 카메라", "20,120", R.drawable.product_list_film_img))
-            add(Product("코지테이블", "아이보리앤도트 머그잔", "8,400", R.drawable.product_list_cup_img))
-            add(Product("언폴드", "Copenhagen-bule 에코백", "9,800", R.drawable.product_list_bag_img))
+            add(Product("대봉식품", "둘이 함께 먹는 매일견과 20g x 60봉", "25,430", R.drawable.product_list_nut_img))
+            add(Product("경남제약", "카카오 레모나산 2g 100포", "17,450", R.drawable.product_list_lemona_img))
+            add(Product("캐릭터주방", "돌아온 스누피 댄스댄스 글라스잔 2P세트", "17,850", R.drawable.product_list_glass_img))
+            add(Product("원더커피", "더치커피 5종원두 혼합 100팩", "18,900", R.drawable.product_list_coffee_img))
         }
 
         // 어댑터와 데이터 리스트 연결

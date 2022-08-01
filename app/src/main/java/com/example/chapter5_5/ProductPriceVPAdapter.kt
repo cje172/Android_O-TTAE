@@ -16,9 +16,9 @@ class ProductPriceVPAdapter(
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> PriceAllFragment()  // 전체
-            1 -> PriceAllFragment()  // 1만원 이하
-            2 -> PriceAllFragment()  // 2~4만원대
-            else -> PriceAllFragment()  // 5만원 이상
+            1 -> PriceOneFragment()  // 1만원 이하
+            2 -> PriceTwoFourFragment()  // 2~4만원대
+            else -> PriceFiveFragment()  // 5만원 이상
         }
     }
 }
