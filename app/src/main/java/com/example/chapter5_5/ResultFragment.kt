@@ -87,6 +87,8 @@ class ResultFragment : Fragment() {
         resultItemIntro = view.findViewById(R.id.result_item_intro)
         // 다시 검사하기 버튼
         againButton = view.findViewById(R.id.again_btn)
+        //저장 버튼
+        saveResultBtn=view.findViewById(R.id.save_result_btn)
 
         val transaction = (context as MainActivity).supportFragmentManager.beginTransaction()
 
@@ -96,15 +98,7 @@ class ResultFragment : Fragment() {
             transaction.commit()
         }
 
-        //결과 저장하기 버튼
-//        saveResultBtn=view.findViewById(R.id.save_result_btn)
-//        saveResultBtn.setOnClickListener {
-//
-//            dbManager = DBManager(mainActivity,"my",null,1)
-//            sqlitedb =dbManager.writableDatabase
-//            saveResult()
-//
-//        }
+
 
 
         // answer로 조건문 작성 -> 결과지 세팅
@@ -261,11 +255,22 @@ class ResultFragment : Fragment() {
             }
         }
 
-        dbManager = DBManager(mainActivity, "my", null, 1)
-        sqlitedb = dbManager.writableDatabase
-        saveResult()
+//        dbManager = DBManager(mainActivity, "my", null, 1)
+//        sqlitedb = dbManager.writableDatabase
+//        saveResult()
 
-        sqlitedb.close()
+   //     결과 저장하기 버튼
+
+        saveResultBtn.setOnClickListener {
+
+            dbManager = DBManager(mainActivity,"my",null,1)
+            sqlitedb =dbManager.writableDatabase
+            saveResult()
+            sqlitedb.close()
+
+        }
+
+
 
 
         //  title="테스트입니다"
