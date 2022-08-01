@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Chapter5-5</string>
+    <string name="app_name">어때</string>
     <string-array name="taker_info_age_entries">
         <item>10대</item>
         <item>20대</item>

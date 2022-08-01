@@ -14,7 +14,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.chapter5_5"
+        applicationId "com.example.o_ttae"
         minSdkVersion 24
         targetSdkVersion 32
         versionCode 1
