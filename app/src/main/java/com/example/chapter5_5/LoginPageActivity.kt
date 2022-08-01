@@ -76,29 +76,9 @@ class LoginPageActivity : AppCompatActivity() {
             while (cursor.moveToNext()) {
                 sendUserName(cursor.getString((cursor.getColumnIndex("name"))).toString())
             }
-//            var cursor2: Cursor
-//            cursor2 =sqlitedbR.rawQuery("SELECT * FROM user;",null)
-//            notExEmailText.visibility=View.VISIBLE
-//            notExEmailText.text=cursor2.count.toString()
-//            notExEmailText.visibility=View.INVISIBLE
-//            misMatchText.visibility=View.VISIBLE
-//            // password_mismatch.
 
-            // var passwordTemp:String=cursor2.getString((cursor.getColumnIndex("password"))).toString()
-            //  notExEmailText.visibility=View.VISIBLE
-            // notExEmailText.text=emailTemp
             return true
-//
-//            if(logIn_password.text.toString().equals(passwordTemp))
-//                return true
-//            else
-//            {
-//                //아이디는 존재 비밀번호 일치 x
-//                //이메일과 비밀번호가 일치하지 않습니다.
-//                    notExEmailText.visibility=View.INVISIBLE
-//                    misMatchText.visibility=View.VISIBLE
-//                return false
-//            }
+
         } else {
             // 가입된 적이 없는 이메일이라고 메시지 띄우기
             loginMismatchTv.visibility = View.VISIBLE

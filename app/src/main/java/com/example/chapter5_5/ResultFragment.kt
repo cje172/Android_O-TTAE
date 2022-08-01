@@ -45,18 +45,14 @@ class ResultFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        setFragmentResultListener("requestKey") { requestKey, bundle ->
-//            val result = bundle.getString("bundleKey")
-//            // Do something with the result
-//        }
+
         arguments?.let {
+            //QuestionFragment에서 검사한 결과를 받아오기
             result = it.getString("result")    //데이터 수신
-            friendName = it.getString("friendId")
+
         }
 
-//        arguments?.let {
-//            myId = it.getString("userId")    //데이터 수신
-//        }
+
     }
 
     override fun onCreateView(
@@ -65,19 +61,9 @@ class ResultFragment : Fragment() {
     ): View? {
         val view: View = inflater.inflate(R.layout.fragment_result, container, false)
 
-//        var result = arrayOfNulls<String>(5)
-//        setFragmentResultListener("requestKey") { requestKey, bundle ->
-//             result = bundle.getStringArray("bundleKey") as Array<String?>
-//            // Do something with the result
-//        }
-        // var answer:String
-//        setFragmentResultListener("request") { key, bundle ->
-////            bundle.getString("senderKey")?.let { value ->
-////                binding.textView.text = value
-//            var answer = bundle.getString("senderKey")
-//            }
 
-        // 결과지 세팅할 것들
+
+        // 결과지에 세팅할 것들
         friendItem = view.findViewById(R.id.friend_item)
         productName = view.findViewById(R.id.product_name)
         price = view.findViewById(R.id.gift_price)
@@ -85,13 +71,10 @@ class ResultFragment : Fragment() {
         resultImg = view.findViewById(R.id.result_img)
         resultItemBg = view.findViewById(R.id.result_item_bg)
         resultItemIntro = view.findViewById(R.id.result_item_intro)
-        // 다시 검사하기 버튼
-        againButton = view.findViewById(R.id.again_btn)
-        //저장 버튼
-        saveResultBtn=view.findViewById(R.id.save_result_btn)
 
         val transaction = (context as MainActivity).supportFragmentManager.beginTransaction()
-
+        // 다시 검사하기 버튼
+        againButton = view.findViewById(R.id.again_btn)
         againButton.setOnClickListener {
             transaction.replace(R.id.main_frm, TakerInfoFirstFragment())
             transaction.addToBackStack(null)
@@ -100,8 +83,7 @@ class ResultFragment : Fragment() {
 
 
 
-
-        // answer로 조건문 작성 -> 결과지 세팅
+        // result로 조건문 작성 -> 결과지 세팅
         when (result) {
             // 1. I, 집, 허약, 보부상, 한식 -> 보드게임
             // 10100
@@ -255,11 +237,10 @@ class ResultFragment : Fragment() {
             }
         }
 
-//        dbManager = DBManager(mainActivity, "my", null, 1)
-//        sqlitedb = dbManager.writableDatabase
-//        saveResult()
 
-   //     결과 저장하기 버튼
+
+         //결과 저장하기 버튼
+        saveResultBtn=view.findViewById(R.id.save_result_btn)
 
         saveResultBtn.setOnClickListener {
 
@@ -270,27 +251,19 @@ class ResultFragment : Fragment() {
 
         }
 
-
-
-
-        //  title="테스트입니다"
-        //  price.text=result.toString()
-
-        //    giftImg.setImageResource(imgTemp!!)
         return view
     }
-
+    //저장 버튼 누르면 호출되는 함수
     private fun saveResult() {
         var productNameTemp: String = productName.text.toString()
         var priceTemp: String = price.text.toString()
 
-        // var imgTemp:Int=R.drawable.wonder_visitor_ball_cap
-        //var imgTemp2:Int=R.drawable.product_list_cup_img
-     //   myId = "1234"
         loadUserName()
+    //테이블에 검사 결과 저장
         sqlitedb.execSQL("INSERT INTO my VALUES('" + myId.toString() + "','" + friendItemComment + "','" + productNameTemp + "','" + priceTemp + "'," + imgTemp + ");")
     }
 
+    //추천받을 친구이름 가져오는 함수
     private fun loadData() {
         var pref = this.activity?.getPreferences(0)
         var name = pref?.getString("friendName", "")
@@ -299,6 +272,7 @@ class ResultFragment : Fragment() {
     }
 
 
+    //현재 검사를 진행하고 이름 user아이디 가져오는 함수
     private fun loadUserName() {
         var pref = this.activity?.getSharedPreferences("name", 0)
          myId = pref?.getString("name", "0")

@@ -39,6 +39,7 @@ class TakerInfoSecondFragment : Fragment() {
         return view
     }
 
+
     private fun loadData() {
         var pref = this.activity?.getPreferences(0)
         var name = pref?.getString("friendName", "")

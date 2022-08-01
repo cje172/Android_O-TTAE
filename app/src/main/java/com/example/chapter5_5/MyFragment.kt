@@ -66,17 +66,15 @@ class MyFragment : Fragment() {
         dbManager = DBManager(mainActivity, "my", null, 1)
         sqlitedb = dbManager.readableDatabase
         var cursor: Cursor
-        // cursor =sqlitedb.rawQuery("SELECT * FROM my WHERE user = 'qqq';",null)
 
-        // 지워야함
-      //  userId = "1234"
+        //현재 로그인 한 user의아이디를 가져오기
         loadUserName()
+        //가져온 user의 아이디를 사용하여 my 테이블에서 user의 선물추천 받은 기록을 불러오기
         cursor = sqlitedb.rawQuery("SELECT * FROM my WHERE user='" + userId + "';", null)
 
 
-        // 사용자 이름 받아오기
-        loadUserName()
 
+        //기록 개수만큼 GiftDatas(ArrayList)에 저장하기
         while (cursor.moveToNext()) {
             var friendName = cursor.getString((cursor.getColumnIndex("friendName"))).toString()
             var itemName = cursor.getString((cursor.getColumnIndex("itemName"))).toString()
@@ -84,37 +82,13 @@ class MyFragment : Fragment() {
             var img = cursor.getInt((cursor.getColumnIndex("coverImg")))
             GiftDatas.apply {
                 add(MyGiftList(friendName, itemName, price, img!!))
-//            add(MyGiftList("111님을 위한 머그잔", "아이보리앤도트 머그잔", "8,400", R.drawable.list2_cup_img))
-//            add(MyGiftList("222님을 위한 패션아이템", "Copenhagen-bule 에코백", "9,800", R.drawable.list3_bag_img))
-//            add(MyGiftList("333님을 위한 스몰 력셔리", "드레스 퍼퓸 100ml", "8,950", R.drawable.list4_perfume_img))
-//            add(MyGiftList("444님을 위한 스몰 력셔리", "드레스 퍼퓸 100ml", "8,950", R.drawable.list4_perfume_img))
-//            add(MyGiftList("555님을 위한 스몰 력셔리", "드레스 퍼퓸 100ml", "8,950", R.drawable.list4_perfume_img))
-//            add(MyGiftList("666님을 위한 패션 아이템", "wonder visitor 볼캡", "12,000", R.drawable.wonder_visitor_ball_cap))
+
             }
 
         }
 
+        //fragment_my의 recyclerview와 연결
         MyGiftItemRv = view.findViewById(R.id.my_gift_list_rv)
-        //  Santa = view.findViewById(R.id.santa)
-//        GiftDatas.apply {
-//            add(MyGiftList("ooo님을 위한 패션 아이템", "wonder visitor 볼캡", "12,000", R.drawable.wonder_visitor_ball_cap))
-//            add(MyGiftList("111님을 위한 머그잔", "아이보리앤도트 머그잔", "8,400", R.drawable.list2_cup_img))
-//            add(MyGiftList("222님을 위한 패션아이템", "Copenhagen-bule 에코백", "9,800", R.drawable.list3_bag_img))
-//            add(MyGiftList("333님을 위한 스몰 력셔리", "드레스 퍼퓸 100ml", "8,950", R.drawable.list4_perfume_img))
-//            add(MyGiftList("444님을 위한 스몰 력셔리", "드레스 퍼퓸 100ml", "8,950", R.drawable.list4_perfume_img))
-//            add(MyGiftList("555님을 위한 스몰 력셔리", "드레스 퍼퓸 100ml", "8,950", R.drawable.list4_perfume_img))
-//            add(MyGiftList("666님을 위한 패션 아이템", "wonder visitor 볼캡", "12,000", R.drawable.wonder_visitor_ball_cap))
-//        }
-//        GiftDatas.apply {
-//            add(MyGiftList(friendName, itemName, price,img!!))
-////            add(MyGiftList("111님을 위한 머그잔", "아이보리앤도트 머그잔", "8,400", R.drawable.list2_cup_img))
-////            add(MyGiftList("222님을 위한 패션아이템", "Copenhagen-bule 에코백", "9,800", R.drawable.list3_bag_img))
-////            add(MyGiftList("333님을 위한 스몰 력셔리", "드레스 퍼퓸 100ml", "8,950", R.drawable.list4_perfume_img))
-////            add(MyGiftList("444님을 위한 스몰 력셔리", "드레스 퍼퓸 100ml", "8,950", R.drawable.list4_perfume_img))
-////            add(MyGiftList("555님을 위한 스몰 력셔리", "드레스 퍼퓸 100ml", "8,950", R.drawable.list4_perfume_img))
-////            add(MyGiftList("666님을 위한 패션 아이템", "wonder visitor 볼캡", "12,000", R.drawable.wonder_visitor_ball_cap))
-//        }
-
 
         val myRVAdapter = MyGiftListAdapter(GiftDatas)
         MyGiftItemRv.layoutManager = LinearLayoutManager(
@@ -126,22 +100,10 @@ class MyFragment : Fragment() {
 
         return view
 
-//    private fun transXAni() {
-//        btn_transX_left.setOnClickListener {
-//            btn_transX_left.animate().translationX(-400f * dp).setDuration(duration).withEndAction {
-//                btn_transX_left.translationX = 0f
-//            }.start()
-//        }
-//        btn_transX_right.setOnClickListener {
-//            btn_transX_right.animate().translationX(400f * dp).setDuration(duration).withEndAction {
-//                btn_transX_right.translationX = 0f
-//            }.start()
-//
-//        }
-//    }
 
     }
 
+    //user의 아이디를 가져와서 my페이지에 문구 세팅
     private fun loadUserName() {
         var pref = this.activity?.getSharedPreferences("name", 0)
         userId = pref?.getString("name", "0")
