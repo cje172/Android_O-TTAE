@@ -14,10 +14,10 @@ import java.util.ArrayList
 
 class ProductLuxuryFragment : Fragment() {
 
-    lateinit var productLuxuryWeekRv: RecyclerView
-    private var weekProductDatas = ArrayList<WeekProduct>()
+    private lateinit var productLuxuryWeekRv: RecyclerView
+    private var weekProductData = ArrayList<WeekProduct>()
 
-    lateinit var productCategoryPriceTb: TabLayout
+    private lateinit var productCategoryPriceTb: TabLayout
     lateinit var productCategoryPriceVp: ViewPager2
     private val productCategoryTab = arrayListOf("전체", "1만원 이하", "2~4만원대", "5만원 이상")
 
@@ -57,7 +57,7 @@ class ProductLuxuryFragment : Fragment() {
 
 
         // 금주의 이거 어때? 데이터 리스트
-        weekProductDatas.apply {
+        weekProductData.apply {
             add(WeekProduct("DIOR", "[각인/선물포장] 립 글로우", R.drawable.product_list_dior_img))
             add(WeekProduct("젠틀몬스터", "릭 01", R.drawable.product_list_sunglasses_img))
             add(WeekProduct("판도라", "신탄생석 참 목걸이세트", R.drawable.product_list_pandora_img))
@@ -65,16 +65,13 @@ class ProductLuxuryFragment : Fragment() {
         }
 
         // 어댑터와 데이터 리스트 연결
-        val luxuryWeekProductRVAdapter = WeekProductRVAdapter(weekProductDatas)
+        val luxuryWeekProductRVAdapter = WeekProductRVAdapter(weekProductData)
         productLuxuryWeekRv.layoutManager = LinearLayoutManager(
             context,
             LinearLayoutManager.HORIZONTAL, false
         )
         productLuxuryWeekRv.adapter = luxuryWeekProductRVAdapter
 
-
         return view
-
     }
-
 }

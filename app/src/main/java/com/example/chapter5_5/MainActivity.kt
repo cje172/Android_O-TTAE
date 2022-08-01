@@ -24,8 +24,6 @@ class MainActivity : AppCompatActivity() {
         dbManager = DBManager(this, "my", null, 1)
         sqlitedb = dbManager.readableDatabase
 
-        // db
-
         setContentView(R.layout.activity_main)
 
         mainBnv = findViewById(R.id.main_bnv)
@@ -33,14 +31,12 @@ class MainActivity : AppCompatActivity() {
         initBottomNavigation()
         loadUserName()
         sendUserName(userName.toString())
-
     }
 
     @Override
-    fun insert(arg0: String, arg1: String, arg2: String, table: String) {
+    fun insert(arg0: String, arg1: String, arg2: String) {
         sqlitedb = dbManager.writableDatabase
         sqlitedb.execSQL("INSERT INTO my VALUES('" + arg0 + "','" + arg1 + "','" + arg2 + "');")
-//"INSERT INTO personnel VALUES('"+str_name+"','"+str_gender+"',"+str_age+",'"+str_tel+"');")
     }
 
     fun setDataAtFragment(fragment: Fragment, result: String) {
@@ -93,6 +89,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // 로그인한 사용자 이름 받기
     private fun loadUserName() {
         var pref = applicationContext.getSharedPreferences("name", 0)
         var name = pref?.getString("name", "")
@@ -100,6 +97,7 @@ class MainActivity : AppCompatActivity() {
         userName = name
     }
 
+    // 로그인한 사용자 이름 전달
     private fun sendUserName(name: String) {
         var pref = applicationContext.getSharedPreferences("name", 0)
         var editor = pref?.edit()

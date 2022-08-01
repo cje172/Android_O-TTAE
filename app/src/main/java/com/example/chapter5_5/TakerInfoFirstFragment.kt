@@ -12,7 +12,7 @@ class TakerInfoFirstFragment : Fragment() {
 
     lateinit var takerInfoFirstNextBtn: Button
     lateinit var name: EditText
-    private var friendId: String? = null    // 전역변수로 사용
+    private var friendId: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,6 +40,7 @@ class TakerInfoFirstFragment : Fragment() {
         return view
     }
 
+    // 추천받을 친구 이름 저장
     private fun saveData(friendName: String) {
         var pref = this.activity?.getPreferences(0)
         var editor = pref?.edit()

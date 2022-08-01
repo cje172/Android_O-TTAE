@@ -30,7 +30,7 @@ class OnBoardingActivity : AppCompatActivity() {
         onBoardingStartBtn = findViewById(R.id.on_boarding_start_btn)
 
 
-        // ViewPager2 어댑터 연결
+        // TabLayout, ViewPager2 연결
         val onBoardingFm = supportFragmentManager
         val onBoardingLifecycle = lifecycle
         val onBoardingVPAdapter = OnBoardingVPAdapter(onBoardingFm, onBoardingLifecycle)
@@ -74,17 +74,12 @@ class OnBoardingActivity : AppCompatActivity() {
             }
         })
 
-
-        // 시작하기 버튼 클릭 시, 로그인 화면으로 이동
+        // 시작하기 버튼 클릭 시
         onBoardingStartBtn.setOnClickListener {
             // 로그인 화면으로 이동
-//            startActivity(Intent(this, MainActivity::class.java))
             startActivity(Intent(this, LoginPageActivity::class.java))
-//            finish()
         }
-
     }
-
 
     private inner class OnBoardingVPAdapter(
         fragmentManager: FragmentManager,

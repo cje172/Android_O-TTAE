@@ -1,6 +1,5 @@
 package com.example.chapter5_5
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,8 +14,6 @@ class GiftFragment : Fragment() {
     lateinit var giftCategoryParentsView: View
     lateinit var giftCategoryLightGiftView: View
     lateinit var giftCategoryLuxuryView: View
-
-    lateinit var tabValue: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -69,6 +66,7 @@ class GiftFragment : Fragment() {
         return view
     }
 
+    // 이동할 카테고리 탭 전달
     private fun sendData(tabPosition: Int) {
         var pref = this.activity?.getPreferences(0)
         var editor = pref?.edit()

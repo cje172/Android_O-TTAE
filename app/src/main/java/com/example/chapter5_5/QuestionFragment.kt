@@ -89,7 +89,6 @@ class QuestionFragment : Fragment() {
                         // 결과지로 이동
                         sendAnswers()
                     }
-
                 }
                 else -> {
                     // 결과지로 이동
@@ -162,7 +161,6 @@ class QuestionFragment : Fragment() {
 
         return view
     }
-
 
     fun sendAnswers() {
         val mActivity = activity as MainActivity

@@ -12,7 +12,6 @@ import android.widget.TextView
 
 class LoginPageActivity : AppCompatActivity() {
 
-
     lateinit var loginEmail: EditText
     lateinit var loginPassword: EditText
     lateinit var dbManager: DBManager
@@ -33,20 +32,17 @@ class LoginPageActivity : AppCompatActivity() {
         loginNotExEmailTv = findViewById(R.id.login_not_ex_email_tv)
         loginMismatchTv = findViewById(R.id.login_mismatch_tv)
 
-        // db
-
-        // var userEmail:String=logIn_email.text.toString()
-        // cursor =sqlitedbR.rawQuery("SELECT * FROM user WHERE email='$userEmail';",null)
-        // 이메일이 db에 존재하는지 체크
-        // 이메일과 비밀번호가 일치하는지 체크
-        // 메인화면으로 전환
+        // 로그인 버튼 누를 시
         loginBtn.setOnClickListener {
+            // db
             dbManager = DBManager(this, "user", null, 1)
             sqlitedbR = dbManager.readableDatabase
 
             var cursor: Cursor
             var userEmail: String = loginEmail.text.toString()
             var passwordS: String = loginPassword.text.toString()
+
+            // 이메일과 비밀번호가 일치하는지 체크
             cursor = sqlitedbR.rawQuery(
                 "SELECT * FROM user WHERE email='$userEmail' and password='$passwordS';",
                 null
@@ -58,14 +54,18 @@ class LoginPageActivity : AppCompatActivity() {
                 cursor.close()
                 sqlitedbR.close()
                 dbManager.close()
+
+                // 메인화면으로 전환
                 startActivity(Intent(this, MainActivity::class.java))
             }
         }
 
-        // 회원가입 화면으로 전환
+        // 회원가입 버튼 누를 시
         loginToRegBtn.setOnClickListener {
             loginMismatchTv.visibility = View.INVISIBLE
             loginNotExEmailTv.visibility = View.INVISIBLE
+
+            // 회원가입 화면으로 전환
             startActivity(Intent(this, RegisterPageActivity::class.java))
         }
     }
@@ -88,6 +88,7 @@ class LoginPageActivity : AppCompatActivity() {
         }
     }
 
+    // 로그인한 사용자 이름 저장
     private fun sendUserName(name: String) {
         var pref = applicationContext.getSharedPreferences("name", 0)
         var editor = pref?.edit()

@@ -8,7 +8,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 
-class HomeBannerFragment(private val imgRes: Int, private val titleRes: String, private val captionRes: String) :
+class HomeBannerFragment(
+    private val imgRes: Int,
+    private val titleRes: String,
+    private val captionRes: String
+) :
     Fragment() {
 
     lateinit var homeBannerImageIv: ImageView
@@ -28,7 +32,6 @@ class HomeBannerFragment(private val imgRes: Int, private val titleRes: String, 
         homeBannerImageIv.setImageResource(imgRes)
         homeBannerTitleTv.text = titleRes
         homeBannerCaptionTv.text = captionRes
-
 
         return view
     }

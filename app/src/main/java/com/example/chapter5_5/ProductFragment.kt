@@ -56,10 +56,10 @@ class ProductFragment : Fragment() {
         val tab: TabLayout.Tab? = productCategoryTb.getTabAt(resultTab)
         tab?.select()
 
-
         return view
     }
 
+    // 이동할 카테고리 탭 받아오기
     fun receiveData() {
         var pref = this.activity?.getPreferences(0)
         var tab = pref?.getInt("tabPosition", 0)

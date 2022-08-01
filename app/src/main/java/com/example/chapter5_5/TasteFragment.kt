@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 
 class TasteFragment : Fragment() {
 
@@ -15,8 +14,6 @@ class TasteFragment : Fragment() {
     ): View? {
         val view: View = inflater.inflate(R.layout.fragment_taste, container, false)
 
-
         return view
     }
-
 }

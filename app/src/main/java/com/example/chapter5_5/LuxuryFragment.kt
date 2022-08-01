@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
 class LuxuryFragment : Fragment() {
-    private var productDatas = ArrayList<Product>()
+    private var productData = ArrayList<Product>()
     lateinit var homeLuxuryProductRv: RecyclerView
     lateinit var homeLuxuryAllBtn: Button
 
@@ -26,7 +26,7 @@ class LuxuryFragment : Fragment() {
 
         val transaction = (context as MainActivity).supportFragmentManager.beginTransaction()
 
-        productDatas.apply {
+        productData.apply {
             add(Product("DIOR", "[각인/선물포장] 립 글로우", "47,000", R.drawable.product_list_dior_img))
             add(Product("젠틀몬스터", "릭 01", "259,000", R.drawable.product_list_sunglasses_img))
             add(Product("판도라", "신탄생석 참 목걸이세트", "98,000", R.drawable.product_list_pandora_img))
@@ -34,7 +34,7 @@ class LuxuryFragment : Fragment() {
         }
 
         // 어댑터와 데이터 리스트 연결
-        val homeLuxuryRVAdapter = ProductRVAdapter(productDatas)
+        val homeLuxuryRVAdapter = ProductRVAdapter(productData)
         homeLuxuryProductRv.layoutManager = LinearLayoutManager(
             context,
             LinearLayoutManager.VERTICAL, false
@@ -53,6 +53,7 @@ class LuxuryFragment : Fragment() {
         return view
     }
 
+    // 이동할 카테고리 탭 전달
     private fun sendData(tabPosition: Int) {
         var pref = this.activity?.getPreferences(0)
         var editor = pref?.edit()

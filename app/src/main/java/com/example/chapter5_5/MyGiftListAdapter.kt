@@ -12,7 +12,6 @@ class MyGiftListAdapter(private val giftList: ArrayList<MyGiftList>) :
 
     interface MyItemClickListener {
         fun onItemClick(giftList: MyGiftList)
-        fun onRemoveItem(position: Int)
     }
 
     private lateinit var mGiftClickListener: MyItemClickListener
@@ -22,11 +21,6 @@ class MyGiftListAdapter(private val giftList: ArrayList<MyGiftList>) :
 
     fun addItem(myGiftList: MyGiftList) {
         giftList.add(myGiftList)
-        notifyDataSetChanged()
-    }
-
-    fun removeItem(position: Int) {
-        giftList.removeAt(position)
         notifyDataSetChanged()
     }
 
@@ -47,15 +41,11 @@ class MyGiftListAdapter(private val giftList: ArrayList<MyGiftList>) :
     override fun onBindViewHolder(holder: MyGiftListAdapter.ViewHolder, position: Int) {
         holder.bind(giftList[position])
         holder.itemView.setOnClickListener { mGiftClickListener.onItemClick(giftList[position]) }
-//        holder.binding.giftRemoveBtn.setOnClickListener {
-//            removeItem(position)
-//            mGiftClickListener.onRemoveItem(position)
-//        }
     }
 
     override fun getItemCount(): Int = giftList.size
 
-    inner class ViewHolder(val binding: ItemRecyclerMyBinding) :
+    inner class ViewHolder(private val binding: ItemRecyclerMyBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(giftList: MyGiftList) {
             binding.giftCategory.text = giftList.friendItem

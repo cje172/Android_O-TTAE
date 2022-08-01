@@ -44,7 +44,7 @@ class ProductRVAdapter(private val productList: ArrayList<Product>) :
 
     override fun getItemCount(): Int = productList.size
 
-    inner class ViewHolder(val binding: ItemHomeCategoryProductBinding) :
+    inner class ViewHolder(private val binding: ItemHomeCategoryProductBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(product: Product) {
             binding.itemCompanyTv.text = product.company
@@ -53,5 +53,4 @@ class ProductRVAdapter(private val productList: ArrayList<Product>) :
             binding.itemProductImgIv.setImageResource(product.coverImg!!)
         }
     }
-
 }

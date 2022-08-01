@@ -12,7 +12,7 @@ import java.util.*
 
 class BirthdayFragment : Fragment() {
 
-    private var productDatas = ArrayList<Product>()
+    private var productData = ArrayList<Product>()
     lateinit var homeBirthdayProductRv: RecyclerView
     lateinit var homeBirthdayAllBtn: Button
 
@@ -27,7 +27,7 @@ class BirthdayFragment : Fragment() {
 
         val transaction = (context as MainActivity).supportFragmentManager.beginTransaction()
 
-        productDatas.apply {
+        productData.apply {
             add(Product("라이프 아카이브", "라이프 아카이브 일회용 카메라", "20,120", R.drawable.product_list_film_img))
             add(Product("코지테이블", "아이보리앤도트 머그잔", "8,400", R.drawable.product_list_cup_img))
             add(Product("언폴드", "Copenhagen-bule 에코백", "9,800", R.drawable.product_list_bag_img))
@@ -35,7 +35,7 @@ class BirthdayFragment : Fragment() {
         }
 
         // 어댑터와 데이터 리스트 연결
-        val homeBirthdayProductRVAdapter = ProductRVAdapter(productDatas)
+        val homeBirthdayProductRVAdapter = ProductRVAdapter(productData)
         homeBirthdayProductRv.layoutManager = LinearLayoutManager(
             context,
             LinearLayoutManager.VERTICAL, false
@@ -54,6 +54,7 @@ class BirthdayFragment : Fragment() {
         return view
     }
 
+    // 이동할 카테고리 탭 전달
     private fun sendData(tabPosition: Int) {
         var pref = this.activity?.getPreferences(0)
         var editor = pref?.edit()

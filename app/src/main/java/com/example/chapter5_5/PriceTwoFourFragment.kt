@@ -11,7 +11,7 @@ import java.util.ArrayList
 
 class PriceTwoFourFragment : Fragment() {
 
-    private var productDatas = ArrayList<Product>()
+    private var productData = ArrayList<Product>()
     lateinit var priceTwoFourProductRv: RecyclerView
 
     override fun onCreateView(
@@ -22,7 +22,7 @@ class PriceTwoFourFragment : Fragment() {
 
         priceTwoFourProductRv = view.findViewById(R.id.price_product_rv)
 
-        productDatas.apply {
+        productData.apply {
             add(Product("양키캔들", "우드윅 미니 캔들 + 루나 스몰 캔들워머 + 전구 2개", "29,900", R.drawable.product_list_candle_img))
             add(Product("코튼랩", "수건선물세트 40수 8매", "44,000", R.drawable.product_list_towel_img))
             add(Product("에이치앤프렌즈", "\"오둥이 입니다만\" 오둥이 모찌 바디필로우", "29,800", R.drawable.product_list_pillow_img))
@@ -30,13 +30,12 @@ class PriceTwoFourFragment : Fragment() {
         }
 
         // 어댑터와 데이터 리스트 연결
-        val priceAllProductRVAdapter = ProductRVAdapter(productDatas)
+        val priceAllProductRVAdapter = ProductRVAdapter(productData)
         priceTwoFourProductRv.layoutManager = LinearLayoutManager(
             context,
             LinearLayoutManager.VERTICAL, false
         )
         priceTwoFourProductRv.adapter = priceAllProductRVAdapter
-
 
         return view
     }

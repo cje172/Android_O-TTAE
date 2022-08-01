@@ -1,6 +1,5 @@
 package com.example.chapter5_5
 
-
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
@@ -11,7 +10,6 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-
 
 class ResultFragment : Fragment() {
 
@@ -28,8 +26,8 @@ class ResultFragment : Fragment() {
     lateinit var resultItemIntro: TextView
 
     lateinit var resultImg: ImageView
-    private var result: String? = null    //전역변수로 사용
-    private var myId: String? = null    //전역변수로 사용
+    private var result: String? = null
+    private var myId: String? = null
     private var friendName: String? = null
     private var imgTemp: Int? = null
 
@@ -38,21 +36,16 @@ class ResultFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
-        // 2. Context를 액티비티로 형변환해서 할당
         mainActivity = context as MainActivity
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         arguments?.let {
-            //QuestionFragment에서 검사한 결과를 받아오기
-            result = it.getString("result")    //데이터 수신
-
+            // QuestionFragment에서 검사한 결과를 받아오기
+            result = it.getString("result")  // 데이터 수신
         }
-
-
     }
 
     override fun onCreateView(
@@ -60,8 +53,6 @@ class ResultFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater.inflate(R.layout.fragment_result, container, false)
-
-
 
         // 결과지에 세팅할 것들
         friendItem = view.findViewById(R.id.friend_item)
@@ -71,8 +62,10 @@ class ResultFragment : Fragment() {
         resultImg = view.findViewById(R.id.result_img)
         resultItemBg = view.findViewById(R.id.result_item_bg)
         resultItemIntro = view.findViewById(R.id.result_item_intro)
+        saveResultBtn = view.findViewById(R.id.save_result_btn)
 
         val transaction = (context as MainActivity).supportFragmentManager.beginTransaction()
+
         // 다시 검사하기 버튼
         againButton = view.findViewById(R.id.again_btn)
         againButton.setOnClickListener {
@@ -80,8 +73,6 @@ class ResultFragment : Fragment() {
             transaction.addToBackStack(null)
             transaction.commit()
         }
-
-
 
         // result로 조건문 작성 -> 결과지 세팅
         when (result) {
@@ -238,32 +229,28 @@ class ResultFragment : Fragment() {
         }
 
 
-
-         //결과 저장하기 버튼
-        saveResultBtn=view.findViewById(R.id.save_result_btn)
-
+        //결과 저장하기 버튼
         saveResultBtn.setOnClickListener {
-
-            dbManager = DBManager(mainActivity,"my",null,1)
-            sqlitedb =dbManager.writableDatabase
+            dbManager = DBManager(mainActivity, "my", null, 1)
+            sqlitedb = dbManager.writableDatabase
             saveResult()
             sqlitedb.close()
-
         }
 
         return view
     }
-    //저장 버튼 누르면 호출되는 함수
+
+    // 저장 버튼 누르면 호출되는 함수
     private fun saveResult() {
         var productNameTemp: String = productName.text.toString()
         var priceTemp: String = price.text.toString()
 
         loadUserName()
-    //테이블에 검사 결과 저장
+        // 테이블에 검사 결과 저장
         sqlitedb.execSQL("INSERT INTO my VALUES('" + myId.toString() + "','" + friendItemComment + "','" + productNameTemp + "','" + priceTemp + "'," + imgTemp + ");")
     }
 
-    //추천받을 친구이름 가져오는 함수
+    // 추천받을 친구 이름 가져오는 함수
     private fun loadData() {
         var pref = this.activity?.getPreferences(0)
         var name = pref?.getString("friendName", "")
@@ -271,12 +258,9 @@ class ResultFragment : Fragment() {
         friendName = name
     }
 
-
-    //현재 검사를 진행하고 이름 user아이디 가져오는 함수
+    // 현재 검사를 진행하고 이름 user아이디 가져오는 함수
     private fun loadUserName() {
         var pref = this.activity?.getSharedPreferences("name", 0)
-         myId = pref?.getString("name", "0")
-
-
+        myId = pref?.getString("name", "0")
     }
 }

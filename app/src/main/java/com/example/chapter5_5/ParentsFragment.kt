@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class ParentsFragment : Fragment() {
-    private var productDatas = ArrayList<Product>()
-    lateinit var homeParentsProductRv: RecyclerView
-    lateinit var homeParentsAllBtn: Button
+    private var productData = ArrayList<Product>()
+    private lateinit var homeParentsProductRv: RecyclerView
+    private lateinit var homeParentsAllBtn: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,7 +25,7 @@ class ParentsFragment : Fragment() {
 
         val transaction = (context as MainActivity).supportFragmentManager.beginTransaction()
 
-        productDatas.apply {
+        productData.apply {
             add(Product("인사이디", "휴대용 미니 마사지건 IMG-BP", "59,900", R.drawable.product_list_massage_gun_img))
             add(Product("한우맘", "1등급 한우 선물세트 1.2kg", "79,000", R.drawable.product_list_meat_img))
             add(Product("복순도가", "복순도가 손막걸리 935ml x 1병", "12,000", R.drawable.product_list_makgeolli_img))
@@ -33,7 +33,7 @@ class ParentsFragment : Fragment() {
         }
 
         // 어댑터와 데이터 리스트 연결
-        val homeParentsRVAdapter = ProductRVAdapter(productDatas)
+        val homeParentsRVAdapter = ProductRVAdapter(productData)
         homeParentsProductRv.layoutManager = LinearLayoutManager(
             context,
             LinearLayoutManager.VERTICAL, false
@@ -51,6 +51,7 @@ class ParentsFragment : Fragment() {
         return view
     }
 
+    // 이동할 카테고리 탭 전달
     private fun sendData(tabPosition: Int) {
         var pref = this.activity?.getPreferences(0)
         var editor = pref?.edit()

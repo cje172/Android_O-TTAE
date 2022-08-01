@@ -5,11 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentManager
-import androidx.lifecycle.Lifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -17,10 +14,10 @@ import java.util.ArrayList
 
 class ProductBirthdayFragment : Fragment() {
 
-    lateinit var productBirthdayWeekRv: RecyclerView
-    private var weekProductDatas = ArrayList<WeekProduct>()
+    private lateinit var productBirthdayWeekRv: RecyclerView
+    private var weekProductData = ArrayList<WeekProduct>()
 
-    lateinit var productCategoryPriceTb: TabLayout
+    private lateinit var productCategoryPriceTb: TabLayout
     lateinit var productCategoryPriceVp: ViewPager2
     private val productCategoryTab = arrayListOf("전체", "1만원 이하", "2~4만원대", "5만원 이상")
 
@@ -61,7 +58,7 @@ class ProductBirthdayFragment : Fragment() {
 
 
         // 금주의 이거 어때? 데이터 리스트
-        weekProductDatas.apply {
+        weekProductData.apply {
             add(WeekProduct("라이프 아카이브", "라이프 아카이브 일회용 카메라", R.drawable.product_list_film_img))
             add(WeekProduct("코지테이블", "아이보리앤도트 머그잔", R.drawable.product_list_cup_img))
             add(WeekProduct("언폴드", "Copenhagen-bule 에코백", R.drawable.product_list_bag_img))
@@ -69,17 +66,13 @@ class ProductBirthdayFragment : Fragment() {
         }
 
         // 어댑터와 데이터 리스트 연결
-        val birthdayWeekProductRVAdapter = WeekProductRVAdapter(weekProductDatas)
+        val birthdayWeekProductRVAdapter = WeekProductRVAdapter(weekProductData)
         productBirthdayWeekRv.layoutManager = LinearLayoutManager(
             context,
             LinearLayoutManager.HORIZONTAL, false
         )
         productBirthdayWeekRv.adapter = birthdayWeekProductRVAdapter
 
-        //
-
         return view
-
     }
-
 }

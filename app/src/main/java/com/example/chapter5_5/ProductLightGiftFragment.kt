@@ -14,10 +14,10 @@ import java.util.ArrayList
 
 class ProductLightGiftFragment : Fragment() {
 
-    lateinit var productLightGiftWeekRv: RecyclerView
-    private var weekProductDatas = ArrayList<WeekProduct>()
+    private lateinit var productLightGiftWeekRv: RecyclerView
+    private var weekProductData = ArrayList<WeekProduct>()
 
-    lateinit var productCategoryPriceTb: TabLayout
+    private lateinit var productCategoryPriceTb: TabLayout
     lateinit var productCategoryPriceVp: ViewPager2
     private val productCategoryTab = arrayListOf("전체", "1만원 이하", "2~4만원대", "5만원 이상")
 
@@ -57,7 +57,7 @@ class ProductLightGiftFragment : Fragment() {
 
 
         // 금주의 이거 어때? 데이터 리스트
-        weekProductDatas.apply {
+        weekProductData.apply {
             add(WeekProduct("대봉식품", "둘이 함께 먹는 매일견과 20g x 60봉", R.drawable.product_list_nut_img))
             add(WeekProduct("경남제약", "카카오 레모나산 2g 100포", R.drawable.product_list_lemona_img))
             add(WeekProduct("캐릭터주방", "돌아온 스누피 댄스댄스 글라스잔 2P세트", R.drawable.product_list_glass_img))
@@ -65,15 +65,13 @@ class ProductLightGiftFragment : Fragment() {
         }
 
         // 어댑터와 데이터 리스트 연결
-        val lightGiftWeekProductRVAdapter = WeekProductRVAdapter(weekProductDatas)
+        val lightGiftWeekProductRVAdapter = WeekProductRVAdapter(weekProductData)
         productLightGiftWeekRv.layoutManager = LinearLayoutManager(
             context,
             LinearLayoutManager.HORIZONTAL, false
         )
         productLightGiftWeekRv.adapter = lightGiftWeekProductRVAdapter
 
-
         return view
     }
-
 }

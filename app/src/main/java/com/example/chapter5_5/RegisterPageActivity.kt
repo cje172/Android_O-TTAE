@@ -25,7 +25,7 @@ class RegisterPageActivity : AppCompatActivity() {
     lateinit var registerThirdCb: CheckBox
     lateinit var registerChoiceCb: CheckBox
 
-    //db
+    // db
     lateinit var dbManager: DBManager
     lateinit var sqlitedbW: SQLiteDatabase
     lateinit var sqlitedbR: SQLiteDatabase
@@ -46,7 +46,7 @@ class RegisterPageActivity : AppCompatActivity() {
         registerThirdCb = findViewById(R.id.register_third_cb)
         registerChoiceCb = findViewById(R.id.register_choice_cb)
 
-        //db
+        // db
         dbManager = DBManager(this, "user", null, 1)
 
         sqlitedbR = dbManager.readableDatabase  // 읽기

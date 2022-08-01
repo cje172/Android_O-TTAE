@@ -44,7 +44,7 @@ class WeekProductRVAdapter(private val weekProductList: ArrayList<WeekProduct>) 
 
     override fun getItemCount(): Int = weekProductList.size
 
-    inner class ViewHolder(val binding: ItemWeekProductBinding) :
+    inner class ViewHolder(private val binding: ItemWeekProductBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(weekProduct: WeekProduct) {
             binding.itemWeekProductCaptionTv.text = weekProduct.caption

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
 class CoupleFragment : Fragment() {
+
     private var productDatas = ArrayList<Product>()
     lateinit var homeCoupleProductRv: RecyclerView
     lateinit var homeCoupleAllBtn: Button
@@ -53,6 +54,7 @@ class CoupleFragment : Fragment() {
         return view
     }
 
+    // 이동할 카테고리 탭 전달
     private fun sendData(tabPosition: Int) {
         var pref = this.activity?.getPreferences(0)
         var editor = pref?.edit()

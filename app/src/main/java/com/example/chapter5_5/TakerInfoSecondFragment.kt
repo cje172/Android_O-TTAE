@@ -13,8 +13,6 @@ class TakerInfoSecondFragment : Fragment() {
     lateinit var takerInfoSecondNextBtn: Button
     lateinit var takerInfoSecondTitleTv: TextView
 
-    private var name: String = ""
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,7 +37,7 @@ class TakerInfoSecondFragment : Fragment() {
         return view
     }
 
-
+    // 추천받을 친구 이름 받아오기
     private fun loadData() {
         var pref = this.activity?.getPreferences(0)
         var name = pref?.getString("friendName", "")
