@@ -54,9 +54,9 @@ class ResultFragment : Fragment() {
             friendName = it.getString("friendId")
         }
 
-        arguments?.let {
-            myId = it.getString("userId")    //데이터 수신
-        }
+//        arguments?.let {
+//            myId = it.getString("userId")    //데이터 수신
+//        }
     }
 
     override fun onCreateView(
@@ -281,7 +281,8 @@ class ResultFragment : Fragment() {
 
         // var imgTemp:Int=R.drawable.wonder_visitor_ball_cap
         //var imgTemp2:Int=R.drawable.product_list_cup_img
-        myId = "1234"
+     //   myId = "1234"
+        loadUserName()
         sqlitedb.execSQL("INSERT INTO my VALUES('" + myId.toString() + "','" + friendItemComment + "','" + productNameTemp + "','" + priceTemp + "'," + imgTemp + ");")
     }
 
@@ -290,5 +291,13 @@ class ResultFragment : Fragment() {
         var name = pref?.getString("friendName", "")
 
         friendName = name
+    }
+
+
+    private fun loadUserName() {
+        var pref = this.activity?.getSharedPreferences("name", 0)
+         myId = pref?.getString("name", "0")
+
+
     }
 }

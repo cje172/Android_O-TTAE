@@ -69,7 +69,8 @@ class MyFragment : Fragment() {
         // cursor =sqlitedb.rawQuery("SELECT * FROM my WHERE user = 'qqq';",null)
 
         // 지워야함
-        userId = "1234"
+      //  userId = "1234"
+        loadUserName()
         cursor = sqlitedb.rawQuery("SELECT * FROM my WHERE user='" + userId + "';", null)
 
 
@@ -143,8 +144,8 @@ class MyFragment : Fragment() {
 
     private fun loadUserName() {
         var pref = this.activity?.getSharedPreferences("name", 0)
-        var name = pref?.getString("name", "0")
+        userId = pref?.getString("name", "0")
 
-        someId.text = name + "님의 선물 보따리"
+        someId.text = userId + "님의 선물 보따리"
     }
 }
