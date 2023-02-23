@@ -1,9 +1,8 @@
 # 🎁 어때?(O-TTAE)
 뭘 선물할지 모를 땐! 이거 "어때?"
 
-📽️ Presentation Video : https://www.youtube.com/watch?v=1oXPQtQgLx4&list=PL8F_Apv4yeyeaUplqrSTcGULyfzayA5q0
-
-📹 Demo Video : https://www.youtube.com/watch?v=Tx4TfPyuXIg&list=PL8F_Apv4yeyeaUplqrSTcGULyfzayA5q0&index=2
+📽️ [Presentation Video](https://www.youtube.com/watch?v=1oXPQtQgLx4&list=PL8F_Apv4yeyeaUplqrSTcGULyfzayA5q0)   
+📹 [Demo Video](https://www.youtube.com/watch?v=Tx4TfPyuXIg&list=PL8F_Apv4yeyeaUplqrSTcGULyfzayA5q0&index=2)
 
 <img src="https://user-images.githubusercontent.com/68229317/220828278-1fbe4cb4-d680-4c70-b931-f97ec2e51f6e.jpg" width="85%" height="85%"/>
 
@@ -18,30 +17,30 @@
 <table id = "ui_table">
    <tr style = "background-color:#FF000000; border-style:none;">
      <td style = "align:center; border-style:none;">
-       <img src="https://user-images.githubusercontent.com/68229317/220837248-fa8e9d4d-fafb-489d-84de-f0cca23a59ed.png" width="300" height="480" style = "border:1px solid #eeeeee"/>
+       <img src="https://user-images.githubusercontent.com/68229317/220837248-fa8e9d4d-fafb-489d-84de-f0cca23a59ed.png" width="300" style = "border:1px solid #eeeeee"/>
      </td>
      <td style = "align:center; border-style:none;">
-       <img src="https://user-images.githubusercontent.com/68229317/220838096-3ce87b30-e052-4163-ac1f-6f42dba76a5f.png" width="300" height="480" style = "border:1px solid #eeeeee"/>
+       <img src="https://user-images.githubusercontent.com/68229317/220838096-3ce87b30-e052-4163-ac1f-6f42dba76a5f.png" width="300" style = "border:1px solid #eeeeee"/>
      </td>
      <td style = "align:center; border-style:none;">
-       <img src="https://user-images.githubusercontent.com/68229317/220837285-58f4dd3c-d48d-4532-b989-b624a183cfb3.png" width="300" height="480" style = "border:1px solid #eeeeee"/>
+       <img src="https://user-images.githubusercontent.com/68229317/220837285-58f4dd3c-d48d-4532-b989-b624a183cfb3.png" width="300" style = "border:1px solid #eeeeee"/>
      </td>
      <td style = "align:center; border-style:none;">
-       <img src="https://user-images.githubusercontent.com/68229317/220838383-e16bd7c9-40b0-4547-bbc0-2b2f86e3e43a.png" width="300" height="480" style = "border:1px solid #eeeeee"/>
+       <img src="https://user-images.githubusercontent.com/68229317/220838383-e16bd7c9-40b0-4547-bbc0-2b2f86e3e43a.png" width="300" style = "border:1px solid #eeeeee"/>
      </td>
   </tr>
   <tr style = "background-color:#FF000000; border-style:none;">
      <td style = "align:center; border-style:none;">
-       <img src="https://user-images.githubusercontent.com/68229317/220834003-ec05c559-9b88-4374-bab7-45704f3bc2b0.png" width="300" height="480" style = "border:1px solid #eeeeee"/>
+       <img src="https://user-images.githubusercontent.com/68229317/220834003-ec05c559-9b88-4374-bab7-45704f3bc2b0.png" width="300" style = "border:1px solid #eeeeee"/>
      </td>
      <td style = "align:center; border-style:none;">
-       <img src="https://user-images.githubusercontent.com/68229317/220835095-44fbfd11-4ee7-48f1-aec0-47dbf9eb451a.png" width="300" height="480" style = "border:1px solid #eeeeee"/>
+       <img src="https://user-images.githubusercontent.com/68229317/220835095-44fbfd11-4ee7-48f1-aec0-47dbf9eb451a.png" width="300" style = "border:1px solid #eeeeee"/>
      </td>
      <td style = "align:center; border-style:none;">
-       <img src="https://user-images.githubusercontent.com/68229317/220836980-730a52ce-eda2-41ec-95c8-0da126e2e5e5.png" width="300" height="480" style = "border:1px solid #eeeeee"/>
+       <img src="https://user-images.githubusercontent.com/68229317/220836980-730a52ce-eda2-41ec-95c8-0da126e2e5e5.png" width="300" style = "border:1px solid #eeeeee"/>
      </td>
      <td style = "align:center; border-style:none;">
-       <img src="https://user-images.githubusercontent.com/68229317/220836799-514b7ff3-9405-427d-9236-0ea28d99d122.png" width="300" height="480" style = "border:1px solid #eeeeee"/>
+       <img src="https://user-images.githubusercontent.com/68229317/220836799-514b7ff3-9405-427d-9236-0ea28d99d122.png" width="300" style = "border:1px solid #eeeeee"/>
      </td>
   </tr>
 </table>
