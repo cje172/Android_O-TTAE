@@ -1,30 +1,81 @@
-# 💕 HowAboutThis 💕
-## 무엇을 선물해줄지 고민이 되는 사람들을 위한 서비스  
-# 이거 어때? 💝
-[영상으로 보실 수 있습니다.](https://www.youtube.com/watch?v=1oXPQtQgLx4)
-![슬라이드1](https://user-images.githubusercontent.com/68319395/215014033-ef2d3d55-391c-4ab2-b82a-ce8093653e40.PNG)
-![슬라이드2](https://user-images.githubusercontent.com/68319395/215014035-8d0bd943-a758-441f-bc99-74dd1e18a0ea.PNG)
-![슬라이드3](https://user-images.githubusercontent.com/68319395/215014037-f8372ede-e607-4bfd-80ea-e5c8d4e0558b.PNG)
-![슬라이드4](https://user-images.githubusercontent.com/68319395/215014038-251a56fa-4d1c-49f0-91c5-31e78ab37da5.PNG)
-![슬라이드5](https://user-images.githubusercontent.com/68319395/215014039-6070e1dd-861a-41d5-bdb0-a36b15c3f3c6.PNG)
-![슬라이드6](https://user-images.githubusercontent.com/68319395/215014041-23f5a15a-4ffa-47fc-b240-8f5821fdc158.PNG)
-![슬라이드7](https://user-images.githubusercontent.com/68319395/215014043-97d1c9de-30d3-4875-8a9b-05dadc0263c4.PNG)
-![슬라이드8](https://user-images.githubusercontent.com/68319395/215014045-0a00407a-f759-4c38-a335-adaaf2bcd0ed.PNG)
-![슬라이드9](https://user-images.githubusercontent.com/68319395/215014046-89850e49-0314-4455-b5fd-f04047a2c644.PNG)
-![슬라이드10](https://user-images.githubusercontent.com/68319395/215014048-231d9ef8-5021-4b6b-b8af-df831fb26d71.PNG)
-![슬라이드11](https://user-images.githubusercontent.com/68319395/215014050-713f733a-fc62-45c1-b795-59fef84941a5.PNG)
-![슬라이드12](https://user-images.githubusercontent.com/68319395/215014052-787f7863-fa43-433b-8144-4ea7bb088df3.PNG)
-![슬라이드13](https://user-images.githubusercontent.com/68319395/215014053-3f3c678a-c127-444a-aa5d-3c4f542e201c.PNG)
-![슬라이드14](https://user-images.githubusercontent.com/68319395/215014056-5ae4871f-21c4-494d-b5a6-0cea921abe7b.PNG)
-![슬라이드15](https://user-images.githubusercontent.com/68319395/215014059-f7d2a34d-84f3-4246-a349-feb49046daff.PNG)
-![슬라이드16](https://user-images.githubusercontent.com/68319395/215014061-73de9420-5e35-4dc4-8f6e-f3b2e349817a.PNG)
-![슬라이드17](https://user-images.githubusercontent.com/68319395/215014065-fce3c2fb-2e05-4a3f-a037-a0f24a6578a5.PNG)
-![슬라이드18](https://user-images.githubusercontent.com/68319395/215014066-c3a2b93e-1983-449f-a7f5-39a66fa45bf5.PNG)
-![슬라이드19](https://user-images.githubusercontent.com/68319395/215014069-892b9879-7df9-485d-ad23-06d308aca8ef.PNG)
-![슬라이드20](https://user-images.githubusercontent.com/68319395/215014070-69201fce-211f-4da3-85d0-2cafe7e0f600.PNG)
-![슬라이드21](https://user-images.githubusercontent.com/68319395/215014071-71bbb04c-4110-4ac1-b196-e7e04ac63f93.PNG)
-![슬라이드22](https://user-images.githubusercontent.com/68319395/215014073-dd5ff099-ba8f-4dbb-be33-52083347d298.PNG)
-![슬라이드23](https://user-images.githubusercontent.com/68319395/215014075-7f78eff8-18d9-457a-ba90-2cca0c6cfeab.PNG)
-![슬라이드24](https://user-images.githubusercontent.com/68319395/215014076-124d78f1-87d5-489c-b3dc-d85bbf8ce587.PNG)
-![슬라이드25](https://user-images.githubusercontent.com/68319395/215014077-51060f08-7c21-465b-8208-65cfc890c633.PNG)
-![슬라이드26](https://user-images.githubusercontent.com/68319395/215014078-b10a345f-9b22-4d83-9a7b-e50621e8c0ed.PNG)
+# 🎁 어때?(O-TTAE)
+뭘 선물할지 모를 땐! 이거 "어때?"
+
+📽️ Presentation Video : https://www.youtube.com/watch?v=1oXPQtQgLx4&list=PL8F_Apv4yeyeaUplqrSTcGULyfzayA5q0
+
+📹 Demo Video : https://www.youtube.com/watch?v=Tx4TfPyuXIg&list=PL8F_Apv4yeyeaUplqrSTcGULyfzayA5q0&index=2
+
+<img src="https://user-images.githubusercontent.com/68229317/220828278-1fbe4cb4-d680-4c70-b931-f97ec2e51f6e.jpg" width="85%" height="85%"/>
+
+<br/>
+
+## IA 📜
+<img src="https://user-images.githubusercontent.com/68229317/220829301-ac802707-8ebe-48fc-9caa-aac3c055d79c.jpg" width="42%" height="42%"/>
+
+<br/>
+
+## UI 📱
+<table id = "ui_table">
+   <tr style = "background-color:#FF000000; border-style:none;">
+     <td style = "align:center; border-style:none;">
+       <img src="https://user-images.githubusercontent.com/68229317/220837248-fa8e9d4d-fafb-489d-84de-f0cca23a59ed.png" width="300" height="480" style = "border:1px solid #eeeeee"/>
+     </td>
+     <td style = "align:center; border-style:none;">
+       <img src="https://user-images.githubusercontent.com/68229317/220838096-3ce87b30-e052-4163-ac1f-6f42dba76a5f.png" width="300" height="480" style = "border:1px solid #eeeeee"/>
+     </td>
+     <td style = "align:center; border-style:none;">
+       <img src="https://user-images.githubusercontent.com/68229317/220837285-58f4dd3c-d48d-4532-b989-b624a183cfb3.png" width="300" height="480" style = "border:1px solid #eeeeee"/>
+     </td>
+     <td style = "align:center; border-style:none;">
+       <img src="https://user-images.githubusercontent.com/68229317/220838383-e16bd7c9-40b0-4547-bbc0-2b2f86e3e43a.png" width="300" height="480" style = "border:1px solid #eeeeee"/>
+     </td>
+  </tr>
+  <tr style = "background-color:#FF000000; border-style:none;">
+     <td style = "align:center; border-style:none;">
+       <img src="https://user-images.githubusercontent.com/68229317/220834003-ec05c559-9b88-4374-bab7-45704f3bc2b0.png" width="300" height="480" style = "border:1px solid #eeeeee"/>
+     </td>
+     <td style = "align:center; border-style:none;">
+       <img src="https://user-images.githubusercontent.com/68229317/220835095-44fbfd11-4ee7-48f1-aec0-47dbf9eb451a.png" width="300" height="480" style = "border:1px solid #eeeeee"/>
+     </td>
+     <td style = "align:center; border-style:none;">
+       <img src="https://user-images.githubusercontent.com/68229317/220836980-730a52ce-eda2-41ec-95c8-0da126e2e5e5.png" width="300" height="480" style = "border:1px solid #eeeeee"/>
+     </td>
+     <td style = "align:center; border-style:none;">
+       <img src="https://user-images.githubusercontent.com/68229317/220836799-514b7ff3-9405-427d-9236-0ea28d99d122.png" width="300" height="480" style = "border:1px solid #eeeeee"/>
+     </td>
+  </tr>
+</table>
+
+<br/>
+
+## Description 📋
+* 뭘 선물할지 고민하는 사용자를 위해 간단한 질문을 통해 선물을 추천해줌
+* 개발 배경
+  * 코로나19 사태로 비대면 소비가 확산되면서 모바일 선물하기 시장 성장
+      * 선물 추천 앱이 타겟으로 삼는 시장의 성장세
+      * 선물 추천을 목적으로 하는 APP의 희소성(3~5개 사이)
+  * 사용자 니즈
+      * 친구에 대해 잘 안다고 생각했는데 선물을 고르기 어려움
+      * 친구한테 갖고 싶은 선물을 물어보기 어렵지만 아무거나 주고 싶지 않음
+      * 카카오톡 선물하기만 30분 넘게 뒤져봄
+* 기능(솔루션)
+  * 가격대별, 카테고리별 인기선물 추천
+  * 비밀선물
+      * 서프라이즈 선물을 준비하는 사용자를 위해 간단한 질문지를 풀어 맞춤 선물을 추천 받을 수 있는 기능
+      * 추천 결과 저장 기능
+  * 취향선물
+      * 선물을 줄 친구에 대해 잘 모르겠는 사용자를 위해 친구한테 직접 물어볼 수 있는 취향 질문지 전송 기능
+  * 마이페이지
+      * 추천 결과지 기록 확인
+  * 추천 기준 단순화
+
+<br/>
+
+## Tech Stack 🔨
+* Minimum SDK version 24
+* MVC Architecture
+* Android Studio
+* Kotlin
+* SQLite
+
+<br/>
