@@ -9,7 +9,7 @@
 <br/>
 
 ## IA 📜
-<img src="https://user-images.githubusercontent.com/68229317/220829301-ac802707-8ebe-48fc-9caa-aac3c055d79c.jpg" width="42%" height="42%"/>
+<img src="https://user-images.githubusercontent.com/68229317/220887935-8858d61f-b692-4931-8c85-06aaaa4154e8.jpg" width="70%" height="70%"/>
 
 <br/>
 
@@ -48,7 +48,7 @@
 <br/>
 
 ## Description 📋
-* 뭘 선물할지 고민하는 사용자를 위해 간단한 질문을 통해 선물을 추천해줌
+* 뭘 선물할지 고민하는 사용자를 위해 간단한 질문을 통해 선물을 추천해주는 서비스
 * 개발 배경
   * 코로나19 사태로 비대면 소비가 확산되면서 모바일 선물하기 시장 성장
       * 선물 추천 앱이 타겟으로 삼는 시장의 성장세
